@@ -1,5 +1,9 @@
 # Proyecto Programacion Cliente Servidor
 
+## Profesor
+
+Alexis Boza
+
 ## Integrantes
 
 - Alexa Cabalceta
@@ -7,3 +11,4 @@
 - Gabriel Rojas
 - Gabriel Chavez
 - Roberto Murillo
+
