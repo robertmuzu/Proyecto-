@@ -1,0 +1,60 @@
+package paquete;
+
+import java.io.Serializable;
+
+public class Admin implements Serializable{
+
+    private String nombreUsuario;
+    private String contrasena;
+    private String telefono;
+    private String correo;
+    
+    public Admin(){
+        
+    }
+
+    public Admin(String nombreUsuario, String contrasena, String telefono, String correo) {
+        this.nombreUsuario = nombreUsuario;
+        this.contrasena = contrasena;
+        this.telefono = telefono;
+        this.correo = correo;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
+    
+    
+    
+    
+    
+}
