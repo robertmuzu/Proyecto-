@@ -28,45 +28,46 @@ public class InfoPelis extends javax.swing.JFrame {
     private void initComponents() {
 
         Titulo2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        OkButton = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
-        Titulo1 = new javax.swing.JLabel();
-        Titulo3 = new javax.swing.JLabel();
-        Titulo4 = new javax.swing.JLabel();
-        Titulo5 = new javax.swing.JLabel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
+        Duracion = new javax.swing.JLabel();
+        Actores = new javax.swing.JLabel();
+        Director = new javax.swing.JLabel();
+        Resenia = new javax.swing.JLabel();
+        FotoPeli = new javax.swing.JPanel();
 
         Titulo2.setText("Duracion");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        OkButton.setText("OK");
+        OkButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                OkButtonActionPerformed(evt);
             }
         });
 
         Titulo.setText("Titulo");
 
-        Titulo1.setText("Duracion");
+        Duracion.setText("Duracion");
 
-        Titulo3.setText("Actores");
+        Actores.setText("Actores");
 
-        Titulo4.setText("Director");
+        Director.setText("Director");
 
-        Titulo5.setText("Reseña");
+        Resenia.setText("Reseña");
 
-        jInternalFrame1.setVisible(true);
+        FotoPeli.setBackground(new java.awt.Color(153, 153, 153));
+        FotoPeli.setForeground(new java.awt.Color(153, 153, 153));
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 155, Short.MAX_VALUE)
+        javax.swing.GroupLayout FotoPeliLayout = new javax.swing.GroupLayout(FotoPeli);
+        FotoPeli.setLayout(FotoPeliLayout);
+        FotoPeliLayout.setHorizontalGroup(
+            FotoPeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 145, Short.MAX_VALUE)
         );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        FotoPeliLayout.setVerticalGroup(
+            FotoPeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -75,21 +76,20 @@ public class InfoPelis extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Titulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Titulo4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Titulo5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Duracion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Actores, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Director, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Resenia, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(171, 171, 171))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,26 +99,26 @@ public class InfoPelis extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Titulo)
                         .addGap(18, 18, 18)
-                        .addComponent(Titulo1)
+                        .addComponent(Duracion)
                         .addGap(18, 18, 18)
-                        .addComponent(Titulo3)
+                        .addComponent(Actores)
                         .addGap(18, 18, 18)
-                        .addComponent(Titulo4)
+                        .addComponent(Director)
                         .addGap(18, 18, 18)
-                        .addComponent(Titulo5)
+                        .addComponent(Resenia)
                         .addGap(0, 54, Short.MAX_VALUE))
-                    .addComponent(jInternalFrame1))
+                    .addComponent(FotoPeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void OkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_OkButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,13 +156,13 @@ public class InfoPelis extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Actores;
+    private javax.swing.JLabel Director;
+    private javax.swing.JLabel Duracion;
+    private javax.swing.JPanel FotoPeli;
+    private javax.swing.JButton OkButton;
+    private javax.swing.JLabel Resenia;
     private javax.swing.JLabel Titulo;
-    private javax.swing.JLabel Titulo1;
     private javax.swing.JLabel Titulo2;
-    private javax.swing.JLabel Titulo3;
-    private javax.swing.JLabel Titulo4;
-    private javax.swing.JLabel Titulo5;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JInternalFrame jInternalFrame1;
     // End of variables declaration//GEN-END:variables
 }
