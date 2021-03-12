@@ -31,25 +31,22 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="FotoPeli" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="72" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jInternalFrame1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Titulo" min="-2" pref="190" max="-2" attributes="0"/>
-                          <Component id="Titulo1" min="-2" pref="190" max="-2" attributes="0"/>
-                          <Component id="Titulo3" min="-2" pref="190" max="-2" attributes="0"/>
-                          <Component id="Titulo4" min="-2" pref="190" max="-2" attributes="0"/>
-                          <Component id="Titulo5" min="-2" pref="190" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="Titulo" min="-2" pref="190" max="-2" attributes="0"/>
+                  <Component id="Duracion" min="-2" pref="190" max="-2" attributes="0"/>
+                  <Component id="Actores" min="-2" pref="190" max="-2" attributes="0"/>
+                  <Component id="Director" min="-2" pref="190" max="-2" attributes="0"/>
+                  <Component id="Resenia" min="-2" pref="190" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="OkButton" min="-2" pref="72" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,31 +58,31 @@
                   <Group type="102" attributes="0">
                       <Component id="Titulo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Titulo1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Duracion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Titulo3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Actores" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Titulo4" min="-2" max="-2" attributes="0"/>
+                      <Component id="Director" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Titulo5" min="-2" max="-2" attributes="0"/>
+                      <Component id="Resenia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="54" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jInternalFrame1" max="32767" attributes="0"/>
+                  <Component id="FotoPeli" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="38" max="-2" attributes="0"/>
+              <Component id="OkButton" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="OkButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="OK"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OkButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Titulo">
@@ -93,35 +90,40 @@
         <Property name="text" type="java.lang.String" value="Titulo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Titulo1">
+    <Component class="javax.swing.JLabel" name="Duracion">
       <Properties>
         <Property name="text" type="java.lang.String" value="Duracion"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Titulo3">
+    <Component class="javax.swing.JLabel" name="Actores">
       <Properties>
         <Property name="text" type="java.lang.String" value="Actores"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Titulo4">
+    <Component class="javax.swing.JLabel" name="Director">
       <Properties>
         <Property name="text" type="java.lang.String" value="Director"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Titulo5">
+    <Component class="javax.swing.JLabel" name="Resenia">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rese&#xf1;a"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JInternalFrame" name="jInternalFrame1">
+    <Container class="javax.swing.JPanel" name="FotoPeli">
       <Properties>
-        <Property name="visible" type="boolean" value="true"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="155" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="145" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
