@@ -5,6 +5,8 @@
  */
 package Frames;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Roberto
@@ -27,31 +29,63 @@ public class PagInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("jButton1");
 
+        jButton2.setText("Cerrar Sesión");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(177, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
                 .addComponent(jButton1)
-                .addGap(150, 150, 150))
+                .addContainerGap(167, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(139, 139, 139)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addGap(137, 137, 137))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String[] options = new String [2];
+        options[0] = "Si";
+        options[1] = "No";
+        int result = JOptionPane.showOptionDialog(rootPane, "¿Está seguro de cerrar sesión?","Cerrar Sesión",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,null);
+        if (result == JOptionPane.YES_OPTION){
+            this.setVisible(false);
+            InicioLogIn iniLog = new InicioLogIn();
+            iniLog.setVisible(true);
+            this.dispose();
+        }
+            
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,5 +124,7 @@ public class PagInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

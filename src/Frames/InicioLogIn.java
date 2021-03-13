@@ -1,6 +1,6 @@
 package Frames;
 
-import paquete.Admin;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.FileInputStream;
@@ -233,6 +233,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                 this.setVisible(false);
                 PagInicio ini = new PagInicio();
                 ini.setVisible(true);
+                this.dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "Favor suministre la contraseña");
             }
