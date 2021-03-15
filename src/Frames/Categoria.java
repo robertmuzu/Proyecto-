@@ -44,7 +44,6 @@ public class Categoria extends javax.swing.JFrame {
         Cat4.setText("Cat4");
 
         TitleCat.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
-        TitleCat.setForeground(new java.awt.Color(255, 255, 255));
         TitleCat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TitleCat.setLabelFor(TitleCat);
         TitleCat.setText("CATEGORÍAS");
