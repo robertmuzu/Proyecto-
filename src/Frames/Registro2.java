@@ -82,14 +82,17 @@ public class Registro2 extends javax.swing.JFrame {
             }
         });
 
-        BtnAnterior.setIcon(new javax.swing.ImageIcon("C:\\Users\\Roberto\\Desktop\\PROGRA II\\atras.png")); // NOI18N
         BtnAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAnteriorActionPerformed(evt);
             }
         });
 
-        BtnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Roberto\\Desktop\\PROGRA II\\adelante.png")); // NOI18N
+        BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSiguienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,6 +180,10 @@ public class Registro2 extends javax.swing.JFrame {
         Registro re = new Registro();
         re.setVisible(true);
     }//GEN-LAST:event_BtnAnteriorActionPerformed
+
+    private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
