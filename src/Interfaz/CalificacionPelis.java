@@ -39,20 +39,31 @@ public class CalificacionPelis extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(57, 62, 70));
+
+        cmb_puntuacion.setBackground(new java.awt.Color(255, 255, 255));
         cmb_puntuacion.setForeground(new java.awt.Color(255, 255, 51));
         cmb_puntuacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆" }));
 
+        txt_subtituloPuntuacion.setBackground(new java.awt.Color(255, 255, 255));
+        txt_subtituloPuntuacion.setForeground(new java.awt.Color(255, 255, 255));
         txt_subtituloPuntuacion.setText("Puntuación:");
 
+        txtarea_comentario.setBackground(new java.awt.Color(255, 255, 255));
         txtarea_comentario.setColumns(20);
         txtarea_comentario.setRows(5);
         jScrollPane1.setViewportView(txtarea_comentario);
 
+        txt_subtituloComentario.setBackground(new java.awt.Color(255, 255, 255));
+        txt_subtituloComentario.setForeground(new java.awt.Color(255, 255, 255));
         txt_subtituloComentario.setText("Comentarios");
 
+        txt_tituloCalificacion.setBackground(new java.awt.Color(255, 255, 255));
         txt_tituloCalificacion.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        txt_tituloCalificacion.setForeground(new java.awt.Color(255, 255, 255));
         txt_tituloCalificacion.setText("Califica la película");
 
+        btn_guardarCalificacion.setBackground(new java.awt.Color(144, 55, 73));
         btn_guardarCalificacion.setText("Guardar");
         btn_guardarCalificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +71,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
             }
         });
 
+        btn_cancelarCalificacion.setBackground(new java.awt.Color(144, 55, 73));
         btn_cancelarCalificacion.setText("Cancelar");
         btn_cancelarCalificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

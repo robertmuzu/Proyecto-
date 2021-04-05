@@ -51,6 +51,7 @@ public class InicioLogIn extends javax.swing.JFrame {
         BtnRegistro = new javax.swing.JButton();
         Btnolvido = new javax.swing.JButton();
         BtnSiguiente = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -114,6 +115,13 @@ public class InicioLogIn extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Testing");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTesting(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -135,7 +143,11 @@ public class InicioLogIn extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TxtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
                             .addComponent(TxtContraseña)
-                            .addComponent(Btnolvido)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Btnolvido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +172,9 @@ public class InicioLogIn extends javax.swing.JFrame {
                         .addComponent(LblUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(Btnolvido)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btnolvido)
+                    .addComponent(jButton1))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -242,6 +256,12 @@ public class InicioLogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnSiguienteMouseClicked
 
+    private void btnTesting(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesting
+        this.setVisible(false);
+        CalificacionPelis test = new CalificacionPelis();
+        test.setVisible(true);
+    }//GEN-LAST:event_btnTesting
+
     /**
      * @param args the command line arguments
      */
@@ -288,6 +308,7 @@ public class InicioLogIn extends javax.swing.JFrame {
     private javax.swing.JLabel LblUsuario1;
     private javax.swing.JPasswordField TxtContraseña;
     private javax.swing.JTextField TxtUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
