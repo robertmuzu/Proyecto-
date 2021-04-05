@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Frames;
+package Interfaz;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -121,7 +121,6 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
-        BtnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Roberto\\Desktop\\PROGRA II\\adelante.png")); // NOI18N
         BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSiguienteActionPerformed(evt);

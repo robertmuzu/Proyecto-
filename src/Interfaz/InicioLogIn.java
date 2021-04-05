@@ -1,4 +1,4 @@
-package Frames;
+package Interfaz;
 
 
 import java.awt.Graphics;
@@ -103,7 +103,6 @@ public class InicioLogIn extends javax.swing.JFrame {
 
         Btnolvido.setText("¿Olvidò su Contraseña?");
 
-        BtnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Roberto\\Desktop\\PROGRA II\\adelante.png")); // NOI18N
         BtnSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BtnSiguienteMouseClicked(evt);
@@ -140,13 +139,9 @@ public class InicioLogIn extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(BtnRegistro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(189, 189, 189)
+                            .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnRegistro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(150, Short.MAX_VALUE))
         );
@@ -231,7 +226,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                     System.out.println("Excepcion: " + ex.getMessage());
                 }
                 this.setVisible(false);
-                PagInicio ini = new PagInicio();
+                SeleccionPerfil ini = new SeleccionPerfil();
                 ini.setVisible(true);
                 this.dispose();
             }else{

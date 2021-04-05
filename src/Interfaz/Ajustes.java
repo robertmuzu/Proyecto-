@@ -7,12 +7,12 @@ package Interfaz;
 
 import javax.swing.JOptionPane;
         
-public class ajustes extends javax.swing.JFrame {
+public class Ajustes extends javax.swing.JFrame {
 
     /**
-     * Creates new form ajustes
+     * Creates new form Ajustes
      */
-    public ajustes() {
+    public Ajustes() {
         initComponents();
     }
 
@@ -170,20 +170,20 @@ public class ajustes extends javax.swing.JFrame {
     }//GEN-LAST:event_InfoPagoActionPerformed
 
     private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
-     interfaz inter = new interfaz();
+     SeleccionPerfil inter = new SeleccionPerfil();
      inter.getGabriel().setToolTipText(JOptionPane.showInputDialog("Digite el nuevo nombre del usuario "));
      
     }//GEN-LAST:event_NombreActionPerformed
 
     private void SalirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirButtonActionPerformed
      this.setVisible(false);
-     USuario1 inter = new USuario1();
+     Usuario1 inter = new Usuario1();
      inter.setVisible(true);
     }//GEN-LAST:event_SalirButtonActionPerformed
 
     private void contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactoActionPerformed
-        JOptionPane.showMessageDialog(null,"Nos pude contactar a siguiente numero:4578-6587\n"
-                + "O bien por el correo fideflix@atencionalcliente.com");
+        JOptionPane.showMessageDialog(null,"Nos puede contactar al siguiente numero: 4578-6587\n"
+                + "O bien al correo fideflix@atencionalcliente.com");
     }//GEN-LAST:event_contactoActionPerformed
 
     private void CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoActionPerformed
@@ -211,20 +211,20 @@ public class ajustes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajustes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ajustes().setVisible(true);
+                new Ajustes().setVisible(true);
             }
         });
     }

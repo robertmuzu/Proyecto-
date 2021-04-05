@@ -1,4 +1,4 @@
-package Frames;
+package Interfaz;
 
 
 import java.awt.Graphics;
