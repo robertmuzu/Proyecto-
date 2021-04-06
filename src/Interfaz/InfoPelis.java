@@ -40,7 +40,10 @@ public class InfoPelis extends javax.swing.JFrame {
         Titulo2.setText("Duracion");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(57, 62, 70));
 
+        OkButton.setBackground(new java.awt.Color(144, 55, 73));
+        OkButton.setForeground(new java.awt.Color(255, 255, 255));
         OkButton.setText("OK");
         OkButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,6 +51,8 @@ public class InfoPelis extends javax.swing.JFrame {
             }
         });
 
+        btn_calificar.setBackground(new java.awt.Color(144, 55, 73));
+        btn_calificar.setForeground(new java.awt.Color(255, 255, 255));
         btn_calificar.setText("Calificar");
         btn_calificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,18 +60,28 @@ public class InfoPelis extends javax.swing.JFrame {
             }
         });
 
+        Titulo.setBackground(new java.awt.Color(255, 255, 255));
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
         Titulo.setText("Titulo");
 
+        Duracion.setBackground(new java.awt.Color(255, 255, 255));
+        Duracion.setForeground(new java.awt.Color(255, 255, 255));
         Duracion.setText("Duracion");
 
+        Actores.setBackground(new java.awt.Color(255, 255, 255));
+        Actores.setForeground(new java.awt.Color(255, 255, 255));
         Actores.setText("Actores");
 
+        Director.setBackground(new java.awt.Color(255, 255, 255));
+        Director.setForeground(new java.awt.Color(255, 255, 255));
         Director.setText("Director");
 
+        Resenia.setBackground(new java.awt.Color(255, 255, 255));
+        Resenia.setForeground(new java.awt.Color(255, 255, 255));
         Resenia.setText("Reseña");
 
         FotoPeli.setBackground(new java.awt.Color(153, 153, 153));
-        FotoPeli.setForeground(new java.awt.Color(153, 153, 153));
+        FotoPeli.setForeground(new java.awt.Color(57, 62, 70));
 
         javax.swing.GroupLayout FotoPeliLayout = new javax.swing.GroupLayout(FotoPeli);
         FotoPeli.setLayout(FotoPeliLayout);

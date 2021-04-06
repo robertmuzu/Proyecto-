@@ -52,6 +52,8 @@ public class CatSeries extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SERIES");
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/signo.png"))); // NOI18N
@@ -108,6 +110,8 @@ public class CatSeries extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(144, 55, 73));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("ATRAS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -64,6 +64,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
         txt_tituloCalificacion.setText("Califica la película");
 
         btn_guardarCalificacion.setBackground(new java.awt.Color(144, 55, 73));
+        btn_guardarCalificacion.setForeground(new java.awt.Color(255, 255, 255));
         btn_guardarCalificacion.setText("Guardar");
         btn_guardarCalificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +73,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
         });
 
         btn_cancelarCalificacion.setBackground(new java.awt.Color(144, 55, 73));
+        btn_cancelarCalificacion.setForeground(new java.awt.Color(255, 255, 255));
         btn_cancelarCalificacion.setText("Cancelar");
         btn_cancelarCalificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
