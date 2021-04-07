@@ -49,7 +49,9 @@ public class SeleccionPerfil extends javax.swing.JFrame {
 
         perro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
 
+        Luis.setBackground(new java.awt.Color(144, 55, 73));
         Luis.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Luis.setForeground(new java.awt.Color(255, 255, 255));
         Luis.setText("Luis");
         Luis.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Luis.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +62,9 @@ public class SeleccionPerfil extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/camara.png"))); // NOI18N
 
+        Andres.setBackground(new java.awt.Color(144, 55, 73));
         Andres.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Andres.setForeground(new java.awt.Color(255, 255, 255));
         Andres.setText("Andres");
         Andres.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Andres.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +75,9 @@ public class SeleccionPerfil extends javax.swing.JFrame {
 
         andrea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/among.png"))); // NOI18N
 
+        Andrea1.setBackground(new java.awt.Color(144, 55, 73));
         Andrea1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Andrea1.setForeground(new java.awt.Color(255, 255, 255));
         Andrea1.setText("Andrea");
         Andrea1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Andrea1.addActionListener(new java.awt.event.ActionListener() {
@@ -81,13 +87,16 @@ public class SeleccionPerfil extends javax.swing.JFrame {
         });
 
         usuarios.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        usuarios.setForeground(new java.awt.Color(255, 255, 255));
         usuarios.setText("Usuarios");
 
         Salir.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salr¡ir.png"))); // NOI18N
         Salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        Gabriel.setBackground(new java.awt.Color(144, 55, 73));
         Gabriel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Gabriel.setForeground(new java.awt.Color(255, 255, 255));
         Gabriel.setText("Gabriel");
         Gabriel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Gabriel.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +105,8 @@ public class SeleccionPerfil extends javax.swing.JFrame {
             }
         });
 
+        jButton16.setBackground(new java.awt.Color(144, 55, 73));
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setText("Cerrar Sesión");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,26 +139,31 @@ public class SeleccionPerfil extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(Luis, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(9, 9, 9)))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(63, 63, 63)
-                            .addComponent(jLabel1)
-                            .addGap(133, 133, 133)
-                            .addComponent(andrea, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(94, 94, 94)
-                            .addComponent(Andres, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Andrea1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Andrea1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(andrea, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(44, 44, 44))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(Andres, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(280, 280, 280)
+                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(262, 262, 262))
+                .addGap(241, 241, 241))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Salir))
