@@ -9,12 +9,7 @@ import javax.swing.JPanel;
 
 public class Portada extends javax.swing.JFrame {
 
-
-    FondoPanel fondo = new FondoPanel();
-    
-    public Portada() {
-        this.setContentPane(fondo);
-        
+    public Portada() {     
         initComponents();
     }
 
@@ -24,29 +19,40 @@ public class Portada extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jPanel1 = new FondoPanel();
+        jPanel1 = new javax.swing.JPanel();
         LblLog = new javax.swing.JLabel();
         BtnInicio = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        LblLog.setBackground(new java.awt.Color(255, 255, 255));
+        LblLog.setBackground(new java.awt.Color(51, 51, 51));
         LblLog.setFont(new java.awt.Font("Colonna MT", 2, 48)); // NOI18N
         LblLog.setForeground(new java.awt.Color(255, 255, 255));
         LblLog.setText("FiDEFleX");
 
-        BtnInicio.setBackground(new java.awt.Color(153, 153, 153));
-        BtnInicio.setFont(new java.awt.Font("Colonna MT", 0, 36)); // NOI18N
-        BtnInicio.setText("INICIO");
+        BtnInicio.setBackground(new java.awt.Color(144, 55, 73));
+        BtnInicio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BtnInicio.setForeground(new java.awt.Color(255, 255, 255));
+        BtnInicio.setText("Inicio");
         BtnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnInicioActionPerformed(evt);
             }
         });
+
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Bienvenido a:");
+
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("       Por favor presione el siguiente botòn para iniciar sesiòn");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -55,21 +61,34 @@ public class Portada extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(293, 293, 293)
-                        .addComponent(BtnInicio))
+                        .addGap(324, 324, 324)
+                        .addComponent(BtnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(266, 266, 266)
+                        .addGap(262, 262, 262)
                         .addComponent(LblLog, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 180, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(176, 176, 176))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(304, 304, 304))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
+                .addContainerGap(55, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(LblLog, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BtnInicio)
-                .addGap(175, 175, 175))
+                .addGap(160, 160, 160))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -87,7 +106,6 @@ public class Portada extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInicioActionPerformed
-        //PASAR DE UNA VANTANA A OTRA Y OCULTAR LA ANTERIOR
         this.setVisible(false);
         InicioLogIn in = new InicioLogIn();
         in.setVisible(true);
@@ -131,25 +149,9 @@ public class Portada extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnInicio;
     private javax.swing.JLabel LblLog;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-
-    class FondoPanel extends JPanel{
-     private Image imagen; 
-     
-     @Override
-     public void paint(Graphics g){
-         
-         imagen = new ImageIcon(getClass().getResource("/Imagenes/Fondo2.jpg")).getImage();
-         
-         g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-         
-         setOpaque(false);
-         
-         super.paint(g);
-     }
-     
-    }
-
 }

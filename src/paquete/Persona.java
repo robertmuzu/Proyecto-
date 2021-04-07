@@ -6,7 +6,7 @@ public class Persona {
     //Creamos atributos de las personas que van a usar el APP.
     protected String nombre;
     protected String apellidos;
-    protected int cedula;
+    protected String correo;
     protected boolean sexo;
     protected int edad;
     protected int numeroTelefono;
@@ -17,10 +17,10 @@ public class Persona {
     }
     
     //CONSTRUCTOR
-    public Persona(String nombre, String apellidos, int cedula, boolean sexo, int edad, int numeroTelefono) {
+    public Persona(String nombre, String apellidos, String correo, boolean sexo, int edad, int numeroTelefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.cedula = cedula;
+        this.correo = correo;
         this.sexo = sexo;
         this.edad = edad;
         this.numeroTelefono = numeroTelefono;
@@ -43,12 +43,12 @@ public class Persona {
         this.apellidos = apellidos;
     }
 
-    public int getCedula() {
-        return cedula;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public boolean isSexo() {
