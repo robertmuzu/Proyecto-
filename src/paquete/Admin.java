@@ -12,7 +12,7 @@ public class Admin implements Serializable{
         
     }
 
-    public Admin(String nombreUsuario, String contrasena, String telefono, String correo) {
+    public Admin(String nombreUsuario, String contrasena, String correo) {
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
         this.correo = correo;
@@ -42,5 +42,19 @@ public class Admin implements Serializable{
         this.correo = correo;
     }
      
+    public void agregarPelicula(){
+        
+    }
     
+    public void eliminarPelicula(){
+        
+    }
+    
+    public void agregarCategoria(){
+        
+    }
+    
+    public void eliminarCategoria(){
+        
+    }
 }
