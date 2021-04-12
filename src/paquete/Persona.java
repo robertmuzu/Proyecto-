@@ -1,5 +1,7 @@
 package paquete;
 
+import java.util.ArrayList;
+
 
 public class Persona {
     
@@ -9,7 +11,10 @@ public class Persona {
     protected String correo;
     protected boolean sexo;
     protected int edad;
-    protected int numeroTelefono;
+    protected String numeroTelefono;
+    protected String fotoUsuario;
+    protected ArrayList <Perfil> perfilesAsociados;
+    protected Perfil perfilActivo;
     
     //CONSTRUCTOR VACIO
     public Persona(){
@@ -17,7 +22,7 @@ public class Persona {
     }
     
     //CONSTRUCTOR
-    public Persona(String nombre, String apellidos, String correo, boolean sexo, int edad, int numeroTelefono) {
+    public Persona(String nombre, String apellidos, String correo, boolean sexo, int edad, String numeroTelefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -67,11 +72,11 @@ public class Persona {
         this.edad = edad;
     }
 
-    public int getNumeroTelefono() {
+    public String getNumeroTelefono() {
         return numeroTelefono;
     }
 
-    public void setNumeroTelefono(int numeroTelefono) {
+    public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
     

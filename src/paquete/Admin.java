@@ -41,20 +41,5 @@ public class Admin implements Serializable{
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-     
-    public void agregarPelicula(){
-        
-    }
-    
-    public void eliminarPelicula(){
-        
-    }
-    
-    public void agregarCategoria(){
-        
-    }
-    
-    public void eliminarCategoria(){
-        
-    }
+
 }

@@ -4,23 +4,23 @@ package paquete;
  *
  * @author GABRIEL CHAVES G
  */
-public class Peliculas {
+public class Pelicula {
    
     //Creamos atributos para las peliculas que se van a usar en el APP.
    private String Nombre;
    private String Lenguaje;
    private String Descripcion;
-   private String Comentario;
+   private Comentario Comentario;
    private Categoria Categoria;
    
 
 //Constructor vacio
-    public Peliculas (){
+    public Pelicula (){
         
     }
    
     //Constructor
-     public Peliculas(String Nombre, String Lenguaje, String Descripcion, String Comentario,Categoria Categoria) {
+     public Pelicula(String Nombre, String Lenguaje, String Descripcion, Comentario Comentario,Categoria Categoria) {
         this.Nombre = Nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
@@ -42,7 +42,7 @@ public class Peliculas {
         return Descripcion;
     }
 
-    public String getComentario() {
+    public Comentario getComentario() {
         return Comentario;
     }
 
@@ -62,7 +62,7 @@ public class Peliculas {
         this.Descripcion = Descripcion;
     }
 
-    public void setComentario(String Comentario) {
+    public void setComentario(Comentario Comentario) {
         this.Comentario = Comentario;
     }
 
@@ -70,7 +70,5 @@ public class Peliculas {
         this.Categoria = Categoria;
     }
 
- 
-    
       
 }
