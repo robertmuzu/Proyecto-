@@ -49,10 +49,15 @@ public class Ajustes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 240, 240));
 
+        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+
         JAyuda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JAyuda.setForeground(new java.awt.Color(255, 255, 255));
         JAyuda.setText("Configuraciones de usuario");
 
+        InfoPago.setBackground(new java.awt.Color(144, 55, 73));
         InfoPago.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        InfoPago.setForeground(new java.awt.Color(255, 255, 255));
         InfoPago.setText("Informacion de pago");
         InfoPago.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         InfoPago.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +66,9 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        CanbiarFoto.setBackground(new java.awt.Color(144, 55, 73));
         CanbiarFoto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        CanbiarFoto.setForeground(new java.awt.Color(255, 255, 255));
         CanbiarFoto.setText("Cambiar foto de perfil");
         CanbiarFoto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CanbiarFoto.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +77,9 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        Nombre.setBackground(new java.awt.Color(144, 55, 73));
         Nombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Nombre.setForeground(new java.awt.Color(255, 255, 255));
         Nombre.setText("Cambiar nombre de usuario");
         Nombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Nombre.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +88,9 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        Correo.setBackground(new java.awt.Color(144, 55, 73));
         Correo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Correo.setForeground(new java.awt.Color(255, 255, 255));
         Correo.setText("Correo elelctronico de la cuenta");
         Correo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Correo.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +99,9 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        contacto.setBackground(new java.awt.Color(144, 55, 73));
         contacto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contacto.setForeground(new java.awt.Color(255, 255, 255));
         contacto.setText("Contactenos ");
         contacto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         contacto.addActionListener(new java.awt.event.ActionListener() {
@@ -97,41 +110,6 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(InfoPago)
-                    .addComponent(CanbiarFoto)
-                    .addComponent(Nombre)
-                    .addComponent(Correo)
-                    .addComponent(contacto))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
-                .addComponent(JAyuda)
-                .addGap(149, 149, 149))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(JAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(InfoPago)
-                .addGap(28, 28, 28)
-                .addComponent(CanbiarFoto)
-                .addGap(33, 33, 33)
-                .addComponent(Nombre)
-                .addGap(35, 35, 35)
-                .addComponent(Correo)
-                .addGap(18, 18, 18)
-                .addComponent(contacto)
-                .addGap(89, 89, 89))
-        );
-
         SalirButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salr¡ir.png"))); // NOI18N
         SalirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,25 +117,61 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(InfoPago)
+                            .addComponent(CanbiarFoto)
+                            .addComponent(Nombre)
+                            .addComponent(Correo)
+                            .addComponent(contacto)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(JAyuda)))
+                .addGap(0, 149, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JAyuda)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(InfoPago)
+                .addGap(29, 29, 29)
+                .addComponent(CanbiarFoto)
+                .addGap(33, 33, 33)
+                .addComponent(Nombre)
+                .addGap(27, 27, 27)
+                .addComponent(Correo)
+                .addGap(26, 26, 26)
+                .addComponent(contacto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

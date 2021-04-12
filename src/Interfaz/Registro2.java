@@ -46,42 +46,42 @@ public class Registro2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
 
         jPanel1.setBackground(java.awt.Color.darkGray);
 
         LblRegistro.setBackground(java.awt.Color.darkGray);
         LblRegistro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LblRegistro.setForeground(new java.awt.Color(204, 204, 204));
+        LblRegistro.setForeground(new java.awt.Color(255, 255, 255));
         LblRegistro.setText("REGISTRO");
 
         LblNombreUsuario.setBackground(java.awt.Color.darkGray);
-        LblNombreUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        LblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         LblNombreUsuario.setText("Nombre de Usuario:");
 
         LblContraseña.setBackground(java.awt.Color.darkGray);
-        LblContraseña.setForeground(new java.awt.Color(204, 204, 204));
+        LblContraseña.setForeground(new java.awt.Color(255, 255, 255));
         LblContraseña.setText("Contraseña:");
 
         LblContraseña2.setBackground(java.awt.Color.darkGray);
-        LblContraseña2.setForeground(new java.awt.Color(204, 204, 204));
+        LblContraseña2.setForeground(new java.awt.Color(255, 255, 255));
         LblContraseña2.setText("Repetir Contraseña:");
 
-        TxtNombreUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        TxtNombreUsuario.setBackground(new java.awt.Color(255, 255, 255));
         TxtNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNombreUsuarioActionPerformed(evt);
             }
         });
 
-        TxtContraseña.setBackground(new java.awt.Color(204, 204, 204));
+        TxtContraseña.setBackground(new java.awt.Color(255, 255, 255));
         TxtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtContraseñaActionPerformed(evt);
             }
         });
 
-        TxtContraseña2.setBackground(new java.awt.Color(204, 204, 204));
+        TxtContraseña2.setBackground(new java.awt.Color(255, 255, 255));
         TxtContraseña2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtContraseña2ActionPerformed(evt);
