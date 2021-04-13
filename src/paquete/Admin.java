@@ -6,17 +6,15 @@ public class Admin implements Serializable{
 
     private String nombreUsuario;
     private String contrasena;
-    private String telefono;
     private String correo;
     
     public Admin(){
         
     }
 
-    public Admin(String nombreUsuario, String contrasena, String telefono, String correo) {
+    public Admin(String nombreUsuario, String contrasena, String correo) {
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
-        this.telefono = telefono;
         this.correo = correo;
     }
 
@@ -36,14 +34,6 @@ public class Admin implements Serializable{
         this.contrasena = contrasena;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
     public String getCorreo() {
         return correo;
     }
@@ -51,10 +41,5 @@ public class Admin implements Serializable{
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    
-    
-    
-    
-    
-    
+
 }

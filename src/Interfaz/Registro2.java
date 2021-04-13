@@ -32,7 +32,8 @@ public class Registro2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new FondoPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         LblRegistro = new javax.swing.JLabel();
         LblNombreUsuario = new javax.swing.JLabel();
         LblContraseña = new javax.swing.JLabel();
@@ -40,59 +41,60 @@ public class Registro2 extends javax.swing.JFrame {
         TxtNombreUsuario = new javax.swing.JTextField();
         TxtContraseña = new javax.swing.JTextField();
         TxtContraseña2 = new javax.swing.JTextField();
-        BtnAnterior = new javax.swing.JButton();
-        BtnSiguiente = new javax.swing.JButton();
+        BtnRegresar = new javax.swing.JButton();
+        BtnAvanzar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LblRegistro.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        LblRegistro.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+
+        jPanel1.setBackground(java.awt.Color.darkGray);
+
+        LblRegistro.setBackground(java.awt.Color.darkGray);
+        LblRegistro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LblRegistro.setForeground(new java.awt.Color(255, 255, 255));
         LblRegistro.setText("REGISTRO");
 
-        LblNombreUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        LblNombreUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        LblNombreUsuario.setBackground(java.awt.Color.darkGray);
+        LblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         LblNombreUsuario.setText("Nombre de Usuario:");
 
-        LblContraseña.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        LblContraseña.setForeground(new java.awt.Color(204, 204, 204));
+        LblContraseña.setBackground(java.awt.Color.darkGray);
+        LblContraseña.setForeground(new java.awt.Color(255, 255, 255));
         LblContraseña.setText("Contraseña:");
 
-        LblContraseña2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        LblContraseña2.setForeground(new java.awt.Color(204, 204, 204));
+        LblContraseña2.setBackground(java.awt.Color.darkGray);
+        LblContraseña2.setForeground(new java.awt.Color(255, 255, 255));
         LblContraseña2.setText("Repetir Contraseña:");
 
-        TxtNombreUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        TxtNombreUsuario.setBackground(new java.awt.Color(255, 255, 255));
         TxtNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNombreUsuarioActionPerformed(evt);
             }
         });
 
-        TxtContraseña.setBackground(new java.awt.Color(204, 204, 204));
+        TxtContraseña.setBackground(new java.awt.Color(255, 255, 255));
         TxtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtContraseñaActionPerformed(evt);
             }
         });
 
-        TxtContraseña2.setBackground(new java.awt.Color(204, 204, 204));
+        TxtContraseña2.setBackground(new java.awt.Color(255, 255, 255));
         TxtContraseña2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtContraseña2ActionPerformed(evt);
             }
         });
 
-        BtnAnterior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAnteriorActionPerformed(evt);
-            }
-        });
+        BtnRegresar.setBackground(new java.awt.Color(144, 55, 73));
+        BtnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnRegresar.setText("Regresar");
 
-        BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSiguienteActionPerformed(evt);
-            }
-        });
+        BtnAvanzar.setBackground(new java.awt.Color(144, 55, 73));
+        BtnAvanzar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnAvanzar.setText("Continuar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,63 +102,75 @@ public class Registro2 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(84, 84, 84)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(397, 397, 397)
-                        .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(LblContraseña2)
-                            .addGap(18, 18, 18)
-                            .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BtnRegresar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnAvanzar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(LblNombreUsuario)
                                 .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LblContraseña, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(137, Short.MAX_VALUE))
+                                .addComponent(LblContraseña, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LblNombreUsuario, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(LblContraseña2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LblNombreUsuario)
-                            .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LblContraseña)
-                            .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblContraseña2)
-                            .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(BtnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(128, 128, 128))
+                .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblNombreUsuario)
+                    .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblContraseña)
+                    .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblContraseña2)
+                    .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnRegresar)
+                    .addComponent(BtnAvanzar))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,17 +187,6 @@ public class Registro2 extends javax.swing.JFrame {
     private void TxtContraseña2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtContraseña2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtContraseña2ActionPerformed
-
-    private void BtnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnteriorActionPerformed
-        
-        this.setVisible(false);
-        Registro re = new Registro();
-        re.setVisible(true);
-    }//GEN-LAST:event_BtnAnteriorActionPerformed
-
-    private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,8 +225,8 @@ public class Registro2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAnterior;
-    private javax.swing.JButton BtnSiguiente;
+    private javax.swing.JButton BtnAvanzar;
+    private javax.swing.JButton BtnRegresar;
     private javax.swing.JLabel LblContraseña;
     private javax.swing.JLabel LblContraseña2;
     private javax.swing.JLabel LblNombreUsuario;
@@ -232,23 +235,6 @@ public class Registro2 extends javax.swing.JFrame {
     private javax.swing.JTextField TxtContraseña2;
     private javax.swing.JTextField TxtNombreUsuario;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-
-class FondoPanel extends JPanel {
-
-        private Image imagen;
-
-        @Override
-        public void paint(Graphics g) {
-
-            imagen = new ImageIcon(getClass().getResource("/Imagenes/Fondo2.jpg")).getImage();
-
-            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-
-            setOpaque(false);
-
-            super.paint(g);
-        }
-
     }
-}

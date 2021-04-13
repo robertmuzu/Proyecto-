@@ -17,11 +17,11 @@ public class MainSerializacion {
       //Contacto vContacto2 = new Contacto("Ana Mora", "+506-8888-7777", "ana@mora.com");
       
       
-      Admin ad = new Admin("roberto", "1234", "72828982", "muribeto24@gmail.com");
-      Admin ad1 = new Admin("alee", "5678", "8888888", "@gmail.com");
-      Admin ad2 = new Admin("gabriel", "12345", "8888888", "@gmail.com");
-      Admin ad3 = new Admin("gabriel(tatu)", "56789", "8888888", "@gmail.com");
-      Admin ad4 = new Admin("element", "123", "8888888", "@gmail.com");
+      Admin ad = new Admin("roberto", "1234", "muribeto24@gmail.com");
+      Admin ad1 = new Admin("alee", "5678", "@gmail.com");
+      Admin ad2 = new Admin("gabriel", "12345", "@gmail.com");
+      Admin ad3 = new Admin("gabriel(tatu)", "8888888", "@gmail.com");
+      Admin ad4 = new Admin("element", "123", "@gmail.com");
                   
     //VAMOS A PROCEDER PRIMERO A GUARDALO EN UN ARCHIVO            
      

@@ -1,15 +1,20 @@
 package paquete;
 
+import java.util.ArrayList;
+
 
 public class Persona {
     
     //Creamos atributos de las personas que van a usar el APP.
     protected String nombre;
     protected String apellidos;
-    protected int cedula;
+    protected String correo;
     protected boolean sexo;
     protected int edad;
-    protected int numeroTelefono;
+    protected String numeroTelefono;
+    protected String fotoUsuario;
+    protected ArrayList <Perfil> perfilesAsociados;
+    protected Perfil perfilActivo;
     
     //CONSTRUCTOR VACIO
     public Persona(){
@@ -17,10 +22,10 @@ public class Persona {
     }
     
     //CONSTRUCTOR
-    public Persona(String nombre, String apellidos, int cedula, boolean sexo, int edad, int numeroTelefono) {
+    public Persona(String nombre, String apellidos, String correo, boolean sexo, int edad, String numeroTelefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.cedula = cedula;
+        this.correo = correo;
         this.sexo = sexo;
         this.edad = edad;
         this.numeroTelefono = numeroTelefono;
@@ -43,12 +48,12 @@ public class Persona {
         this.apellidos = apellidos;
     }
 
-    public int getCedula() {
-        return cedula;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public boolean isSexo() {
@@ -67,11 +72,11 @@ public class Persona {
         this.edad = edad;
     }
 
-    public int getNumeroTelefono() {
+    public String getNumeroTelefono() {
         return numeroTelefono;
     }
 
-    public void setNumeroTelefono(int numeroTelefono) {
+    public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
     

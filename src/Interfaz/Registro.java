@@ -33,10 +33,11 @@ public class Registro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new FondoPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         LblRegistro = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        LblCorreo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -47,85 +48,88 @@ public class Registro extends javax.swing.JFrame {
         TxtTelfono = new javax.swing.JTextField();
         TxtSexo = new javax.swing.JTextField();
         TxtEdad = new javax.swing.JTextField();
-        BtnSiguiente = new javax.swing.JButton();
+        BtnAvanzar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LblRegistro.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        LblRegistro.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+
+        jPanel1.setBackground(java.awt.Color.darkGray);
+
+        LblRegistro.setBackground(java.awt.Color.darkGray);
+        LblRegistro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LblRegistro.setForeground(new java.awt.Color(255, 255, 255));
         LblRegistro.setText("REGISTRO");
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setBackground(java.awt.Color.darkGray);
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre:");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel3.setText("Número de Cédula:");
+        LblCorreo.setBackground(java.awt.Color.darkGray);
+        LblCorreo.setForeground(new java.awt.Color(255, 255, 255));
+        LblCorreo.setText("Correo electrónico:");
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setBackground(java.awt.Color.darkGray);
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Teléfono:");
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setBackground(java.awt.Color.darkGray);
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Apellidos:");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setBackground(java.awt.Color.darkGray);
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Sexo:");
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setBackground(java.awt.Color.darkGray);
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Edad:");
 
-        TxtNombre.setBackground(new java.awt.Color(204, 204, 204));
+        TxtNombre.setBackground(new java.awt.Color(255, 255, 255));
         TxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNombreActionPerformed(evt);
             }
         });
 
-        TxtApellidos.setBackground(new java.awt.Color(204, 204, 204));
+        TxtApellidos.setBackground(new java.awt.Color(255, 255, 255));
         TxtApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtApellidosActionPerformed(evt);
             }
         });
 
-        TxtCedula.setBackground(new java.awt.Color(204, 204, 204));
+        TxtCedula.setBackground(new java.awt.Color(255, 255, 255));
         TxtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtCedulaActionPerformed(evt);
             }
         });
 
-        TxtTelfono.setBackground(new java.awt.Color(204, 204, 204));
+        TxtTelfono.setBackground(new java.awt.Color(255, 255, 255));
         TxtTelfono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtTelfonoActionPerformed(evt);
             }
         });
 
-        TxtSexo.setBackground(new java.awt.Color(204, 204, 204));
+        TxtSexo.setBackground(new java.awt.Color(255, 255, 255));
         TxtSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtSexoActionPerformed(evt);
             }
         });
 
-        TxtEdad.setBackground(new java.awt.Color(204, 204, 204));
+        TxtEdad.setBackground(new java.awt.Color(255, 255, 255));
         TxtEdad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtEdadActionPerformed(evt);
             }
         });
 
-        BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSiguienteActionPerformed(evt);
-            }
-        });
+        BtnAvanzar.setBackground(new java.awt.Color(144, 55, 73));
+        BtnAvanzar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnAvanzar.setText("Avanzar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -133,84 +137,92 @@ public class Registro extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(83, 83, 83)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(TxtSexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
-                            .addComponent(TxtTelfono, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtEdad))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(82, 82, 82)
-                        .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel4)
+                            .addComponent(LblCorreo)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel1))
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 232, Short.MAX_VALUE))
+                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(TxtSexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                                .addComponent(TxtTelfono, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(TxtEdad))
+                            .addComponent(BtnAvanzar, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 113, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(TxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(TxtTelfono, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(TxtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(TxtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblCorreo)
+                    .addComponent(TxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(TxtTelfono, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(TxtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(TxtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(BtnAvanzar)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -239,44 +251,6 @@ public class Registro extends javax.swing.JFrame {
     private void TxtEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEdadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtEdadActionPerformed
-
-    private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
-
-        try {
-            if (!TxtNombre.getText().isEmpty()) {
-                if (!TxtApellidos.getText().isEmpty()) {
-                    if (!TxtCedula.getText().isEmpty()) {
-                        if (!TxtTelfono.getText().isEmpty()) {
-                            if (!TxtSexo.getText().isEmpty()) {
-                                if (!TxtEdad.getText().isEmpty()) {
-                                    this.setVisible(false);
-                                    Registro2 re = new Registro2();
-                                    re.setVisible(true);
-                                } else {
-                                    JOptionPane.showMessageDialog(null, "Ha llenado el Registro");
-                                }
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Falta informacíon por llenar");
-                            }
-
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Falta informacíon por llenar");
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Falta informacíon por llenar");
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Falta informacíon por llenar");
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Falta informacíon por llenar");
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Excepción" + ex.getMessage());
-        }
-
-
-    }//GEN-LAST:event_BtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,7 +289,8 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnSiguiente;
+    private javax.swing.JButton BtnAvanzar;
+    private javax.swing.JLabel LblCorreo;
     private javax.swing.JLabel LblRegistro;
     private javax.swing.JTextField TxtApellidos;
     private javax.swing.JTextField TxtCedula;
@@ -324,29 +299,11 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField TxtSexo;
     private javax.swing.JTextField TxtTelfono;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-
-    class FondoPanel extends JPanel {
-
-        private Image imagen;
-
-        @Override
-        public void paint(Graphics g) {
-
-            imagen = new ImageIcon(getClass().getResource("/Imagenes/Fondo2.jpg")).getImage();
-
-            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-
-            setOpaque(false);
-
-            super.paint(g);
-        }
-
-    }
 }
