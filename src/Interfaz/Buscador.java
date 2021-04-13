@@ -44,8 +44,6 @@ public class Buscador extends javax.swing.JFrame {
         LblBuscar.setForeground(new java.awt.Color(255, 255, 255));
         LblBuscar.setText("Buscar película por nombre:");
 
-        TxtBuscar.setBackground(new java.awt.Color(255, 255, 255));
-
         BtnBuscar.setBackground(new java.awt.Color(144, 55, 73));
         BtnBuscar.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         BtnBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -60,7 +58,6 @@ public class Buscador extends javax.swing.JFrame {
         LblFound.setForeground(new java.awt.Color(255, 255, 255));
         LblFound.setText("Se encontraron:");
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -69,6 +66,11 @@ public class Buscador extends javax.swing.JFrame {
         BtnVolver.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
         BtnVolver.setText("Volver al Catálogo");
+        BtnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,6 +123,10 @@ public class Buscador extends javax.swing.JFrame {
     private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnBuscarActionPerformed
+
+    private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnVolverActionPerformed
 
     /**
      * @param args the command line arguments

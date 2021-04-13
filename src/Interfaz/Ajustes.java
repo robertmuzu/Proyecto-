@@ -29,8 +29,6 @@ public class Ajustes extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         JAyuda = new javax.swing.JLabel();
         InfoPago = new javax.swing.JButton();
-        CanbiarFoto = new javax.swing.JButton();
-        Nombre = new javax.swing.JButton();
         Correo = new javax.swing.JButton();
         contacto = new javax.swing.JButton();
         SalirButton = new javax.swing.JButton();
@@ -47,7 +45,6 @@ public class Ajustes extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(240, 240, 240));
 
         jPanel2.setBackground(new java.awt.Color(57, 62, 70));
 
@@ -66,32 +63,10 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
-        CanbiarFoto.setBackground(new java.awt.Color(144, 55, 73));
-        CanbiarFoto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        CanbiarFoto.setForeground(new java.awt.Color(255, 255, 255));
-        CanbiarFoto.setText("Cambiar foto de perfil");
-        CanbiarFoto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        CanbiarFoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CanbiarFotoActionPerformed(evt);
-            }
-        });
-
-        Nombre.setBackground(new java.awt.Color(144, 55, 73));
-        Nombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Nombre.setForeground(new java.awt.Color(255, 255, 255));
-        Nombre.setText("Cambiar nombre de usuario");
-        Nombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreActionPerformed(evt);
-            }
-        });
-
         Correo.setBackground(new java.awt.Color(144, 55, 73));
         Correo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Correo.setForeground(new java.awt.Color(255, 255, 255));
-        Correo.setText("Correo elelctronico de la cuenta");
+        Correo.setText("Nombre de la cuenta ");
         Correo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,8 +102,6 @@ public class Ajustes extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(InfoPago)
-                            .addComponent(CanbiarFoto)
-                            .addComponent(Nombre)
                             .addComponent(Correo)
                             .addComponent(contacto)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -136,26 +109,21 @@ public class Ajustes extends javax.swing.JFrame {
                         .addComponent(JAyuda)))
                 .addGap(0, 149, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(JAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(InfoPago)
-                .addGap(29, 29, 29)
-                .addComponent(CanbiarFoto)
                 .addGap(33, 33, 33)
-                .addComponent(Nombre)
-                .addGap(27, 27, 27)
                 .addComponent(Correo)
-                .addGap(26, 26, 26)
+                .addGap(43, 43, 43)
                 .addComponent(contacto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(87, 87, 87)
                 .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -183,15 +151,9 @@ public class Ajustes extends javax.swing.JFrame {
               + "Su proxima factura estara disponible el 12/8/21 ");
     }//GEN-LAST:event_InfoPagoActionPerformed
 
-    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
-     SeleccionPerfil inter = new SeleccionPerfil();
-     inter.getGabriel().setToolTipText(JOptionPane.showInputDialog("Digite el nuevo nombre del usuario "));
-     
-    }//GEN-LAST:event_NombreActionPerformed
-
     private void SalirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirButtonActionPerformed
      this.setVisible(false);
-     Usuario1 inter = new Usuario1();
+     Catalogo inter = new Catalogo();
      inter.setVisible(true);
     }//GEN-LAST:event_SalirButtonActionPerformed
 
@@ -203,10 +165,6 @@ public class Ajustes extends javax.swing.JFrame {
     private void CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoActionPerformed
        
     }//GEN-LAST:event_CorreoActionPerformed
-
-    private void CanbiarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CanbiarFotoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CanbiarFotoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,11 +202,9 @@ public class Ajustes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CanbiarFoto;
     private javax.swing.JButton Correo;
     private javax.swing.JButton InfoPago;
     private javax.swing.JLabel JAyuda;
-    private javax.swing.JButton Nombre;
     private javax.swing.JButton SalirButton;
     private javax.swing.JButton contacto;
     private javax.swing.JPanel jPanel1;

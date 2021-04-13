@@ -41,7 +41,6 @@ public class SeleccionPerfil extends javax.swing.JFrame {
         Andrea1 = new javax.swing.JButton();
         andrea = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,19 +111,12 @@ public class SeleccionPerfil extends javax.swing.JFrame {
             }
         });
 
-        Salir.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salr¡ir.png"))); // NOI18N
-        Salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Salir))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -154,9 +146,7 @@ public class SeleccionPerfil extends javax.swing.JFrame {
                                 .addComponent(Andres, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Andrea1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Andrea1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addComponent(andrea, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,9 +182,7 @@ public class SeleccionPerfil extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Andrea1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Andres, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(32, 32, 32)
-                .addComponent(Salir)
-                .addContainerGap())
+                .addGap(100, 100, 100))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -213,26 +201,26 @@ public class SeleccionPerfil extends javax.swing.JFrame {
 
     private void GabrielActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GabrielActionPerformed
         this.setVisible(false);
-        Usuario1 aj = new Usuario1();
+        Catalogo aj = new Catalogo();
         aj.setVisible(true);
 
     }//GEN-LAST:event_GabrielActionPerformed
 
     private void LuisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuisActionPerformed
         this.setVisible(false);
-        Usuario1 aj = new Usuario1();
+        Catalogo aj = new Catalogo();
         aj.setVisible(true);
     }//GEN-LAST:event_LuisActionPerformed
 
     private void AndresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AndresActionPerformed
         this.setVisible(false);
-        Usuario1 aj = new Usuario1();
+        Catalogo aj = new Catalogo();
         aj.setVisible(true);
     }//GEN-LAST:event_AndresActionPerformed
 
     private void Andrea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Andrea1ActionPerformed
         this.setVisible(false);
-        Usuario1 aj = new Usuario1();
+        Catalogo aj = new Catalogo();
         aj.setVisible(true);
     }//GEN-LAST:event_Andrea1ActionPerformed
 
@@ -289,7 +277,6 @@ public class SeleccionPerfil extends javax.swing.JFrame {
     private javax.swing.JButton Andres;
     private javax.swing.JButton Gabriel;
     private javax.swing.JButton Luis;
-    private javax.swing.JButton Salir;
     private javax.swing.JLabel UsuarioCualquera;
     private javax.swing.JLabel andrea;
     private javax.swing.JButton jButton16;
