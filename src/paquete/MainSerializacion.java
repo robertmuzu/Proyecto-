@@ -102,7 +102,25 @@ public class MainSerializacion {
             System.out.println("Exception: "+ ex.getMessage());
         }
         
-                
+        Pelicula peli1 = new Pelicula("Avengers", "Ingles subtitulado",
+                                      "Un grupo de heroes trata de salvar la vida en el universo.",
+                                      "", 0, "Pelicula");
+        Pelicula peli2 = new Pelicula("Baby", "Doblada",
+                                      "Un habil y joven conductor que trata de encontrar su camino.",
+                                      "", 0, "Pelicula");
+        Pelicula peli3 = new Pelicula("Batman", "Doblada",
+                                      "Un caballero de la noche que protege a los inocentes",
+                                      "", 0, "Pelicula");
+        Pelicula peli4 = new Pelicula("It", "Doblada",
+                                      "Un payaso diabolico que se alimenta del miedo.",
+                                      "", 0, "Pelicula");
+        Pelicula peli5 = new Pelicula("Matrix", "Ingles Subtitulado",
+                                      "Un hombre descubre algo increible que pondra todo lo que conoce de cabeza.",
+                                      "", 0, "Pelicula");
+        Pelicula peli6 = new Pelicula("Mortal Kombat","Ingles Subtitulado",
+                                      "Un torneo para encontrar al luchador mas habil y sanguinario.",
+                                      "",0,"Pelicula");
+        
       
     } 
     
