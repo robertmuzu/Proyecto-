@@ -53,7 +53,6 @@ public class InicioLogIn extends javax.swing.JFrame {
         BtnSiguiente = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         LblOlvidoContrasena = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         LblTitulo = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -139,8 +138,6 @@ public class InicioLogIn extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -171,11 +168,8 @@ public class InicioLogIn extends javax.swing.JFrame {
                         .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(BtnSiguiente))
-                    .addComponent(jButton2))
+                .addGap(214, 214, 214)
+                .addComponent(BtnSiguiente)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -206,8 +200,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton2))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         LblTitulo.setBackground(new java.awt.Color(51, 51, 51));
@@ -293,26 +286,33 @@ public class InicioLogIn extends javax.swing.JFrame {
         
         if (!TxtUsuario.getText().isEmpty()) {
             if (!TxtContraseña.getText().isEmpty()) {
-                try {
-                    FileInputStream archivo = new FileInputStream("Usuarios.roberto");
-                    ObjectInputStream input = new ObjectInputStream(archivo);
-                    Usuario usuLeido = (Usuario) input.readObject();
-                    
-                    if (usuLeido.getNombreUsuario().equals(input.readObject()) && usuLeido.getContrasena().equals(input.readObject())) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido " + usu.getNombreUsuario());
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida");
+                if(!TxtUsuario.getText().equals("admin")&&!TxtContraseña.getText().equals("admin")){
+                    try {
+                        FileInputStream archivo = new FileInputStream("Usuarios.roberto");
+                        ObjectInputStream input = new ObjectInputStream(archivo);
+                        Usuario usuLeido = (Usuario) input.readObject();
+
+                        if (usuLeido.getNombreUsuario().equals(input.readObject()) && usuLeido.getContrasena().equals(input.readObject())) {
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + usu.getNombreUsuario());
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida");
+                        }
+
+                        input.close();
+                        archivo.close();
+                    }catch (Exception ex){
+                        System.out.println("Excepcion: " + ex.getMessage());
                     }
-                    
-                    input.close();
-                    archivo.close();
-                }catch (Exception ex){
-                    System.out.println("Excepcion: " + ex.getMessage());
+                    this.setVisible(false);
+                    SeleccionPerfil ini = new SeleccionPerfil();
+                    ini.setVisible(true);
+                    this.dispose();
+                }else{
+                  this.setVisible(false);
+                  Administrador ad = new Administrador();
+                  ad.setVisible(true);
+                  this.dispose();
                 }
-                this.setVisible(false);
-                SeleccionPerfil ini = new SeleccionPerfil();
-                ini.setVisible(true);
-                this.dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "Favor suministre la contraseña");
             }
@@ -386,7 +386,6 @@ public class InicioLogIn extends javax.swing.JFrame {
     private javax.swing.JPasswordField TxtContraseña;
     private javax.swing.JTextField TxtUsuario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
