@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class MainSerializacion {
@@ -100,7 +101,9 @@ public class MainSerializacion {
         } catch (Exception ex) {
             System.out.println("Exception: "+ ex.getMessage());
         }
-      
+        
+        
+        
       
     } 
     
