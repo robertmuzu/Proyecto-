@@ -6,14 +6,14 @@ public class Estrenos {
     private String nombre;
     private String Lenguaje;
     private String Descripcion;
-    private Comentario Comentario;
+    private String Comentario;
     private String Categoria;
     
     public Estrenos(){
         
     }
 
-    public Estrenos(String nombre, String Lenguaje, String Descripcion, Comentario Comentario, String Categoria) {
+    public Estrenos(String nombre, String Lenguaje, String Descripcion, String Comentario, String Categoria) {
         this.nombre = nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
@@ -45,11 +45,11 @@ public class Estrenos {
         this.Descripcion = Descripcion;
     }
 
-    public Comentario getComentario() {
+    public String getComentario() {
         return Comentario;
     }
 
-    public void setComentario(Comentario Comentario) {
+    public void setComentario(String Comentario) {
         this.Comentario = Comentario;
     }
 
@@ -59,6 +59,8 @@ public class Estrenos {
 
     public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
-    }    
+    }
+
+      
     
 }
