@@ -10,7 +10,7 @@ public class Pelicula {
    private String Nombre;
    private String Lenguaje;
    private String Descripcion;
-   private Comentario Comentario;
+   private String Comentario;
    private String Categoria;
    
 
@@ -20,54 +20,53 @@ public class Pelicula {
     }
    
     //Constructor
-     public Pelicula(String Nombre, String Lenguaje, String Descripcion, Comentario Comentario,String Categoria) {
+    public Pelicula(String Nombre, String Lenguaje, String Descripcion, String Comentario, String Categoria) {
         this.Nombre = Nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
         this.Comentario = Comentario;
-        this.Categoria = Categoria; 
+        this.Categoria = Categoria;
     }
-     
-    //GETTERS AND SETTERS
 
     public String getNombre() {
         return Nombre;
-    }
-
-    public String getLenguaje() {
-        return Lenguaje;
-    }
-
-    public String getDescripcion() {
-        return Descripcion;
-    }
-
-    public Comentario getComentario() {
-        return Comentario;
-    }
-
-    public String getCategoria() {
-        return Categoria;
     }
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
+    public String getLenguaje() {
+        return Lenguaje;
+    }
+
     public void setLenguaje(String Lenguaje) {
         this.Lenguaje = Lenguaje;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
     }
 
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
 
-    public void setComentario(Comentario Comentario) {
+    public String getComentario() {
+        return Comentario;
+    }
+
+    public void setComentario(String Comentario) {
         this.Comentario = Comentario;
+    }
+
+    public String getCategoria() {
+        return Categoria;
     }
 
     public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
     }
+    
     
 }
