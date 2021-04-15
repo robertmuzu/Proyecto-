@@ -41,15 +41,18 @@ public class CalificacionPelis extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(57, 62, 70));
 
-        cmb_puntuacion.setBackground(new java.awt.Color(255, 255, 255));
         cmb_puntuacion.setForeground(new java.awt.Color(255, 255, 51));
         cmb_puntuacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆" }));
+        cmb_puntuacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_puntuacionActionPerformed(evt);
+            }
+        });
 
         txt_subtituloPuntuacion.setBackground(new java.awt.Color(255, 255, 255));
         txt_subtituloPuntuacion.setForeground(new java.awt.Color(255, 255, 255));
         txt_subtituloPuntuacion.setText("Puntuación:");
 
-        txtarea_comentario.setBackground(new java.awt.Color(255, 255, 255));
         txtarea_comentario.setColumns(20);
         txtarea_comentario.setRows(5);
         jScrollPane1.setViewportView(txtarea_comentario);
@@ -144,6 +147,10 @@ public class CalificacionPelis extends javax.swing.JFrame {
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_cancelarCalificacionActionPerformed
+
+    private void cmb_puntuacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_puntuacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_puntuacionActionPerformed
 
     /**
      * @param args the command line arguments
