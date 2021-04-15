@@ -102,8 +102,7 @@ public class MainSerializacion {
             System.out.println("Exception: "+ ex.getMessage());
         }
         
-        
-        
+                
       
     } 
     
