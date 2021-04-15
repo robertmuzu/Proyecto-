@@ -5,8 +5,8 @@ public class Series {
     private String nombre;
     private String Lenguaje;
     private String Descripcion;
-    private String Comentario;
-    private Categoria Categoria;
+    private Comentario Comentario;
+    private String Categoria;
 
 //Constructor vacio
     public Series() {
@@ -15,7 +15,7 @@ public class Series {
 
     //Constructor
 
-    public Series(String nombre, String Lenguaje, String Descripcion, String Comentario, Categoria Categoria) {
+    public Series(String nombre, String Lenguaje, String Descripcion, Comentario Comentario, String Categoria) {
         this.nombre = nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
@@ -47,19 +47,19 @@ public class Series {
         this.Descripcion = Descripcion;
     }
 
-    public String getComentario() {
+    public Comentario getComentario() {
         return Comentario;
     }
 
-    public void setComentario(String Comentario) {
+    public void setComentario(Comentario Comentario) {
         this.Comentario = Comentario;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return Categoria;
     }
 
-    public void setCategoria(Categoria Categoria) {
+    public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
     }
     
