@@ -11,7 +11,7 @@ public class Pelicula {
    private String Lenguaje;
    private String Descripcion;
    private Comentario Comentario;
-   private Categoria Categoria;
+   private String Categoria;
    
 
 //Constructor vacio
@@ -20,7 +20,7 @@ public class Pelicula {
     }
    
     //Constructor
-     public Pelicula(String Nombre, String Lenguaje, String Descripcion, Comentario Comentario,Categoria Categoria) {
+     public Pelicula(String Nombre, String Lenguaje, String Descripcion, Comentario Comentario,String Categoria) {
         this.Nombre = Nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
@@ -46,7 +46,7 @@ public class Pelicula {
         return Comentario;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return Categoria;
     }
 
@@ -66,9 +66,8 @@ public class Pelicula {
         this.Comentario = Comentario;
     }
 
-    public void setCategoria(Categoria Categoria) {
+    public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
     }
-
-      
+    
 }
