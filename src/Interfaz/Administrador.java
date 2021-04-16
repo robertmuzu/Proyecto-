@@ -36,7 +36,8 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        bottonSalida.setBackground(new java.awt.Color(144,55,73));
+        bottonSalida.setBackground(new java.awt.Color(144, 55, 73));
+        bottonSalida.setForeground(new java.awt.Color(255, 255, 255));
         bottonSalida.setText("Salir");
         bottonSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,8 +45,12 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(144, 55, 73));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Agregar pelicula ");
 
+        jButton2.setBackground(new java.awt.Color(144, 55, 73));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Eliminar pelicula");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
