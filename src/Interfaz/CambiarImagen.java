@@ -16,7 +16,7 @@ public class CambiarImagen {
     public static void main(String[] args) {
         // Clase main
  
-      int velocidad = 4; // segundos
+      int velocidad = 2; // segundos
       
       Timer timer;
       TimerTask tarea;
