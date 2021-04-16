@@ -152,9 +152,9 @@ public class Ajustes extends javax.swing.JFrame {
     }//GEN-LAST:event_InfoPagoActionPerformed
 
     private void SalirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirButtonActionPerformed
-     this.setVisible(false);
-     Catalogo inter = new Catalogo();
-     inter.setVisible(true);
+    this.setVisible(false);
+    Catalogo inter = new Catalogo();
+  inter.setVisible(true);
     }//GEN-LAST:event_SalirButtonActionPerformed
 
     private void contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactoActionPerformed
