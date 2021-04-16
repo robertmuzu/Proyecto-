@@ -14,7 +14,7 @@ public class SesionActiva {
     private static Persona persona;
 
     public static void setPersona(Persona aPersona) {
-        persona = aPersona;
+        persona = aPersona; ///Aqui se va a hacer el codigo para que el usuario obtenga la persona loggeada en el momento
     }
 
     public static Persona getPersona() {
