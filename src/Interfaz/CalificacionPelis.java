@@ -8,13 +8,14 @@ package Interfaz;
 import javax.swing.JOptionPane;
 import paquete.Comentario;
 import paquete.Pelicula;
+import paquete.SesionActiva;
 
 /**
  *
  * @author Alexa
  */
 public class CalificacionPelis extends javax.swing.JFrame {
-    
+
     private Pelicula peliculaActual;
 
     /**
@@ -149,7 +150,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
 
     private void btn_guardarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCalificacionActionPerformed
         int puntuacion = 5 - cmb_puntuacion.getSelectedIndex();
-        Comentario cmtr = new Comentario(" ",puntuacion,txtarea_comentario.getText());
+        Comentario cmtr = new Comentario(SesionActiva.getPersona().getNombre(), puntuacion, txtarea_comentario.getText());
         this.peliculaActual.addComentario(cmtr);
         JOptionPane.showMessageDialog(null, "El comentario ha sido agregado con éxito.");
         this.dispose();
