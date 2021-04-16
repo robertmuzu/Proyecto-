@@ -156,7 +156,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_guardarCalificacionActionPerformed
 
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btn_cancelarCalificacionActionPerformed
 
     private void cmb_puntuacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_puntuacionActionPerformed

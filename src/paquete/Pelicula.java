@@ -19,7 +19,7 @@ public class Pelicula {
 
 //Constructor vacio
     public Pelicula (){
-        
+        this.Comentarios = new ArrayList<>();
     }
    
     //Constructor
@@ -27,7 +27,7 @@ public class Pelicula {
         this.Nombre = Nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
-        this.Comentarios = new ArrayList<Comentario>();
+        this.Comentarios = new ArrayList<>();
         this.Categoria = Categoria;
     }
 
