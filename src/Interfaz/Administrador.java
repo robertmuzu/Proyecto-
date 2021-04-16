@@ -29,8 +29,8 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         bottonSalida = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAgregarPelicula = new javax.swing.JButton();
+        btnEliminarPelicula = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,13 +45,18 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(144, 55, 73));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Agregar pelicula ");
+        btnAgregarPelicula.setBackground(new java.awt.Color(144, 55, 73));
+        btnAgregarPelicula.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarPelicula.setText("Agregar pelicula ");
+        btnAgregarPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarPeliculaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(144, 55, 73));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Eliminar pelicula");
+        btnEliminarPelicula.setBackground(new java.awt.Color(144, 55, 73));
+        btnEliminarPelicula.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarPelicula.setText("Eliminar pelicula");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -63,17 +68,17 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnAgregarPelicula)
+                    .addComponent(btnEliminarPelicula))
                 .addContainerGap(378, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jButton1)
+                .addComponent(btnAgregarPelicula)
                 .addGap(65, 65, 65)
-                .addComponent(jButton2)
+                .addComponent(btnEliminarPelicula)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addComponent(bottonSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -93,10 +98,15 @@ public class Administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottonSalidaActionPerformed
-     this.setVisible(false);
-     InicioLogIn inter = new InicioLogIn();
-     inter.setVisible(true);        // TODO add your handling code here:
+        this.setVisible(false);
+        InicioLogIn inter = new InicioLogIn();
+        inter.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_bottonSalidaActionPerformed
+
+    private void btnAgregarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPeliculaActionPerformed
+        AgregarPelicula agregarPelicula = new AgregarPelicula();
+        agregarPelicula.setVisible(true);
+    }//GEN-LAST:event_btnAgregarPeliculaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,8 +145,8 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bottonSalida;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAgregarPelicula;
+    private javax.swing.JButton btnEliminarPelicula;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
