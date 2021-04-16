@@ -60,7 +60,6 @@ public class CatPeliculas extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PELICULAS");
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
         jButton8.setText("jButton1");
         jButton8.setBorder(null);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +68,6 @@ public class CatPeliculas extends javax.swing.JFrame {
             }
         });
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
         jButton13.setText("jButton1");
         jButton13.setBorder(null);
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +76,6 @@ public class CatPeliculas extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
         jButton9.setText("jButton1");
         jButton9.setBorder(null);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +84,6 @@ public class CatPeliculas extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
         jButton11.setText("jButton1");
         jButton11.setBorder(null);
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +92,6 @@ public class CatPeliculas extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
         jButton10.setText("jButton1");
         jButton10.setBorder(null);
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +100,6 @@ public class CatPeliculas extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
         jButton12.setText("jButton1");
         jButton12.setBorder(null);
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +111,11 @@ public class CatPeliculas extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(144, 55, 73));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("ATRÀS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -208,6 +207,12 @@ public class CatPeliculas extends javax.swing.JFrame {
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        Catalogo atras = new Catalogo();
+        atras.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

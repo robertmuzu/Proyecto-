@@ -5,7 +5,6 @@ package Interfaz;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author GABRIEL CHAVES G
@@ -55,7 +54,6 @@ public class CatDocumentales extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(57, 62, 70));
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Documental/docu.jpg"))); // NOI18N
         jButton14.setText("jButton1");
         jButton14.setBorder(null);
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +62,6 @@ public class CatDocumentales extends javax.swing.JFrame {
             }
         });
 
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/documentales.jpg"))); // NOI18N
         jButton15.setText("jButton1");
         jButton15.setBorder(null);
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +70,6 @@ public class CatDocumentales extends javax.swing.JFrame {
             }
         });
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/documentales.jpg"))); // NOI18N
         jButton16.setText("jButton1");
         jButton16.setBorder(null);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +78,6 @@ public class CatDocumentales extends javax.swing.JFrame {
             }
         });
 
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Documental/docu.jpg"))); // NOI18N
         jButton17.setBorder(null);
         jButton17.setMaximumSize(new java.awt.Dimension(32767, 32767));
         jButton17.setMinimumSize(new java.awt.Dimension(100, 40));
@@ -93,7 +88,6 @@ public class CatDocumentales extends javax.swing.JFrame {
             }
         });
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/documentales.jpg"))); // NOI18N
         jButton18.setText("jButton1");
         jButton18.setBorder(null);
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +96,6 @@ public class CatDocumentales extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/documentales.jpg"))); // NOI18N
         jButton19.setText("jButton1");
         jButton19.setBorder(null);
         jButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +209,9 @@ public class CatDocumentales extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        Catalogo atras = new Catalogo();
+        atras.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

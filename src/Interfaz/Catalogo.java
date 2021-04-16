@@ -174,6 +174,11 @@ public class Catalogo extends javax.swing.JFrame {
         jButton13.setBackground(new java.awt.Color(144, 55, 73));
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("ATRAS");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         BottonAjustes.setBackground(new java.awt.Color(51, 51, 51));
         BottonAjustes.setForeground(new java.awt.Color(255, 255, 255));
@@ -296,15 +301,20 @@ public class Catalogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
+        Buscador buscador = new Buscador();
+        buscador.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        CatNovelas peliculas = new CatNovelas();
+        peliculas.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        CatEstrenos peliculas = new CatEstrenos();
+        peliculas.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -325,7 +335,9 @@ public class Catalogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        CatDocumentales peliculas = new CatDocumentales();
+        peliculas.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -333,22 +345,35 @@ public class Catalogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        CatInfantil peliculas = new CatInfantil();
+        peliculas.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        CatSeries peliculas = new CatSeries();
+        peliculas.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        CatPeliculas peliculas = new CatPeliculas();
+        peliculas.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void BottonAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonAjustesActionPerformed
         this.setVisible(false);
-     Ajustes inter = new Ajustes();
-     inter.setVisible(true);
+        Ajustes inter = new Ajustes();
+        inter.setVisible(true);
     }//GEN-LAST:event_BottonAjustesActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        this.setVisible(false);
+        SeleccionPerfil atras = new SeleccionPerfil();
+        atras.setVisible(true);
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     /**
      * @param args the command line arguments

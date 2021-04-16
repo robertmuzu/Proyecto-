@@ -328,7 +328,7 @@ public class InicioLogIn extends javax.swing.JFrame {
 
     private void btnTesting(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesting
         this.setVisible(false);
-        SeleccionPerfil test = new SeleccionPerfil();
+        Catalogo test = new Catalogo();
         test.setVisible(true);
     }//GEN-LAST:event_btnTesting
 
