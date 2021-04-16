@@ -6,14 +6,14 @@ public class Documentales {
     private String nombre;
     private String Lenguaje;
     private String Descripcion;
-    private String Comentario;
-    private String Categoria;
+    private Comentario Comentario;
+    private Categoria Categoria;
     
     public Documentales(){
         
     }
 
-    public Documentales(String nombre, String Lenguaje, String Descripcion, String Comentario, String Categoria) {
+    public Documentales(String nombre, String Lenguaje, String Descripcion, Comentario Comentario, Categoria Categoria) {
         this.nombre = nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
@@ -45,19 +45,19 @@ public class Documentales {
         this.Descripcion = Descripcion;
     }
 
-    public String getComentario() {
+    public Comentario getComentario() {
         return Comentario;
     }
 
-    public void setComentario(String Comentario) {
+    public void setComentario(Comentario Comentario) {
         this.Comentario = Comentario;
     }
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return Categoria;
     }
 
-    public void setCategoria(String Categoria) {
+    public void setCategoria(Categoria Categoria) {
         this.Categoria = Categoria;
     }
 
