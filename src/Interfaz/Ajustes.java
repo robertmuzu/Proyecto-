@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Interfaz;
 
+package Interfaz;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JOptionPane;
         
 public class Ajustes extends javax.swing.JFrame {
@@ -14,6 +11,7 @@ public class Ajustes extends javax.swing.JFrame {
      */
     public Ajustes() {
         initComponents();
+      
     }
 
     /**
@@ -32,6 +30,7 @@ public class Ajustes extends javax.swing.JFrame {
         Correo = new javax.swing.JButton();
         contacto = new javax.swing.JButton();
         SalirButton = new javax.swing.JButton();
+        changeUsu = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -66,7 +65,7 @@ public class Ajustes extends javax.swing.JFrame {
         Correo.setBackground(new java.awt.Color(144, 55, 73));
         Correo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Correo.setForeground(new java.awt.Color(255, 255, 255));
-        Correo.setText("Nombre de la cuenta ");
+        Correo.setText("Correo de la cuenta");
         Correo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +91,22 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        changeUsu.setBackground(new java.awt.Color(144, 55, 73));
+        changeUsu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        changeUsu.setForeground(new java.awt.Color(255, 255, 255));
+        changeUsu.setText("Cambiar nombre de usuario");
+        changeUsu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        changeUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeUsuActionPerformed(evt);
+            }
+        });
+        changeUsu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                changeUsuKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -103,7 +118,8 @@ public class Ajustes extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(InfoPago)
                             .addComponent(Correo)
-                            .addComponent(contacto)))
+                            .addComponent(contacto)
+                            .addComponent(changeUsu)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(JAyuda)))
@@ -117,13 +133,15 @@ public class Ajustes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(JAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(InfoPago)
                 .addGap(33, 33, 33)
                 .addComponent(Correo)
                 .addGap(43, 43, 43)
                 .addComponent(contacto)
-                .addGap(87, 87, 87)
+                .addGap(35, 35, 35)
+                .addComponent(changeUsu)
+                .addGap(31, 31, 31)
                 .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -137,10 +155,7 @@ public class Ajustes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -163,8 +178,21 @@ public class Ajustes extends javax.swing.JFrame {
     }//GEN-LAST:event_contactoActionPerformed
 
     private void CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoActionPerformed
-       
+    
+        
     }//GEN-LAST:event_CorreoActionPerformed
+
+    private void changeUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeUsuActionPerformed
+      int nombre= Integer.parseInt(JOptionPane.showInputDialog("Digite el nuevo nombre:"));
+          this.setVisible(false);
+          SeleccionPerfil sele = new SeleccionPerfil();
+          sele.setVisible(true);
+             
+    }//GEN-LAST:event_changeUsuActionPerformed
+
+    private void changeUsuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_changeUsuKeyPressed
+        
+    }//GEN-LAST:event_changeUsuKeyPressed
 
     /**
      * @param args the command line arguments
@@ -206,6 +234,7 @@ public class Ajustes extends javax.swing.JFrame {
     private javax.swing.JButton InfoPago;
     private javax.swing.JLabel JAyuda;
     private javax.swing.JButton SalirButton;
+    private javax.swing.JButton changeUsu;
     private javax.swing.JButton contacto;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

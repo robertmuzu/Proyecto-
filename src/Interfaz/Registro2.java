@@ -67,21 +67,18 @@ public class Registro2 extends javax.swing.JFrame {
         LblContraseña2.setForeground(new java.awt.Color(255, 255, 255));
         LblContraseña2.setText("Repetir Contraseña:");
 
-        TxtNombreUsuario.setBackground(new java.awt.Color(255, 255, 255));
         TxtNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNombreUsuarioActionPerformed(evt);
             }
         });
 
-        TxtContraseña.setBackground(new java.awt.Color(255, 255, 255));
         TxtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtContraseñaActionPerformed(evt);
             }
         });
 
-        TxtContraseña2.setBackground(new java.awt.Color(255, 255, 255));
         TxtContraseña2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtContraseña2ActionPerformed(evt);
@@ -95,6 +92,11 @@ public class Registro2 extends javax.swing.JFrame {
         BtnAvanzar.setBackground(new java.awt.Color(144, 55, 73));
         BtnAvanzar.setForeground(new java.awt.Color(255, 255, 255));
         BtnAvanzar.setText("Continuar");
+        BtnAvanzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAvanzarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -187,6 +189,10 @@ public class Registro2 extends javax.swing.JFrame {
     private void TxtContraseña2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtContraseña2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtContraseña2ActionPerformed
+
+    private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAvanzarActionPerformed
 
     /**
      * @param args the command line arguments

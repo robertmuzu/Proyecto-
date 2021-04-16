@@ -85,42 +85,36 @@ public class Registro extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Edad:");
 
-        TxtNombre.setBackground(new java.awt.Color(255, 255, 255));
         TxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNombreActionPerformed(evt);
             }
         });
 
-        TxtApellidos.setBackground(new java.awt.Color(255, 255, 255));
         TxtApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtApellidosActionPerformed(evt);
             }
         });
 
-        TxtCedula.setBackground(new java.awt.Color(255, 255, 255));
         TxtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtCedulaActionPerformed(evt);
             }
         });
 
-        TxtTelfono.setBackground(new java.awt.Color(255, 255, 255));
         TxtTelfono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtTelfonoActionPerformed(evt);
             }
         });
 
-        TxtSexo.setBackground(new java.awt.Color(255, 255, 255));
         TxtSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtSexoActionPerformed(evt);
             }
         });
 
-        TxtEdad.setBackground(new java.awt.Color(255, 255, 255));
         TxtEdad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtEdadActionPerformed(evt);
@@ -130,6 +124,11 @@ public class Registro extends javax.swing.JFrame {
         BtnAvanzar.setBackground(new java.awt.Color(144, 55, 73));
         BtnAvanzar.setForeground(new java.awt.Color(255, 255, 255));
         BtnAvanzar.setText("Avanzar");
+        BtnAvanzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAvanzarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -251,6 +250,10 @@ public class Registro extends javax.swing.JFrame {
     private void TxtEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEdadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtEdadActionPerformed
+
+    private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAvanzarActionPerformed
 
     /**
      * @param args the command line arguments

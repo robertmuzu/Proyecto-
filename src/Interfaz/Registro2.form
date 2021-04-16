@@ -182,31 +182,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TxtNombreUsuario">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtNombreUsuarioActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TxtContrase&#xf1;a">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtContrase&#xf1;aActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TxtContrase&#xf1;a2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtContrase&#xf1;a2ActionPerformed"/>
               </Events>
@@ -232,6 +217,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Continuar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAvanzarActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
