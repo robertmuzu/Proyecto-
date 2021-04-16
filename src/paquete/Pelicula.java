@@ -1,5 +1,8 @@
 
 package paquete;
+
+import java.util.ArrayList;
+
 /**
  *
  * @author GABRIEL CHAVES G
@@ -10,7 +13,7 @@ public class Pelicula {
    private String Nombre;
    private String Lenguaje;
    private String Descripcion;
-   private Comentario Comentario;
+   private ArrayList<Comentario> Comentarios;
    private Categoria Categoria;
    
 
@@ -20,11 +23,11 @@ public class Pelicula {
     }
    
     //Constructor
-    public Pelicula(String Nombre, String Lenguaje, String Descripcion, Comentario Comentario, Categoria Categoria) {
+    public Pelicula(String Nombre, String Lenguaje, String Descripcion, Categoria Categoria) {
         this.Nombre = Nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
-        this.Comentario = Comentario;
+        this.Comentarios = new ArrayList<Comentario>();
         this.Categoria = Categoria;
     }
 
@@ -52,12 +55,12 @@ public class Pelicula {
         this.Descripcion = Descripcion;
     }
 
-    public Comentario getComentario() {
-        return Comentario;
+    public ArrayList getComentario() {
+        return Comentarios;
     }
 
-    public void setComentario(Comentario Comentario) {
-        this.Comentario = Comentario;
+    public void addComentario(Comentario Comentario) {
+        this.Comentarios.add(Comentario);
     }
 
     public Categoria getCategoria() {

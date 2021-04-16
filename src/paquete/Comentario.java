@@ -11,17 +11,20 @@ package paquete;
  */
 public class Comentario {
     
+    private int contadorIdComentario = 0;
+    
     private int idComentario;
-    private Usuario usuario;
+    private String nombreUsuario;
     private int calificacion;
     private String comentario;
 
     public Comentario() {
     }
 
-    public Comentario(int idComentario, Usuario usuario, int calificacion, String comentario) {
-        this.idComentario = idComentario;
-        this.usuario = usuario;
+    public Comentario(String nombreUsuario, int calificacion, String comentario) {
+        contadorIdComentario += 1;
+        this.idComentario = contadorIdComentario;
+        this.nombreUsuario = nombreUsuario;
         this.calificacion = calificacion;
         this.comentario = comentario;
     }
@@ -42,12 +45,12 @@ public class Comentario {
         this.idComentario = idComentario;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public int getCalificacion() {

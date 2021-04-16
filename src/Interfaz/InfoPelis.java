@@ -5,16 +5,21 @@
  */
 package Interfaz;
 
+import paquete.Pelicula;
+
 /**
  *
  * @author Usuario
  */
 public class InfoPelis extends javax.swing.JFrame {
 
+    private Pelicula peliculaActual;
+    
     /**
      * Creates new form InfoPelis
      */
-    public InfoPelis() {
+    public InfoPelis(Pelicula peliculaActual) {
+        this.peliculaActual = peliculaActual;
         initComponents();
     }
 
@@ -170,7 +175,7 @@ public class InfoPelis extends javax.swing.JFrame {
     }//GEN-LAST:event_OkButtonActionPerformed
 
     private void btn_calificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calificarActionPerformed
-        CalificacionPelis cal = new CalificacionPelis();
+        CalificacionPelis cal = new CalificacionPelis(peliculaActual);
         cal.setVisible(true);
     }//GEN-LAST:event_btn_calificarActionPerformed
 
@@ -204,7 +209,7 @@ public class InfoPelis extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InfoPelis().setVisible(true);
+                new InfoPelis(null).setVisible(true);
             }
         });
     }

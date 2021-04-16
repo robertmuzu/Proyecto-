@@ -5,16 +5,23 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+import paquete.Comentario;
+import paquete.Pelicula;
+
 /**
  *
  * @author Alexa
  */
 public class CalificacionPelis extends javax.swing.JFrame {
+    
+    private Pelicula peliculaActual;
 
     /**
      * Creates new form CalificacionPelis
      */
-    public CalificacionPelis() {
+    public CalificacionPelis(Pelicula pelicula) {
+        this.peliculaActual = pelicula;
         initComponents();
     }
 
@@ -141,7 +148,11 @@ public class CalificacionPelis extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_guardarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCalificacionActionPerformed
-        
+        int puntuacion = 5 - cmb_puntuacion.getSelectedIndex();
+        Comentario cmtr = new Comentario(" ",puntuacion,txtarea_comentario.getText());
+        this.peliculaActual.addComentario(cmtr);
+        JOptionPane.showMessageDialog(null, "El comentario ha sido agregado con éxito.");
+        this.dispose();
     }//GEN-LAST:event_btn_guardarCalificacionActionPerformed
 
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
@@ -182,7 +193,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CalificacionPelis().setVisible(true);
+                new CalificacionPelis(null).setVisible(true);
             }
         });
     }
