@@ -5,7 +5,9 @@
  */
 package Interfaz;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.TreeSet;
@@ -201,22 +203,41 @@ public class AgregarPelicula extends javax.swing.JFrame {
                 lblUrlImagenPelicula.getText()
         );
 
-        try {
+        ArrayList<Pelicula> peliculas = null;
 
-            try (FileOutputStream archivoPelicula = new FileOutputStream("Pelicula.alexa")) {
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Peliculas.alexa")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                peliculas = (ArrayList<Pelicula>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        if (peliculas == null) {
+            peliculas = new ArrayList<>();
+        }
+        peliculas.add(nuevaPelicula);
+
+        try {
+            try (FileOutputStream archivoPelicula = new FileOutputStream("Peliculas.alexa")) {
                 ObjectOutputStream output = new ObjectOutputStream(archivoPelicula);
 
-                output.writeObject(nuevaPelicula);
-                
+                output.writeObject(peliculas);
+
                 output.close();
+                
             }
 
-            JOptionPane.showMessageDialog(null, "El diccionario ha sido almacenado.");
-            //NuevoDiccionario.NuevoSetTerminos.clear();
+            JOptionPane.showMessageDialog(null, "La pelicula ha sido agregada ala categoría indicada.");
 
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
         }
+        this.dispose();
     }//GEN-LAST:event_btn_guardarCalificacionActionPerformed
 
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
