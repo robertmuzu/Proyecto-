@@ -15,6 +15,7 @@ public class Pelicula {
    private String Descripcion;
    private ArrayList<Comentario> Comentarios;
    private Categoria Categoria;
+   private String UrlImagen;
    
 
 //Constructor vacio
@@ -23,12 +24,13 @@ public class Pelicula {
     }
    
     //Constructor
-    public Pelicula(String Nombre, String Lenguaje, String Descripcion, Categoria Categoria) {
+    public Pelicula(String Nombre, String Lenguaje, String Descripcion, Categoria Categoria,String UrlImagen) {
         this.Nombre = Nombre;
         this.Lenguaje = Lenguaje;
         this.Descripcion = Descripcion;
         this.Comentarios = new ArrayList<>();
         this.Categoria = Categoria;
+        this.UrlImagen = UrlImagen;
     }
 
     public String getNombre() {
@@ -70,5 +72,15 @@ public class Pelicula {
     public void setCategoria(Categoria Categoria) {
         this.Categoria = Categoria;
     }
+
+    public String getUrlImagen() {
+        return UrlImagen;
+    }
+
+    public void setUrlImagen(String UrlImagen) {
+        this.UrlImagen = UrlImagen;
+    }
+    
+    
     
 }
