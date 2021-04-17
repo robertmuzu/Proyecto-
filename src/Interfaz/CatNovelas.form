@@ -68,18 +68,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton8" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jButton18" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnCaines" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnParaiso" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton16" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jButton14" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnEscobar" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnCapo" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton17" min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jButton15" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnMuneMafia" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnRotije" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="106" max="32767" attributes="0"/>
                   <Component id="jScrollBar1" min="-2" max="-2" attributes="0"/>
@@ -87,7 +87,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAtras" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -101,21 +101,21 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton8" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton14" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton17" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnCaines" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnCapo" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnMuneMafia" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton15" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton16" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton18" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnRotije" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnEscobar" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnParaiso" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jScrollBar1" min="-2" pref="238" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAtras" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -136,7 +136,7 @@
             <Property name="text" type="java.lang.String" value="NOVELAS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="btnCaines">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -144,10 +144,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCainesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton14">
+        <Component class="javax.swing.JButton" name="btnCapo">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -155,10 +155,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCapoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton17">
+        <Component class="javax.swing.JButton" name="btnMuneMafia">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -166,12 +166,12 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton17ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMuneMafiaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JScrollBar" name="jScrollBar1">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton15">
+        <Component class="javax.swing.JButton" name="btnRotije">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -179,10 +179,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRotijeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton16">
+        <Component class="javax.swing.JButton" name="btnEscobar">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -190,10 +190,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEscobarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton18">
+        <Component class="javax.swing.JButton" name="btnParaiso">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -201,10 +201,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnParaisoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnAtras">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="49" green="37" red="90" type="rgb"/>
@@ -215,7 +215,7 @@
             <Property name="text" type="java.lang.String" value="ATRAS"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtrasActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
