@@ -66,20 +66,20 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(bottonSalida))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAgregarPelicula)
-                    .addComponent(btnEliminarPelicula))
-                .addContainerGap(378, Short.MAX_VALUE))
+                    .addComponent(btnEliminarPelicula)
+                    .addComponent(btnAgregarPelicula))
+                .addContainerGap(349, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(73, 73, 73)
                 .addComponent(btnAgregarPelicula)
-                .addGap(65, 65, 65)
+                .addGap(47, 47, 47)
                 .addComponent(btnEliminarPelicula)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addComponent(bottonSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

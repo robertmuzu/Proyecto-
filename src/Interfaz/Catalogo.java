@@ -154,7 +154,7 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/007_1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cartelera/007_1.jpg"))); // NOI18N
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CATALOGO");
