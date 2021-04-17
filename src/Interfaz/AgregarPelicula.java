@@ -37,18 +37,18 @@ public class AgregarPelicula extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblNombrePelicula = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtareaDescripcionPelicula = new javax.swing.JTextArea();
+        txtAreaDescripcionPelicula = new javax.swing.JTextArea();
         lblDescripcionPelicula = new javax.swing.JLabel();
         txt_tituloAgregarPelicula = new javax.swing.JLabel();
         btn_guardarCalificacion = new javax.swing.JButton();
         btn_cancelarCalificacion = new javax.swing.JButton();
         lblUrlImagenPelicula = new javax.swing.JLabel();
         lblCategoríaPelicula = new javax.swing.JLabel();
-        cmbCategoriaPelicula = new javax.swing.JComboBox<>();
-        txtNombrePelicula = new javax.swing.JTextField();
         cmbLenguajePelicula = new javax.swing.JComboBox<>();
+        txtNombrePelicula = new javax.swing.JTextField();
+        cmbCategoriaPelicula = new javax.swing.JComboBox<>();
         lblLenguajePelicula1 = new javax.swing.JLabel();
-        txtNombrePelicula1 = new javax.swing.JTextField();
+        txtUrlImagenPelicula = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,9 +58,9 @@ public class AgregarPelicula extends javax.swing.JFrame {
         lblNombrePelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblNombrePelicula.setText("Nombre:");
 
-        txtareaDescripcionPelicula.setColumns(20);
-        txtareaDescripcionPelicula.setRows(5);
-        jScrollPane1.setViewportView(txtareaDescripcionPelicula);
+        txtAreaDescripcionPelicula.setColumns(20);
+        txtAreaDescripcionPelicula.setRows(5);
+        jScrollPane1.setViewportView(txtAreaDescripcionPelicula);
 
         lblDescripcionPelicula.setBackground(new java.awt.Color(255, 255, 255));
         lblDescripcionPelicula.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,9 +97,9 @@ public class AgregarPelicula extends javax.swing.JFrame {
         lblCategoríaPelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblCategoríaPelicula.setText("Categoría:");
 
-        cmbCategoriaPelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Inglés" }));
+        cmbLenguajePelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Inglés" }));
 
-        cmbLenguajePelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Películas", "Documentales", "Series", "Infantiles", "Novelas", "Estrenos" }));
+        cmbCategoriaPelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Películas", "Documentales", "Series", "Infantiles", "Novelas", "Estrenos" }));
 
         lblLenguajePelicula1.setBackground(new java.awt.Color(255, 255, 255));
         lblLenguajePelicula1.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,13 +123,13 @@ public class AgregarPelicula extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cmbLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(1, 1, 1)
                                     .addComponent(txtNombrePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(cmbLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNombrePelicula1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cmbCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUrlImagenPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btn_guardarCalificacion)
                                 .addGap(29, 29, 29)
@@ -152,15 +152,15 @@ public class AgregarPelicula extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUrlImagenPelicula)
-                    .addComponent(txtNombrePelicula1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUrlImagenPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLenguajePelicula1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCategoríaPelicula)
-                    .addComponent(cmbLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cancelarCalificacion)
@@ -240,9 +240,9 @@ public class AgregarPelicula extends javax.swing.JFrame {
     private javax.swing.JLabel lblLenguajePelicula1;
     private javax.swing.JLabel lblNombrePelicula;
     private javax.swing.JLabel lblUrlImagenPelicula;
+    private javax.swing.JTextArea txtAreaDescripcionPelicula;
     private javax.swing.JTextField txtNombrePelicula;
-    private javax.swing.JTextField txtNombrePelicula1;
+    private javax.swing.JTextField txtUrlImagenPelicula;
     private javax.swing.JLabel txt_tituloAgregarPelicula;
-    private javax.swing.JTextArea txtareaDescripcionPelicula;
     // End of variables declaration//GEN-END:variables
 }
