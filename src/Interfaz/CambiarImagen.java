@@ -34,32 +34,32 @@ public class CambiarImagen {
               switch(contador){
                   case 0: 
                       contador = 1;
-                          icono = new ImageIcon(getClass().getResource("/iconos/007_1.jpg"));
+                          icono = new ImageIcon(getClass().getResource("/cartelera/007_1.jpg"));
                       catalogo.jLabel1.setIcon(icono);
                       break;
                    case 1: 
                        contador = 2;
-                      icono = new ImageIcon(getClass().getResource("/iconos/blackwidow.jpg"));
+                      icono = new ImageIcon(getClass().getResource("/cartelera/blackwidow.jpg"));
                       catalogo.jLabel1.setIcon(icono);
                       break;   
                   case 2: 
                        contador = 3;
-                      icono = new ImageIcon(getClass().getResource("/iconos/jumanji.jpg"));
+                      icono = new ImageIcon(getClass().getResource("/cartelera/jumanji.jpg"));
                       catalogo.jLabel1.setIcon(icono);
                       break;
                   case 3: 
                        contador = 4;
-                      icono = new ImageIcon(getClass().getResource("/iconos/mulan.jpg"));
+                      icono = new ImageIcon(getClass().getResource("/cartelera/mulan.jpg"));
                       catalogo.jLabel1.setIcon(icono);
                       break;
                   case 4: 
                        contador = 5;
-                      icono = new ImageIcon(getClass().getResource("/iconos/onward.jpg"));
+                      icono = new ImageIcon(getClass().getResource("/cartelera/onward.jpg"));
                       catalogo.jLabel1.setIcon(icono);
                       break;
                   case 5: 
                        contador = 0;
-                      icono = new ImageIcon(getClass().getResource("/iconos/reinadelsur.jpg"));
+                      icono = new ImageIcon(getClass().getResource("/cartelera/reinadelsur.jpg"));
                       catalogo.jLabel1.setIcon(icono);
                       break;    
               }
