@@ -1,13 +1,14 @@
 
 package paquete;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author GABRIEL CHAVES G
  */
-public class Pelicula {
+public class Pelicula implements Serializable{
    
     //Creamos atributos para las peliculas que se van a usar en el APP.
    private String Nombre;
@@ -80,7 +81,6 @@ public class Pelicula {
     public void setUrlImagen(String UrlImagen) {
         this.UrlImagen = UrlImagen;
     }
-    
-    
+
     
 }

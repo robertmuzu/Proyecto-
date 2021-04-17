@@ -1,34 +1,36 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package paquete;
 
-public class Categoria {
+/**
+ *
+ * @author Alexa
+ */
+public enum Categoria {
+    PELICULAS(1),
+    DOCUMENTALES(2),
+    SERIES(3),
+    INFANTILES(4),
+    NOVELAS(5),
+    ESTRENOS(6),
+    OTROS(7);
 
-    private int idCat;
-    private String nombreCat;
-    
-    public Categoria(){
+    private final int codigoCategoria;
+
+    private Categoria(int codigoCategoria) {
+        this.codigoCategoria = codigoCategoria;
     }
 
-    public Categoria(int idCat, String nombreCat) {
-        this.idCat = idCat;
-        this.nombreCat = nombreCat;
+    public static Categoria get(int id) {
+        for (Categoria e : values()) {
+            if (e.codigoCategoria == id) {
+                return e;
+            }
+        }
+        return OTROS;
     }
 
-    public int getIdCat() {
-        return idCat;
-    }
-
-    public void setIdCat(int idCat) {
-        this.idCat = idCat;
-    }
-
-    public String getNombreCat() {
-        return nombreCat;
-    }
-
-    public void setNombreCat(String nombreCat) {
-        this.nombreCat = nombreCat;
-    }
-    
-    
 }

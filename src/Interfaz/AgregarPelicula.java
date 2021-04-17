@@ -5,7 +5,12 @@
  */
 package Interfaz;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.TreeSet;
 import javax.swing.JOptionPane;
+import paquete.Categoria;
 import paquete.Comentario;
 import paquete.Pelicula;
 import paquete.SesionActiva;
@@ -15,8 +20,6 @@ import paquete.SesionActiva;
  * @author Alexa
  */
 public class AgregarPelicula extends javax.swing.JFrame {
-
-
 
     /**
      * Creates new form CalificacionPelis
@@ -100,6 +103,11 @@ public class AgregarPelicula extends javax.swing.JFrame {
         cmbLenguajePelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Inglés" }));
 
         cmbCategoriaPelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Películas", "Documentales", "Series", "Infantiles", "Novelas", "Estrenos" }));
+        cmbCategoriaPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCategoriaPeliculaActionPerformed(evt);
+            }
+        });
 
         lblLenguajePelicula1.setBackground(new java.awt.Color(255, 255, 255));
         lblLenguajePelicula1.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,12 +193,39 @@ public class AgregarPelicula extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_guardarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCalificacionActionPerformed
-        
+        Pelicula nuevaPelicula = new Pelicula(
+                txtNombrePelicula.getText(),
+                cmbLenguajePelicula.getSelectedItem().toString(),
+                txtAreaDescripcionPelicula.getText(),
+                Categoria.get(cmbCategoriaPelicula.getSelectedIndex()),
+                lblUrlImagenPelicula.getText()
+        );
+
+        try {
+
+            try (FileOutputStream archivoPelicula = new FileOutputStream("Pelicula.alexa")) {
+                ObjectOutputStream output = new ObjectOutputStream(archivoPelicula);
+
+                output.writeObject(nuevaPelicula);
+                
+                output.close();
+            }
+
+            JOptionPane.showMessageDialog(null, "El diccionario ha sido almacenado.");
+            //NuevoDiccionario.NuevoSetTerminos.clear();
+
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
     }//GEN-LAST:event_btn_guardarCalificacionActionPerformed
 
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
         this.dispose();
     }//GEN-LAST:event_btn_cancelarCalificacionActionPerformed
+
+    private void cmbCategoriaPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCategoriaPeliculaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbCategoriaPeliculaActionPerformed
 
     /**
      * @param args the command line arguments
