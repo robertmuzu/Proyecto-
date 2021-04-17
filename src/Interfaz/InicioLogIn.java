@@ -1,6 +1,5 @@
 package Interfaz;
 
-
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.FileInputStream;
@@ -282,34 +281,35 @@ public class InicioLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnRegistroActionPerformed
 
     private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
-        
         Admin adIngreso = new Admin(TxtUsuario.getText(), TxtContraseña.getText(), null);
-        
+
         if (!TxtUsuario.getText().isEmpty()) {
             if (!TxtContraseña.getText().isEmpty()) {
-                try{
+                
+                try {
                     FileInputStream miArchivo = new FileInputStream("AdminRoberto.roberto");
                     ObjectInputStream input = new ObjectInputStream(miArchivo);
                     Admin adLeido = (Admin) input.readObject();
-                    if (adLeido.getNombreUsuario().equals(input.readObject()) && 
-                            adIngreso.getContrasena().equals(input.readObject())) {
+
+                    if (adLeido.getNombreUsuario().equals(input.readObject())
+                            && adIngreso.getContrasena().equals(input.readObject())) {
                         JOptionPane.showMessageDialog(null, "Bienvenido" + adLeido.getNombreUsuario());
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña, Invàlida"); 
-                            }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña, Invàlida");
+                    }
                     input.close();
                     miArchivo.close();
+                    
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Exception: " + ex.getMessage());
                 }
-                
                 this.setVisible(false);
                 Administrador ad = new Administrador();
                 ad.setVisible(true);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Favor suministre la contraseña");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Favor suministre su nombre de usuario");
         }
 
