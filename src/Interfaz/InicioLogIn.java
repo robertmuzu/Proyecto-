@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import paquete.Admin;
 import paquete.Persona;
 import paquete.Usuario;
 
@@ -282,37 +283,29 @@ public class InicioLogIn extends javax.swing.JFrame {
 
     private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
         
-        Usuario usu = new Usuario(TxtUsuario.getText(), TxtContraseña.getText());
+        Admin adIngreso = new Admin(TxtUsuario.getText(), TxtContraseña.getText(), null);
         
         if (!TxtUsuario.getText().isEmpty()) {
             if (!TxtContraseña.getText().isEmpty()) {
-                if(!TxtUsuario.getText().equals("admin")&&!TxtContraseña.getText().equals("admin")){
-                    try {
-                        FileInputStream archivo = new FileInputStream("Usuarios.roberto");
-                        ObjectInputStream input = new ObjectInputStream(archivo);
-                        Usuario usuLeido = (Usuario) input.readObject();
-
-                        if (usuLeido.getNombreUsuario().equals(input.readObject()) && usuLeido.getContrasena().equals(input.readObject())) {
-                            JOptionPane.showMessageDialog(null, "Bienvenido " + usu.getNombreUsuario());
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida");
-                        }
-
-                        input.close();
-                        archivo.close();
-                    }catch (Exception ex){
-                        System.out.println("Excepcion: " + ex.getMessage());
-                    }
-                    this.setVisible(false);
-                    SeleccionPerfil ini = new SeleccionPerfil();
-                    ini.setVisible(true);
-                    this.dispose();
-                }else{
-                  this.setVisible(false);
-                  Administrador ad = new Administrador();
-                  ad.setVisible(true);
-                  this.dispose();
+                try{
+                    FileInputStream miArchivo = new FileInputStream("AdminRoberto.roberto");
+                    ObjectInputStream input = new ObjectInputStream(miArchivo);
+                    Admin adLeido = (Admin) input.readObject();
+                    if (adLeido.getNombreUsuario().equals(input.readObject()) && 
+                            adIngreso.getContrasena().equals(input.readObject())) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido" + adLeido.getNombreUsuario());
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña, Invàlida"); 
+                            }
+                    input.close();
+                    miArchivo.close();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Exception: " + ex.getMessage());
                 }
+                
+                this.setVisible(false);
+                Administrador ad = new Administrador();
+                ad.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "Favor suministre la contraseña");
             }
