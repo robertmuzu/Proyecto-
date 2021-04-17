@@ -62,7 +62,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAtras" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -73,18 +73,18 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton8" min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jButton14" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnBigBang" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnHouse" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton15" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jButton16" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnCSI" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnHalfMen" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton17" min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jButton18" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnWalking" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnGray" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="102" max="32767" attributes="0"/>
                   <Component id="jScrollBar1" min="-2" max="-2" attributes="0"/>
@@ -101,24 +101,21 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton8" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton15" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton18" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="btnBigBang" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnCSI" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnGray" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton14" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton16" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
-                              <Component id="jButton17" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="btnHouse" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btnHalfMen" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="btnWalking" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jScrollBar1" min="-2" pref="238" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jScrollBar1" min="-2" pref="238" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Component id="btnAtras" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -139,7 +136,7 @@
             <Property name="text" type="java.lang.String" value="SERIES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="btnBigBang">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -147,10 +144,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBigBangActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton14">
+        <Component class="javax.swing.JButton" name="btnHouse">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -158,10 +155,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHouseActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton17">
+        <Component class="javax.swing.JButton" name="btnWalking">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -169,10 +166,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton17ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnWalkingActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton15">
+        <Component class="javax.swing.JButton" name="btnCSI">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -180,10 +177,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCSIActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton18">
+        <Component class="javax.swing.JButton" name="btnGray">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -191,10 +188,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGrayActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton16">
+        <Component class="javax.swing.JButton" name="btnHalfMen">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -202,10 +199,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHalfMenActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnAtras">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="49" green="37" red="90" type="rgb"/>
@@ -216,7 +213,7 @@
             <Property name="text" type="java.lang.String" value="ATRAS"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtrasActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JScrollBar" name="jScrollBar1">
