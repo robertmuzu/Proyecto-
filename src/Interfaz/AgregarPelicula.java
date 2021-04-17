@@ -45,7 +45,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
         txtAreaDescripcionPelicula = new javax.swing.JTextArea();
         lblDescripcionPelicula = new javax.swing.JLabel();
         txt_tituloAgregarPelicula = new javax.swing.JLabel();
-        btn_guardarCalificacion = new javax.swing.JButton();
+        btnAgregarPelicula = new javax.swing.JButton();
         btn_cancelarCalificacion = new javax.swing.JButton();
         lblUrlImagenPelicula = new javax.swing.JLabel();
         lblCategoríaPelicula = new javax.swing.JLabel();
@@ -76,12 +76,12 @@ public class AgregarPelicula extends javax.swing.JFrame {
         txt_tituloAgregarPelicula.setForeground(new java.awt.Color(255, 255, 255));
         txt_tituloAgregarPelicula.setText("Información de la película");
 
-        btn_guardarCalificacion.setBackground(new java.awt.Color(144, 55, 73));
-        btn_guardarCalificacion.setForeground(new java.awt.Color(255, 255, 255));
-        btn_guardarCalificacion.setText("Guardar");
-        btn_guardarCalificacion.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarPelicula.setBackground(new java.awt.Color(144, 55, 73));
+        btnAgregarPelicula.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarPelicula.setText("Guardar");
+        btnAgregarPelicula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardarCalificacionActionPerformed(evt);
+                btnAgregarPeliculaActionPerformed(evt);
             }
         });
 
@@ -141,7 +141,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
                                 .addComponent(cmbCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtUrlImagenPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_guardarCalificacion)
+                                .addComponent(btnAgregarPelicula)
                                 .addGap(29, 29, 29)
                                 .addComponent(btn_cancelarCalificacion)))))
                 .addContainerGap(47, Short.MAX_VALUE))
@@ -174,7 +174,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cancelarCalificacion)
-                    .addComponent(btn_guardarCalificacion))
+                    .addComponent(btnAgregarPelicula))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -194,7 +194,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_guardarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCalificacionActionPerformed
+    private void btnAgregarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPeliculaActionPerformed
         Pelicula nuevaPelicula = new Pelicula(
                 txtNombrePelicula.getText(),
                 cmbLenguajePelicula.getSelectedItem().toString(),
@@ -238,7 +238,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
             System.out.println("Exception: " + ex.getMessage());
         }
         this.dispose();
-    }//GEN-LAST:event_btn_guardarCalificacionActionPerformed
+    }//GEN-LAST:event_btnAgregarPeliculaActionPerformed
 
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
         this.dispose();
@@ -285,8 +285,8 @@ public class AgregarPelicula extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarPelicula;
     private javax.swing.JButton btn_cancelarCalificacion;
-    private javax.swing.JButton btn_guardarCalificacion;
     private javax.swing.JComboBox<String> cmbCategoriaPelicula;
     private javax.swing.JComboBox<String> cmbLenguajePelicula;
     private javax.swing.JPanel jPanel1;

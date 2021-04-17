@@ -71,7 +71,7 @@
                                   <Component id="txtUrlImagenPelicula" min="-2" pref="388" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="btn_guardarCalificacion" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAgregarPelicula" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="btn_cancelarCalificacion" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -115,7 +115,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_cancelarCalificacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_guardarCalificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarPelicula" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
@@ -174,7 +174,7 @@
             <Property name="text" type="java.lang.String" value="Informaci&#xf3;n de la pel&#xed;cula"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_guardarCalificacion">
+        <Component class="javax.swing.JButton" name="btnAgregarPelicula">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="49" green="37" red="90" type="rgb"/>
@@ -185,7 +185,7 @@
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_guardarCalificacionActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarPeliculaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_cancelarCalificacion">
