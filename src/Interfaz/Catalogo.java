@@ -227,6 +227,8 @@ public class Catalogo extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
+        jLabel1.getAccessibleContext().setAccessibleParent(this);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
