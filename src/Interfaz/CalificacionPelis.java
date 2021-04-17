@@ -5,16 +5,24 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+import paquete.Comentario;
+import paquete.Pelicula;
+import paquete.SesionActiva;
+
 /**
  *
  * @author Alexa
  */
 public class CalificacionPelis extends javax.swing.JFrame {
 
+    private Pelicula peliculaActual;
+
     /**
      * Creates new form CalificacionPelis
      */
-    public CalificacionPelis() {
+    public CalificacionPelis(Pelicula pelicula) {
+        this.peliculaActual = pelicula;
         initComponents();
     }
 
@@ -28,12 +36,12 @@ public class CalificacionPelis extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        cmb_puntuacion = new javax.swing.JComboBox<>();
-        txt_subtituloPuntuacion = new javax.swing.JLabel();
+        cmbPuntuacion = new javax.swing.JComboBox<>();
+        txtSubtituloPuntuacion = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtarea_comentario = new javax.swing.JTextArea();
-        txt_subtituloComentario = new javax.swing.JLabel();
-        txt_tituloCalificacion = new javax.swing.JLabel();
+        txtAreaComentario = new javax.swing.JTextArea();
+        txtSubtituloComentario = new javax.swing.JLabel();
+        txtTituloCalificacion = new javax.swing.JLabel();
         btn_guardarCalificacion = new javax.swing.JButton();
         btn_cancelarCalificacion = new javax.swing.JButton();
 
@@ -41,27 +49,30 @@ public class CalificacionPelis extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(57, 62, 70));
 
-        cmb_puntuacion.setBackground(new java.awt.Color(255, 255, 255));
-        cmb_puntuacion.setForeground(new java.awt.Color(255, 255, 51));
-        cmb_puntuacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆" }));
+        cmbPuntuacion.setForeground(new java.awt.Color(255, 255, 51));
+        cmbPuntuacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆" }));
+        cmbPuntuacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPuntuacionActionPerformed(evt);
+            }
+        });
 
-        txt_subtituloPuntuacion.setBackground(new java.awt.Color(255, 255, 255));
-        txt_subtituloPuntuacion.setForeground(new java.awt.Color(255, 255, 255));
-        txt_subtituloPuntuacion.setText("Puntuación:");
+        txtSubtituloPuntuacion.setBackground(new java.awt.Color(255, 255, 255));
+        txtSubtituloPuntuacion.setForeground(new java.awt.Color(255, 255, 255));
+        txtSubtituloPuntuacion.setText("Puntuación:");
 
-        txtarea_comentario.setBackground(new java.awt.Color(255, 255, 255));
-        txtarea_comentario.setColumns(20);
-        txtarea_comentario.setRows(5);
-        jScrollPane1.setViewportView(txtarea_comentario);
+        txtAreaComentario.setColumns(20);
+        txtAreaComentario.setRows(5);
+        jScrollPane1.setViewportView(txtAreaComentario);
 
-        txt_subtituloComentario.setBackground(new java.awt.Color(255, 255, 255));
-        txt_subtituloComentario.setForeground(new java.awt.Color(255, 255, 255));
-        txt_subtituloComentario.setText("Comentarios");
+        txtSubtituloComentario.setBackground(new java.awt.Color(255, 255, 255));
+        txtSubtituloComentario.setForeground(new java.awt.Color(255, 255, 255));
+        txtSubtituloComentario.setText("Comentarios:");
 
-        txt_tituloCalificacion.setBackground(new java.awt.Color(255, 255, 255));
-        txt_tituloCalificacion.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        txt_tituloCalificacion.setForeground(new java.awt.Color(255, 255, 255));
-        txt_tituloCalificacion.setText("Califica la película");
+        txtTituloCalificacion.setBackground(new java.awt.Color(255, 255, 255));
+        txtTituloCalificacion.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        txtTituloCalificacion.setForeground(new java.awt.Color(255, 255, 255));
+        txtTituloCalificacion.setText("Califica la película");
 
         btn_guardarCalificacion.setBackground(new java.awt.Color(144, 55, 73));
         btn_guardarCalificacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,10 +100,10 @@ public class CalificacionPelis extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmb_puntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_subtituloComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_tituloCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_subtituloPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSubtituloComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTituloCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSubtituloPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -105,13 +116,13 @@ public class CalificacionPelis extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(txt_tituloCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTituloCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txt_subtituloPuntuacion)
+                .addComponent(txtSubtituloPuntuacion)
                 .addGap(18, 18, 18)
-                .addComponent(cmb_puntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txt_subtituloComentario)
+                .addComponent(txtSubtituloComentario)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
@@ -138,12 +149,20 @@ public class CalificacionPelis extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_guardarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCalificacionActionPerformed
-        
+        int puntuacion = 5 - cmbPuntuacion.getSelectedIndex();
+        Comentario cmtr = new Comentario(SesionActiva.getPersona().getNombre(), puntuacion, txtAreaComentario.getText());
+        this.peliculaActual.addComentario(cmtr);
+        JOptionPane.showMessageDialog(null, "El comentario ha sido agregado con éxito.");
+        this.dispose();
     }//GEN-LAST:event_btn_guardarCalificacionActionPerformed
 
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btn_cancelarCalificacionActionPerformed
+
+    private void cmbPuntuacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPuntuacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbPuntuacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +194,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CalificacionPelis().setVisible(true);
+                new CalificacionPelis(null).setVisible(true);
             }
         });
     }
@@ -183,12 +202,12 @@ public class CalificacionPelis extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cancelarCalificacion;
     private javax.swing.JButton btn_guardarCalificacion;
-    private javax.swing.JComboBox<String> cmb_puntuacion;
+    private javax.swing.JComboBox<String> cmbPuntuacion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel txt_subtituloComentario;
-    private javax.swing.JLabel txt_subtituloPuntuacion;
-    private javax.swing.JLabel txt_tituloCalificacion;
-    private javax.swing.JTextArea txtarea_comentario;
+    private javax.swing.JTextArea txtAreaComentario;
+    private javax.swing.JLabel txtSubtituloComentario;
+    private javax.swing.JLabel txtSubtituloPuntuacion;
+    private javax.swing.JLabel txtTituloCalificacion;
     // End of variables declaration//GEN-END:variables
 }

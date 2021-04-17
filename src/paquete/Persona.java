@@ -1,10 +1,16 @@
 package paquete;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 
 public class Persona implements Serializable, Comparable<Persona> {
+=======
+import java.util.ArrayList;
+
+>>>>>>> 1e20c7a68f5a04dccc27eb535fa4f97cf893c3a7
 
     //Creamos atributos de las personas que van a usar el APP.
+<<<<<<< HEAD
     private String nombre;
     private String apellidos;
     private String correo;
@@ -12,13 +18,25 @@ public class Persona implements Serializable, Comparable<Persona> {
     private int edad;
     private int numeroTelefono;
 
+=======
+    protected String nombre;
+    protected String apellidos;
+    protected String correo;
+    protected boolean sexo;
+    protected int edad;
+    protected String numeroTelefono;
+    protected String fotoUsuario;
+    protected ArrayList <Perfil> perfilesAsociados;
+    protected Perfil perfilActivo;
+    
+>>>>>>> 1e20c7a68f5a04dccc27eb535fa4f97cf893c3a7
     //CONSTRUCTOR VACIO
     public Persona() {
 
     }
 
     //CONSTRUCTOR
-    public Persona(String nombre, String apellidos, String correo, boolean sexo, int edad, int numeroTelefono) {
+    public Persona(String nombre, String apellidos, String correo, boolean sexo, int edad, String numeroTelefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -68,11 +86,11 @@ public class Persona implements Serializable, Comparable<Persona> {
         this.edad = edad;
     }
 
-    public int getNumeroTelefono() {
+    public String getNumeroTelefono() {
         return numeroTelefono;
     }
 
-    public void setNumeroTelefono(int numeroTelefono) {
+    public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
 

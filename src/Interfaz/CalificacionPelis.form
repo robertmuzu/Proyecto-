@@ -50,10 +50,10 @@
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="389" max="-2" attributes="0"/>
-                      <Component id="cmb_puntuacion" min="-2" pref="115" max="-2" attributes="0"/>
-                      <Component id="txt_subtituloComentario" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
-                      <Component id="txt_tituloCalificacion" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
-                      <Component id="txt_subtituloPuntuacion" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="cmbPuntuacion" min="-2" pref="115" max="-2" attributes="0"/>
+                      <Component id="txtSubtituloComentario" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                      <Component id="txtTituloCalificacion" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
+                      <Component id="txtSubtituloPuntuacion" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="62" max="32767" attributes="0"/>
               </Group>
@@ -70,13 +70,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="txt_tituloCalificacion" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="txtTituloCalificacion" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="txt_subtituloPuntuacion" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSubtituloPuntuacion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="cmb_puntuacion" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="cmbPuntuacion" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="txt_subtituloComentario" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSubtituloComentario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -90,11 +90,8 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JComboBox" name="cmb_puntuacion">
+        <Component class="javax.swing.JComboBox" name="cmbPuntuacion">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="ff" red="ff" type="rgb"/>
             </Property>
@@ -108,11 +105,14 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbPuntuacionActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="txt_subtituloPuntuacion">
+        <Component class="javax.swing.JLabel" name="txtSubtituloPuntuacion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -130,18 +130,15 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="txtarea_comentario">
+            <Component class="javax.swing.JTextArea" name="txtAreaComentario">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="txt_subtituloComentario">
+        <Component class="javax.swing.JLabel" name="txtSubtituloComentario">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -149,10 +146,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Comentarios"/>
+            <Property name="text" type="java.lang.String" value="Comentarios:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="txt_tituloCalificacion">
+        <Component class="javax.swing.JLabel" name="txtTituloCalificacion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

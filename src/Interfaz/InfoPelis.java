@@ -5,16 +5,21 @@
  */
 package Interfaz;
 
+import paquete.Pelicula;
+
 /**
  *
  * @author Usuario
  */
 public class InfoPelis extends javax.swing.JFrame {
 
+    private Pelicula peliculaActual;
+    
     /**
      * Creates new form InfoPelis
      */
-    public InfoPelis() {
+    public InfoPelis(Pelicula peliculaActual) {
+        this.peliculaActual = peliculaActual;
         initComponents();
     }
 
@@ -28,57 +33,22 @@ public class InfoPelis extends javax.swing.JFrame {
     private void initComponents() {
 
         Titulo2 = new javax.swing.JLabel();
-        OkButton = new javax.swing.JButton();
-        btn_calificar = new javax.swing.JButton();
-        Titulo = new javax.swing.JLabel();
-        Duracion = new javax.swing.JLabel();
-        Actores = new javax.swing.JLabel();
-        Director = new javax.swing.JLabel();
-        Resenia = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         FotoPeli = new javax.swing.JPanel();
+        btn_calificar = new javax.swing.JButton();
+        OkButton = new javax.swing.JButton();
+        Resenia = new javax.swing.JLabel();
+        Director = new javax.swing.JLabel();
+        Actores = new javax.swing.JLabel();
+        Duracion = new javax.swing.JLabel();
+        Titulo = new javax.swing.JLabel();
 
         Titulo2.setText("Duracion");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(57, 62, 70));
 
-        OkButton.setBackground(new java.awt.Color(144, 55, 73));
-        OkButton.setForeground(new java.awt.Color(255, 255, 255));
-        OkButton.setText("OK");
-        OkButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OkButtonActionPerformed(evt);
-            }
-        });
-
-        btn_calificar.setBackground(new java.awt.Color(144, 55, 73));
-        btn_calificar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_calificar.setText("Calificar");
-        btn_calificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_calificarActionPerformed(evt);
-            }
-        });
-
-        Titulo.setBackground(new java.awt.Color(255, 255, 255));
-        Titulo.setForeground(new java.awt.Color(255, 255, 255));
-        Titulo.setText("Titulo");
-
-        Duracion.setBackground(new java.awt.Color(255, 255, 255));
-        Duracion.setForeground(new java.awt.Color(255, 255, 255));
-        Duracion.setText("Duracion");
-
-        Actores.setBackground(new java.awt.Color(255, 255, 255));
-        Actores.setForeground(new java.awt.Color(255, 255, 255));
-        Actores.setText("Actores");
-
-        Director.setBackground(new java.awt.Color(255, 255, 255));
-        Director.setForeground(new java.awt.Color(255, 255, 255));
-        Director.setText("Director");
-
-        Resenia.setBackground(new java.awt.Color(255, 255, 255));
-        Resenia.setForeground(new java.awt.Color(255, 255, 255));
-        Resenia.setText("Reseña");
+        jPanel1.setBackground(new java.awt.Color(57, 62, 70));
 
         FotoPeli.setBackground(new java.awt.Color(153, 153, 153));
         FotoPeli.setForeground(new java.awt.Color(57, 62, 70));
@@ -94,50 +64,107 @@ public class InfoPelis extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+        btn_calificar.setBackground(new java.awt.Color(144, 55, 73));
+        btn_calificar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_calificar.setText("Calificar");
+        btn_calificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_calificarActionPerformed(evt);
+            }
+        });
+
+        OkButton.setBackground(new java.awt.Color(144, 55, 73));
+        OkButton.setForeground(new java.awt.Color(255, 255, 255));
+        OkButton.setText("OK");
+        OkButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkButtonActionPerformed(evt);
+            }
+        });
+
+        Resenia.setBackground(new java.awt.Color(255, 255, 255));
+        Resenia.setForeground(new java.awt.Color(255, 255, 255));
+        Resenia.setText("Reseña");
+
+        Director.setBackground(new java.awt.Color(255, 255, 255));
+        Director.setForeground(new java.awt.Color(255, 255, 255));
+        Director.setText("Director");
+
+        Actores.setBackground(new java.awt.Color(255, 255, 255));
+        Actores.setForeground(new java.awt.Color(255, 255, 255));
+        Actores.setText("Actores");
+
+        Duracion.setBackground(new java.awt.Color(255, 255, 255));
+        Duracion.setForeground(new java.awt.Color(255, 255, 255));
+        Duracion.setText("Duracion");
+
+        Titulo.setBackground(new java.awt.Color(255, 255, 255));
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setText("Titulo");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Director, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Resenia, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Duracion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Actores, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Director, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Resenia, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
+                            .addComponent(Actores, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
                         .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addComponent(btn_calificar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(FotoPeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Titulo)
                         .addGap(18, 18, 18)
                         .addComponent(Duracion)
                         .addGap(18, 18, 18)
                         .addComponent(Actores)
-                        .addGap(18, 18, 18)
+                        .addGap(22, 22, 22)
                         .addComponent(Director)
                         .addGap(18, 18, 18)
-                        .addComponent(Resenia))
-                    .addComponent(FotoPeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Resenia)
+                        .addGap(0, 36, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(btn_calificar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -148,7 +175,7 @@ public class InfoPelis extends javax.swing.JFrame {
     }//GEN-LAST:event_OkButtonActionPerformed
 
     private void btn_calificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calificarActionPerformed
-        CalificacionPelis cal = new CalificacionPelis();
+        CalificacionPelis cal = new CalificacionPelis(peliculaActual);
         cal.setVisible(true);
     }//GEN-LAST:event_btn_calificarActionPerformed
 
@@ -182,7 +209,7 @@ public class InfoPelis extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InfoPelis().setVisible(true);
+                new InfoPelis(null).setVisible(true);
             }
         });
     }
@@ -197,5 +224,6 @@ public class InfoPelis extends javax.swing.JFrame {
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel Titulo2;
     private javax.swing.JButton btn_calificar;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

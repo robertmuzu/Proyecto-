@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class MainSerializacion {
@@ -17,11 +18,19 @@ public class MainSerializacion {
       //Contacto vContacto2 = new Contacto("Ana Mora", "+506-8888-7777", "ana@mora.com");
       
       
+<<<<<<< HEAD
       //Admin ad = new Admin("roberto", "1234", "72828982", "muribeto24@gmail.com");
       //Admin ad1 = new Admin("alee", "5678", "8888888", "@gmail.com");
       //Admin ad2 = new Admin("gabriel", "12345", "8888888", "@gmail.com");
       //Admin ad3 = new Admin("gabriel(tatu)", "56789", "8888888", "@gmail.com");
       Admin ad4 = new Admin("element", "123", "8888888", "@gmail.com");
+=======
+      Admin ad = new Admin("roberto", "1234", "muribeto24@gmail.com");
+      Admin ad1 = new Admin("alee", "5678", "@gmail.com");
+      Admin ad2 = new Admin("gabriel", "12345", "@gmail.com");
+      Admin ad3 = new Admin("gabriel(tatu)", "8888888", "@gmail.com");
+      Admin ad4 = new Admin("element", "123", "@gmail.com");
+>>>>>>> 1e20c7a68f5a04dccc27eb535fa4f97cf893c3a7
                   
     //VAMOS A PROCEDER PRIMERO A GUARDALO EN UN ARCHIVO            
      
@@ -99,8 +108,7 @@ public class MainSerializacion {
             
         } catch (Exception ex) {
             System.out.println("Exception: "+ ex.getMessage());
-        }
-      
+        }        
       
     } 
     

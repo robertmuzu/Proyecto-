@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Interfaz;
 
+package Interfaz;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JOptionPane;
         
 public class Ajustes extends javax.swing.JFrame {
@@ -14,6 +11,7 @@ public class Ajustes extends javax.swing.JFrame {
      */
     public Ajustes() {
         initComponents();
+      
     }
 
     /**
@@ -29,11 +27,10 @@ public class Ajustes extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         JAyuda = new javax.swing.JLabel();
         InfoPago = new javax.swing.JButton();
-        CanbiarFoto = new javax.swing.JButton();
-        Nombre = new javax.swing.JButton();
         Correo = new javax.swing.JButton();
         contacto = new javax.swing.JButton();
         SalirButton = new javax.swing.JButton();
+        changeUsu = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -47,12 +44,16 @@ public class Ajustes extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(240, 240, 240));
+
+        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
 
         JAyuda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JAyuda.setForeground(new java.awt.Color(255, 255, 255));
         JAyuda.setText("Configuraciones de usuario");
 
+        InfoPago.setBackground(new java.awt.Color(144, 55, 73));
         InfoPago.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        InfoPago.setForeground(new java.awt.Color(255, 255, 255));
         InfoPago.setText("Informacion de pago");
         InfoPago.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         InfoPago.addActionListener(new java.awt.event.ActionListener() {
@@ -61,26 +62,10 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
-        CanbiarFoto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        CanbiarFoto.setText("Cambiar foto de perfil");
-        CanbiarFoto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        CanbiarFoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CanbiarFotoActionPerformed(evt);
-            }
-        });
-
-        Nombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Nombre.setText("Cambiar nombre de usuario");
-        Nombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreActionPerformed(evt);
-            }
-        });
-
+        Correo.setBackground(new java.awt.Color(144, 55, 73));
         Correo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Correo.setText("Correo elelctronico de la cuenta");
+        Correo.setForeground(new java.awt.Color(255, 255, 255));
+        Correo.setText("Correo de la cuenta");
         Correo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +73,9 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        contacto.setBackground(new java.awt.Color(144, 55, 73));
         contacto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contacto.setForeground(new java.awt.Color(255, 255, 255));
         contacto.setText("Contactenos ");
         contacto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         contacto.addActionListener(new java.awt.event.ActionListener() {
@@ -97,41 +84,6 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(InfoPago)
-                    .addComponent(CanbiarFoto)
-                    .addComponent(Nombre)
-                    .addComponent(Correo)
-                    .addComponent(contacto))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
-                .addComponent(JAyuda)
-                .addGap(149, 149, 149))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(JAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(InfoPago)
-                .addGap(28, 28, 28)
-                .addComponent(CanbiarFoto)
-                .addGap(33, 33, 33)
-                .addComponent(Nombre)
-                .addGap(35, 35, 35)
-                .addComponent(Correo)
-                .addGap(18, 18, 18)
-                .addComponent(contacto)
-                .addGap(89, 89, 89))
-        );
-
         SalirButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salr¡ir.png"))); // NOI18N
         SalirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,26 +91,71 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
+        changeUsu.setBackground(new java.awt.Color(144, 55, 73));
+        changeUsu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        changeUsu.setForeground(new java.awt.Color(255, 255, 255));
+        changeUsu.setText("Cambiar nombre de usuario");
+        changeUsu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        changeUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeUsuActionPerformed(evt);
+            }
+        });
+        changeUsu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                changeUsuKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(InfoPago)
+                            .addComponent(Correo)
+                            .addComponent(contacto)
+                            .addComponent(changeUsu)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(JAyuda)))
+                .addGap(0, 149, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JAyuda)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(InfoPago)
+                .addGap(33, 33, 33)
+                .addComponent(Correo)
+                .addGap(43, 43, 43)
+                .addComponent(contacto)
+                .addGap(35, 35, 35)
+                .addComponent(changeUsu)
+                .addGap(31, 31, 31)
+                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -169,16 +166,10 @@ public class Ajustes extends javax.swing.JFrame {
               + "Su proxima factura estara disponible el 12/8/21 ");
     }//GEN-LAST:event_InfoPagoActionPerformed
 
-    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
-     SeleccionPerfil inter = new SeleccionPerfil();
-     inter.getGabriel().setToolTipText(JOptionPane.showInputDialog("Digite el nuevo nombre del usuario "));
-     
-    }//GEN-LAST:event_NombreActionPerformed
-
     private void SalirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirButtonActionPerformed
-     this.setVisible(false);
-     Usuario1 inter = new Usuario1();
-     inter.setVisible(true);
+    this.setVisible(false);
+    Catalogo inter = new Catalogo();
+  inter.setVisible(true);
     }//GEN-LAST:event_SalirButtonActionPerformed
 
     private void contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactoActionPerformed
@@ -187,12 +178,21 @@ public class Ajustes extends javax.swing.JFrame {
     }//GEN-LAST:event_contactoActionPerformed
 
     private void CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoActionPerformed
-       
+    
+        
     }//GEN-LAST:event_CorreoActionPerformed
 
-    private void CanbiarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CanbiarFotoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CanbiarFotoActionPerformed
+    private void changeUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeUsuActionPerformed
+      int nombre= Integer.parseInt(JOptionPane.showInputDialog("Digite el nuevo nombre:"));
+          this.setVisible(false);
+          SeleccionPerfil sele = new SeleccionPerfil();
+          sele.setVisible(true);
+             
+    }//GEN-LAST:event_changeUsuActionPerformed
+
+    private void changeUsuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_changeUsuKeyPressed
+        
+    }//GEN-LAST:event_changeUsuKeyPressed
 
     /**
      * @param args the command line arguments
@@ -230,12 +230,11 @@ public class Ajustes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CanbiarFoto;
     private javax.swing.JButton Correo;
     private javax.swing.JButton InfoPago;
     private javax.swing.JLabel JAyuda;
-    private javax.swing.JButton Nombre;
     private javax.swing.JButton SalirButton;
+    private javax.swing.JButton changeUsu;
     private javax.swing.JButton contacto;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
