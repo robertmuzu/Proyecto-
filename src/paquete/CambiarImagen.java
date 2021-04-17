@@ -1,5 +1,7 @@
 
-package Interfaz;
+package paquete;
+import Interfaz.Catalogo;
+import Interfaz.Catalogo;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.util.Timer;
