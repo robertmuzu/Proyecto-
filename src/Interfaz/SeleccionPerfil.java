@@ -6,7 +6,7 @@
 package Interfaz;
 
 import javax.swing.JOptionPane;
-
+import paquete.CambioImagenProto;
 /**
  *
  * @author grf16
@@ -198,26 +198,26 @@ public class SeleccionPerfil extends javax.swing.JFrame {
     private void GabrielActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GabrielActionPerformed
 
         this.setVisible(false);
-        Catalogo aj = new Catalogo();
-        aj.setVisible(true);  
+        CambioImagenProto a = new CambioImagenProto();
+        a.CambiarFoto();
     }//GEN-LAST:event_GabrielActionPerformed
 
     private void LuisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuisActionPerformed
         this.setVisible(false);
-        Catalogo aj = new Catalogo();
-        aj.setVisible(true);
+        CambioImagenProto a = new CambioImagenProto();
+        a.CambiarFoto();
     }//GEN-LAST:event_LuisActionPerformed
 
     private void AndresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AndresActionPerformed
         this.setVisible(false);
-        Catalogo aj = new Catalogo();
-        aj.setVisible(true);
+        CambioImagenProto a = new CambioImagenProto();
+        a.CambiarFoto();
     }//GEN-LAST:event_AndresActionPerformed
 
     private void Andrea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Andrea1ActionPerformed
         this.setVisible(false);
-        Catalogo aj = new Catalogo();
-        aj.setVisible(true);
+        CambioImagenProto a = new CambioImagenProto();
+        a.CambiarFoto();
     }//GEN-LAST:event_Andrea1ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
