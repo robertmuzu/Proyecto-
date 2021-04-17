@@ -17,27 +17,27 @@ public class MainSerializacion {
       //Contacto vContacto2 = new Contacto("Ana Mora", "+506-8888-7777", "ana@mora.com");
       
       
-      Admin ad = new Admin("roberto", "1234", "72828982", "muribeto24@gmail.com");
-      Admin ad1 = new Admin("alee", "5678", "8888888", "@gmail.com");
-      Admin ad2 = new Admin("gabriel", "12345", "8888888", "@gmail.com");
-      Admin ad3 = new Admin("gabriel(tatu)", "56789", "8888888", "@gmail.com");
+      //Admin ad = new Admin("roberto", "1234", "72828982", "muribeto24@gmail.com");
+      //Admin ad1 = new Admin("alee", "5678", "8888888", "@gmail.com");
+      //Admin ad2 = new Admin("gabriel", "12345", "8888888", "@gmail.com");
+      //Admin ad3 = new Admin("gabriel(tatu)", "56789", "8888888", "@gmail.com");
       Admin ad4 = new Admin("element", "123", "8888888", "@gmail.com");
                   
     //VAMOS A PROCEDER PRIMERO A GUARDALO EN UN ARCHIVO            
      
-        /*try {
+        try {
             //PRIMERO NECESITAMOS CREAR EL FILEOUTPUTSTREAM PARA HACER REFERENCIA A NUESTRO ARCHIVO
-            FileOutputStream miArchivo = new FileOutputStream("Admins.roberto");//pueden colocar una direccion especifica
+            FileOutputStream miArchivo = new FileOutputStream("AdminElement.element");//pueden colocar una direccion especifica
             
             //LUEGO NECESITAMOS CREAR EL OBJECTOUTPUTSTREAM
             ObjectOutputStream output = new ObjectOutputStream(miArchivo);
             
             
             //Y LUEGO VAMOS A ESCRIBIR NUESTROS OBJETOS EN EL ARCHIVO
-            output.writeObject(ad);
-            output.writeObject(ad1);
-            output.writeObject(ad2);
-            output.writeObject(ad3);
+            //output.writeObject(ad);
+            //output.writeObject(ad1);
+            //output.writeObject(ad2);
+            //output.writeObject(ad3);
             output.writeObject(ad4);
             //RECORDEMOS CERRAR EL ARCHIVO LUEGO DE ESCRIBIR EN EL
             output.close();
@@ -45,7 +45,7 @@ public class MainSerializacion {
         
         } catch (IOException ex) {
             System.out.println("Exception: "+ ex.getMessage());
-        }*/
+        }
         
        /* try {
             FileOutputStream arc = new FileOutputStream("Admins.roberto");
@@ -71,30 +71,30 @@ public class MainSerializacion {
      //VAMOS AHORA A PROCEDER A LEER LOS DATOS DEL ARCHIVO
         try {                   
             //PRIMERO NECESITAMOS CREAR EL FILEIMPUTSTREAM
-            FileInputStream Admins = new FileInputStream("Admins.roberto");
+            FileInputStream Admin = new FileInputStream("AdminElement.element");
             
             //LUEGO NECESITAMOS CREAR EL OBJECTIMPUTSTREAM
-            ObjectInputStream input = new ObjectInputStream(Admins);
+            ObjectInputStream input = new ObjectInputStream(Admin);
             
             //Y LUEGO VAMOS A LEER LOS DATOS DE NUESTRO ARCHIVO
             //ES MUY IMPORTANTE QUE DEBEMOS LEERLOS DE IGUAL MANERA COMO LOS ESCRIBIMOS
             //Y QUE DEBEMOS EJECUTAR EL CASTING CORRECTO
             
-            Admin adLeido = (Admin) input.readObject();
-            Admin ad1Leido = (Admin) input.readObject();
-            Admin ad2Leido = (Admin) input.readObject();
-            Admin ad3Leido = (Admin) input.readObject();
+            //Admin adLeido = (Admin) input.readObject();
+            //Admin ad1Leido = (Admin) input.readObject();
+            //Admin ad2Leido = (Admin) input.readObject();
+            //Admin ad3Leido = (Admin) input.readObject();
             Admin ad4Leido = (Admin) input.readObject();
             
-            System.out.println("EL PRIMER CONTACTO ERA "+ adLeido.getNombreUsuario() + "-" + adLeido.getContrasena());
+            /*System.out.println("EL PRIMER CONTACTO ERA "+ adLeido.getNombreUsuario() + "-" + adLeido.getContrasena());
             System.out.println("EL SEGUNDO CONTACTO ERA "+ ad1Leido.getNombreUsuario() + "-" + ad1Leido.getContrasena());
             System.out.println("El Tercer contacto era: " + ad2Leido.getNombreUsuario() + "-" + ad2Leido.getContrasena());
             System.out.println("El cuarto es: " + ad3Leido.getNombreUsuario() + "-" + ad3Leido.getContrasena());
-            System.out.println("El quinto es " + ad4Leido.getNombreUsuario() + "-" + ad4Leido.getContrasena());
+            //System.out.println("El quinto es " + ad4Leido.getNombreUsuario() + "-" + ad4Leido.getContrasena());*/
             
             //POR ULTIMO RECORDEMOS CERRAR EL ARCHIVO
             input.close();
-            Admins.close();
+            Admin.close();
                     
             
         } catch (Exception ex) {
