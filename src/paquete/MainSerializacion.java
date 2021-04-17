@@ -18,19 +18,16 @@ public class MainSerializacion {
       //Contacto vContacto2 = new Contacto("Ana Mora", "+506-8888-7777", "ana@mora.com");
       
       
-<<<<<<< HEAD
+
       //Admin ad = new Admin("roberto", "1234", "72828982", "muribeto24@gmail.com");
       //Admin ad1 = new Admin("alee", "5678", "8888888", "@gmail.com");
       //Admin ad2 = new Admin("gabriel", "12345", "8888888", "@gmail.com");
       //Admin ad3 = new Admin("gabriel(tatu)", "56789", "8888888", "@gmail.com");
-      Admin ad4 = new Admin("element", "123", "8888888", "@gmail.com");
-=======
-      Admin ad = new Admin("roberto", "1234", "muribeto24@gmail.com");
-      Admin ad1 = new Admin("alee", "5678", "@gmail.com");
-      Admin ad2 = new Admin("gabriel", "12345", "@gmail.com");
-      Admin ad3 = new Admin("gabriel(tatu)", "8888888", "@gmail.com");
+      //Admin ad = new Admin("roberto", "1234", "muribeto24@gmail.com");
+      //Admin ad1 = new Admin("alee", "5678", "@gmail.com");
+      //Admin ad2 = new Admin("gabriel", "12345", "@gmail.com");
+      //Admin ad3 = new Admin("gabriel(tatu)", "8888888", "@gmail.com");
       Admin ad4 = new Admin("element", "123", "@gmail.com");
->>>>>>> 1e20c7a68f5a04dccc27eb535fa4f97cf893c3a7
                   
     //VAMOS A PROCEDER PRIMERO A GUARDALO EN UN ARCHIVO            
      
@@ -80,7 +77,7 @@ public class MainSerializacion {
      //VAMOS AHORA A PROCEDER A LEER LOS DATOS DEL ARCHIVO
         try {                   
             //PRIMERO NECESITAMOS CREAR EL FILEIMPUTSTREAM
-            FileInputStream Admin = new FileInputStream("AdminElement.element");
+            FileInputStream Admin = new FileInputStream("AdminAlee.alee");
             
             //LUEGO NECESITAMOS CREAR EL OBJECTIMPUTSTREAM
             ObjectInputStream input = new ObjectInputStream(Admin);
@@ -90,10 +87,10 @@ public class MainSerializacion {
             //Y QUE DEBEMOS EJECUTAR EL CASTING CORRECTO
             
             //Admin adLeido = (Admin) input.readObject();
-            //Admin ad1Leido = (Admin) input.readObject();
+            Admin ad1Leido = (Admin) input.readObject();
             //Admin ad2Leido = (Admin) input.readObject();
             //Admin ad3Leido = (Admin) input.readObject();
-            Admin ad4Leido = (Admin) input.readObject();
+            //Admin ad4Leido = (Admin) input.readObject();
             
             /*System.out.println("EL PRIMER CONTACTO ERA "+ adLeido.getNombreUsuario() + "-" + adLeido.getContrasena());
             System.out.println("EL SEGUNDO CONTACTO ERA "+ ad1Leido.getNombreUsuario() + "-" + ad1Leido.getContrasena());
