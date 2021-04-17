@@ -11,7 +11,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.TreeSet;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.ListModel;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import paquete.Categoria;
 import paquete.Comentario;
 import paquete.Pelicula;
@@ -23,11 +28,25 @@ import paquete.SesionActiva;
  */
 public class EliminarPelicula extends javax.swing.JFrame {
 
+    private String nombrePeliculaSeleccionada = "";
+
     /**
      * Creates new form CalificacionPelis
      */
     public EliminarPelicula() {
         initComponents();
+
+        listResultadosObtenidosPeliculas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        listResultadosObtenidosPeliculas.removeAll();
+
+        listResultadosObtenidosPeliculas.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                int indicePeliculaSeleccionada = e.getFirstIndex();
+                ListModel<String> itemsLista = listResultadosObtenidosPeliculas.getModel();
+                nombrePeliculaSeleccionada = itemsLista.getElementAt(indicePeliculaSeleccionada);
+            }
+        });
     }
 
     /**
@@ -48,6 +67,7 @@ public class EliminarPelicula extends javax.swing.JFrame {
         txtPeliculaBuscada = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         listResultadosObtenidosPeliculas = new javax.swing.JList<>();
+        btnBuscarPelicula = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,7 +88,7 @@ public class EliminarPelicula extends javax.swing.JFrame {
 
         btn_EliminarPelicula.setBackground(new java.awt.Color(144, 55, 73));
         btn_EliminarPelicula.setForeground(new java.awt.Color(255, 255, 255));
-        btn_EliminarPelicula.setText("Guardar");
+        btn_EliminarPelicula.setText("Eliminar");
         btn_EliminarPelicula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_EliminarPeliculaActionPerformed(evt);
@@ -87,12 +107,16 @@ public class EliminarPelicula extends javax.swing.JFrame {
         txtPeliculaBuscada.setBackground(new java.awt.Color(255, 255, 255));
 
         listResultadosObtenidosPeliculas.setBackground(new java.awt.Color(255, 255, 255));
-        listResultadosObtenidosPeliculas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane2.setViewportView(listResultadosObtenidosPeliculas);
+
+        btnBuscarPelicula.setBackground(new java.awt.Color(144, 55, 73));
+        btnBuscarPelicula.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarPelicula.setText("Buscar");
+        btnBuscarPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPeliculaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,12 +131,15 @@ public class EliminarPelicula extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPeliculaBuscada, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtPeliculaBuscada, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscarPelicula))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBusquedaPeliculaEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPeliculaBuscada, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblResultadosObtenidosPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,8 +149,10 @@ public class EliminarPelicula extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblPeliculaBuscada)
                 .addGap(18, 18, 18)
-                .addComponent(txtPeliculaBuscada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPeliculaBuscada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarPelicula))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(lblResultadosObtenidosPeliculas)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,7 +178,7 @@ public class EliminarPelicula extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_EliminarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarPeliculaActionPerformed
-        
+
         ArrayList<Pelicula> peliculas = null;
 
         try {
@@ -167,7 +196,14 @@ public class EliminarPelicula extends javax.swing.JFrame {
         if (peliculas == null) {
             peliculas = new ArrayList<>();
         }
-        peliculas.add(nuevaPelicula);
+        
+        int indexPeliculaEliminar = -1;
+        for(Pelicula pelicula : peliculas) {
+            if(pelicula.getNombre().equals(nombrePeliculaSeleccionada)) {
+                indexPeliculaEliminar = peliculas.indexOf(pelicula);
+            }
+        }
+        peliculas.remove(indexPeliculaEliminar);
 
         try {
             try (FileOutputStream archivoPelicula = new FileOutputStream("Peliculas.alexa")) {
@@ -176,10 +212,10 @@ public class EliminarPelicula extends javax.swing.JFrame {
                 output.writeObject(peliculas);
 
                 output.close();
-                
+
             }
 
-            JOptionPane.showMessageDialog(null, "La pelicula ha sido agregada ala categoría indicada.");
+            JOptionPane.showMessageDialog(null, "La pelicula ha sido eliminada satisfactoriamente.");
 
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
@@ -187,9 +223,42 @@ public class EliminarPelicula extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_EliminarPeliculaActionPerformed
 
+    private ArrayList<Pelicula> getPeliculas() {
+        ArrayList<Pelicula> peliculas = null;
+
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Peliculas.alexa")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                peliculas = (ArrayList<Pelicula>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        return peliculas;
+    }
+
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
         this.dispose();
     }//GEN-LAST:event_btn_cancelarCalificacionActionPerformed
+
+    private void btnBuscarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPeliculaActionPerformed
+        ArrayList<Pelicula> peliculas = getPeliculas();
+        ArrayList<String> nombrePeliculas = new ArrayList<>();
+
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula.getNombre().toLowerCase().contains(txtPeliculaBuscada.getText().toLowerCase())) {
+                nombrePeliculas.add(pelicula.getNombre());
+            }
+        }
+
+        DefaultListModel model = new DefaultListModel();
+        model.addAll(nombrePeliculas);
+        listResultadosObtenidosPeliculas.setModel(model);
+    }//GEN-LAST:event_btnBuscarPeliculaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,6 +299,7 @@ public class EliminarPelicula extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarPelicula;
     private javax.swing.JButton btn_EliminarPelicula;
     private javax.swing.JButton btn_cancelarCalificacion;
     private javax.swing.JPanel jPanel1;

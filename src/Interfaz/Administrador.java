@@ -57,6 +57,11 @@ public class Administrador extends javax.swing.JFrame {
         btnEliminarPelicula.setBackground(new java.awt.Color(144, 55, 73));
         btnEliminarPelicula.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarPelicula.setText("Eliminar pelicula");
+        btnEliminarPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarPeliculaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,6 +112,11 @@ public class Administrador extends javax.swing.JFrame {
         AgregarPelicula agregarPelicula = new AgregarPelicula();
         agregarPelicula.setVisible(true);
     }//GEN-LAST:event_btnAgregarPeliculaActionPerformed
+
+    private void btnEliminarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPeliculaActionPerformed
+        EliminarPelicula eliminarPelicula = new EliminarPelicula();
+        eliminarPelicula.setVisible(true);
+    }//GEN-LAST:event_btnEliminarPeliculaActionPerformed
 
     /**
      * @param args the command line arguments
