@@ -68,5 +68,6 @@ public class CambioImagenProto {
         timer.scheduleAtFixedRate(tarea, velmil, velmil);
 
         //a
+        //a
     }
 }
