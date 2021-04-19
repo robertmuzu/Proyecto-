@@ -31,6 +31,7 @@ public class Administrador extends javax.swing.JFrame {
         bottonSalida = new javax.swing.JButton();
         btnAgregarPelicula = new javax.swing.JButton();
         btnEliminarPelicula = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +64,13 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Testing");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1btnTesting(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -73,15 +81,22 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEliminarPelicula)
-                    .addComponent(btnAgregarPelicula))
-                .addContainerGap(349, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnEliminarPelicula)
+                        .addContainerGap(351, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnAgregarPelicula)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
-                .addComponent(btnAgregarPelicula)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregarPelicula)
+                    .addComponent(jButton1))
                 .addGap(47, 47, 47)
                 .addComponent(btnEliminarPelicula)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
@@ -117,6 +132,11 @@ public class Administrador extends javax.swing.JFrame {
         EliminarPelicula eliminarPelicula = new EliminarPelicula();
         eliminarPelicula.setVisible(true);
     }//GEN-LAST:event_btnEliminarPeliculaActionPerformed
+
+    private void jButton1btnTesting(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1btnTesting
+        PruebaBotonesDinamicos test = new PruebaBotonesDinamicos();
+        test.setVisible(true);
+    }//GEN-LAST:event_jButton1btnTesting
 
     /**
      * @param args the command line arguments
@@ -157,6 +177,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton bottonSalida;
     private javax.swing.JButton btnAgregarPelicula;
     private javax.swing.JButton btnEliminarPelicula;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
