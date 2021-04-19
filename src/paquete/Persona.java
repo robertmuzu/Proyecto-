@@ -11,9 +11,9 @@ public class Persona implements Serializable, Comparable<Persona> {
     private String nombre;
     private String apellidos;
     private String correo;
-    private boolean sexo;
-    private int edad;
-    private int numeroTelefono;
+    private String sexo;
+    private String edad;
+    private String numeroTelefono;
     
     //CONSTRUCTOR VACIO
     public Persona() {
@@ -21,7 +21,7 @@ public class Persona implements Serializable, Comparable<Persona> {
     }
 
     //CONSTRUCTOR
-    public Persona(String nombre, String apellidos, String correo, boolean sexo, int edad, int numeroTelefono) {
+    public Persona(String nombre, String apellidos, String correo, String sexo, String edad, String numeroTelefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -55,21 +55,30 @@ public class Persona implements Serializable, Comparable<Persona> {
         this.correo = correo;
     }
 
-    public boolean isSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
+
+    public String getNumeroTelefono() {
+        return numeroTelefono;
+    }
+
+    public void setNumeroTelefono(String numeroTelefono) {
+        this.numeroTelefono = numeroTelefono;
+    }
+    
 
     @Override
     public int compareTo(Persona pPersona) {

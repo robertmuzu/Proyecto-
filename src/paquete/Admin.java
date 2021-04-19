@@ -2,7 +2,7 @@ package paquete;
 
 import java.io.Serializable;
 
-public class Admin implements Serializable{
+public class Admin{
 
     private String nombreUsuario;
     private String contrasena;

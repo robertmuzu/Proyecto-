@@ -7,9 +7,12 @@ package Interfaz;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import paquete.Persona;
+import java.util.TreeSet;
 
 /**
  *
@@ -17,11 +20,13 @@ import javax.swing.JPanel;
  */
 public class Registro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Registro
-     */
+    static ArrayList<Persona> NuevoSetPersonas;
+    
     public Registro() {
         initComponents();
+        NuevoSetPersonas = new ArrayList<Persona>();
+        
+        
     }
 
     /**
@@ -44,11 +49,14 @@ public class Registro extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         TxtNombre = new javax.swing.JTextField();
         TxtApellidos = new javax.swing.JTextField();
-        TxtCedula = new javax.swing.JTextField();
+        TxtCorreo = new javax.swing.JTextField();
         TxtTelfono = new javax.swing.JTextField();
         TxtSexo = new javax.swing.JTextField();
         TxtEdad = new javax.swing.JTextField();
         BtnAvanzar = new javax.swing.JButton();
+        LblNombre = new javax.swing.JLabel();
+        LblApellido = new javax.swing.JLabel();
+        LbCorreo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,9 +105,9 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
-        TxtCedula.addActionListener(new java.awt.event.ActionListener() {
+        TxtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtCedulaActionPerformed(evt);
+                TxtCorreoActionPerformed(evt);
             }
         });
 
@@ -130,6 +138,12 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        LblNombre.setForeground(new java.awt.Color(255, 0, 0));
+
+        LblApellido.setForeground(new java.awt.Color(255, 0, 0));
+
+        LbCorreo.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -149,12 +163,15 @@ public class Registro extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(TxtSexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
                                 .addComponent(TxtTelfono, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(TxtEdad))
-                            .addComponent(BtnAvanzar, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(BtnAvanzar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 113, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,19 +182,25 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LblNombre)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(8, 8, 8)
+                .addComponent(LblApellido)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblCorreo)
-                    .addComponent(TxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(TxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LbCorreo)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(TxtTelfono, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -198,17 +221,17 @@ public class Registro extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(69, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -235,9 +258,9 @@ public class Registro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtApellidosActionPerformed
 
-    private void TxtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCedulaActionPerformed
+    private void TxtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtCedulaActionPerformed
+    }//GEN-LAST:event_TxtCorreoActionPerformed
 
     private void TxtTelfonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelfonoActionPerformed
         // TODO add your handling code here:
@@ -252,7 +275,33 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtEdadActionPerformed
 
     private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
-        // TODO add your handling code here:
+        
+        if (!TxtNombre.getText().isEmpty()) {
+            if (!TxtApellidos.getText().isEmpty()) {
+                if (!TxtCorreo.getText().isEmpty()) {
+                    Persona per = new Persona(TxtNombre.getText(), TxtApellidos.getText(), TxtCorreo.getText(), TxtSexo.getText(), TxtEdad.getText(), TxtTelfono.getText());
+                    this.NuevoSetPersonas.add(per);
+                    TxtNombre.setText("");
+                    TxtApellidos.setText("");
+                    TxtCorreo.setText("");
+                    TxtSexo.setText("");
+                    TxtEdad.setText("");
+                    TxtTelfono.setText("");
+                    JOptionPane.showMessageDialog(null, "Se agregò el Usuario con èxito.");
+                    
+                    this.setVisible(false);
+                    Registro2 re = new Registro2();
+                    re.setVisible(true);
+                }else{
+                    LbCorreo.setText("* Campo Requerido");
+                }
+            }else  {
+                LblApellido.setText("* Campo Requerido");
+            }
+        }else {
+            LblNombre.setText("* Campo Requerido");
+            }
+        
     }//GEN-LAST:event_BtnAvanzarActionPerformed
 
     /**
@@ -293,10 +342,13 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAvanzar;
+    private javax.swing.JLabel LbCorreo;
+    private javax.swing.JLabel LblApellido;
     private javax.swing.JLabel LblCorreo;
+    private javax.swing.JLabel LblNombre;
     private javax.swing.JLabel LblRegistro;
     private javax.swing.JTextField TxtApellidos;
-    private javax.swing.JTextField TxtCedula;
+    private javax.swing.JTextField TxtCorreo;
     private javax.swing.JTextField TxtEdad;
     private javax.swing.JTextField TxtNombre;
     private javax.swing.JTextField TxtSexo;
