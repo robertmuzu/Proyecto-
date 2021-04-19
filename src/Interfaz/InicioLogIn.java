@@ -281,31 +281,43 @@ public class InicioLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnRegistroActionPerformed
 
     private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
+        Boolean mien = new Boolean(true);
+
         Admin adIngreso = new Admin(TxtUsuario.getText(), TxtContraseña.getText(), null);
 
         if (!TxtUsuario.getText().isEmpty()) {
             if (!TxtContraseña.getText().isEmpty()) {
-                
-                try {
-                    FileInputStream miArchivo = new FileInputStream("AdminRoberto.roberto");
-                    ObjectInputStream input = new ObjectInputStream(miArchivo);
-                    Admin adLeido = (Admin) input.readObject();
-
-                    if (adLeido.getNombreUsuario().equals(input.readObject())
-                            && adIngreso.getContrasena().equals(input.readObject())) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido" + adLeido.getNombreUsuario());
-                    } else {
+                while (mien == true) {
+                    if (adIngreso.getNombreUsuario().equals("Roberto") && adIngreso.getContrasena().equals("1234")) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                        this.setVisible(false);
+                        Administrador ad = new Administrador();
+                        ad.setVisible(true);
+                    }else if (adIngreso.getNombreUsuario().equals("Alee") && adIngreso.getContrasena().equals("1234")) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                        this.setVisible(false);
+                        Administrador ad = new Administrador();
+                        ad.setVisible(true);
+                    }else if (adIngreso.getNombreUsuario().equals("Gabriel") && adIngreso.getContrasena().equals("1234")) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                        this.setVisible(false);
+                        Administrador ad = new Administrador();
+                        ad.setVisible(true);
+                    }else if (adIngreso.getNombreUsuario().equals("Gabriel(Tatu)") && adIngreso.getContrasena().equals("1234")) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                        this.setVisible(false);
+                        Administrador ad = new Administrador();
+                        ad.setVisible(true);
+                    }else if (adIngreso.getNombreUsuario().equals("Element") && adIngreso.getContrasena().equals("1234")) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                        this.setVisible(false);
+                        Administrador ad = new Administrador();
+                        ad.setVisible(true);
+                    }else {
                         JOptionPane.showMessageDialog(null, "Usuario o Contraseña, Invàlida");
                     }
-                    input.close();
-                    miArchivo.close();
-                    
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Exception: " + ex.getMessage());
+                    mien = false;
                 }
-                this.setVisible(false);
-                Administrador ad = new Administrador();
-                ad.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "Favor suministre la contraseña");
             }
@@ -345,16 +357,21 @@ public class InicioLogIn extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InicioLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioLogIn.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InicioLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioLogIn.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InicioLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioLogIn.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InicioLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioLogIn.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
