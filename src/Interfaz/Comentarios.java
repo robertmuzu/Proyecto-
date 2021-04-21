@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import paquete.Comentario;
 import paquete.Pelicula;
@@ -24,6 +26,17 @@ public class Comentarios extends javax.swing.JFrame {
     public Comentarios(Pelicula pelicula) {
         this.peliculaActual = pelicula;
         initComponents();
+
+        ArrayList<Comentario> comentarios = pelicula.getComentario();
+        ArrayList<String> comentariosConFormato = new ArrayList<>();
+
+        for (Comentario comentario : comentarios) {
+                comentariosConFormato.add(comentario.getComentario());
+        }
+
+        DefaultListModel model = new DefaultListModel();
+        model.addAll(comentariosConFormato);
+        listaComentariosPelicula.setModel(model);
     }
 
     /**
@@ -37,9 +50,9 @@ public class Comentarios extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txtTituloCalificacion = new javax.swing.JLabel();
-        btn_cancelarCalificacion = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaComentariosPelicula = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,21 +63,21 @@ public class Comentarios extends javax.swing.JFrame {
         txtTituloCalificacion.setForeground(new java.awt.Color(255, 255, 255));
         txtTituloCalificacion.setText("Comentarios de la Película");
 
-        btn_cancelarCalificacion.setBackground(new java.awt.Color(144, 55, 73));
-        btn_cancelarCalificacion.setForeground(new java.awt.Color(255, 255, 255));
-        btn_cancelarCalificacion.setText("Cerrar");
-        btn_cancelarCalificacion.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setBackground(new java.awt.Color(144, 55, 73));
+        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelarCalificacionActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaComentariosPelicula.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listaComentariosPelicula);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,7 +91,7 @@ public class Comentarios extends javax.swing.JFrame {
                 .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_cancelarCalificacion)
+                .addComponent(btnCerrar)
                 .addGap(65, 65, 65))
         );
         jPanel1Layout.setVerticalGroup(
@@ -89,7 +102,7 @@ public class Comentarios extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(btn_cancelarCalificacion)
+                .addComponent(btnCerrar)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -109,9 +122,9 @@ public class Comentarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_btn_cancelarCalificacionActionPerformed
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,10 +163,10 @@ public class Comentarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cancelarCalificacion;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> listaComentariosPelicula;
     private javax.swing.JLabel txtTituloCalificacion;
     // End of variables declaration//GEN-END:variables
 }
