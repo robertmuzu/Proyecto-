@@ -14,7 +14,7 @@ import paquete.Pelicula;
 public class InfoPelis extends javax.swing.JFrame {
 
     private Pelicula peliculaActual;
-    
+
     /**
      * Creates new form InfoPelis
      */
@@ -37,11 +37,11 @@ public class InfoPelis extends javax.swing.JFrame {
         FotoPeli = new javax.swing.JPanel();
         btn_calificar = new javax.swing.JButton();
         OkButton = new javax.swing.JButton();
-        Resenia = new javax.swing.JLabel();
-        Director = new javax.swing.JLabel();
-        Actores = new javax.swing.JLabel();
-        Duracion = new javax.swing.JLabel();
-        Titulo = new javax.swing.JLabel();
+        txtComentarios = new javax.swing.JLabel();
+        txtDescripcion = new javax.swing.JLabel();
+        txtLenguaje = new javax.swing.JLabel();
+        txtCategoria = new javax.swing.JLabel();
+        txtTitulo = new javax.swing.JLabel();
 
         Titulo2.setText("Duracion");
 
@@ -82,71 +82,75 @@ public class InfoPelis extends javax.swing.JFrame {
             }
         });
 
-        Resenia.setBackground(new java.awt.Color(255, 255, 255));
-        Resenia.setForeground(new java.awt.Color(255, 255, 255));
-        Resenia.setText("Reseña");
+        txtComentarios.setBackground(new java.awt.Color(255, 255, 255));
+        txtComentarios.setForeground(new java.awt.Color(255, 255, 255));
+        txtComentarios.setText("Comentarios");
 
-        Director.setBackground(new java.awt.Color(255, 255, 255));
-        Director.setForeground(new java.awt.Color(255, 255, 255));
-        Director.setText("Director");
+        txtDescripcion.setBackground(new java.awt.Color(255, 255, 255));
+        txtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
+        txtDescripcion.setText("Descripción");
 
-        Actores.setBackground(new java.awt.Color(255, 255, 255));
-        Actores.setForeground(new java.awt.Color(255, 255, 255));
-        Actores.setText("Actores");
+        txtLenguaje.setBackground(new java.awt.Color(255, 255, 255));
+        txtLenguaje.setForeground(new java.awt.Color(255, 255, 255));
+        txtLenguaje.setText("Lenguaje");
 
-        Duracion.setBackground(new java.awt.Color(255, 255, 255));
-        Duracion.setForeground(new java.awt.Color(255, 255, 255));
-        Duracion.setText("Duracion");
+        txtCategoria.setBackground(new java.awt.Color(255, 255, 255));
+        txtCategoria.setForeground(new java.awt.Color(255, 255, 255));
+        txtCategoria.setText("Categoría");
 
-        Titulo.setBackground(new java.awt.Color(255, 255, 255));
-        Titulo.setForeground(new java.awt.Color(255, 255, 255));
-        Titulo.setText("Titulo");
+        txtTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitulo.setText("Titulo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Director, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Resenia, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Duracion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Actores, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(btn_calificar)))
+                        .addGap(26, 26, 26)
+                        .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLenguaje, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 86, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(btn_calificar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FotoPeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtTitulo)
+                        .addGap(34, 34, 34)
+                        .addComponent(txtCategoria)
+                        .addGap(36, 36, 36)
+                        .addComponent(txtLenguaje)
+                        .addGap(36, 36, 36)
+                        .addComponent(txtDescripcion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(FotoPeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addComponent(btn_calificar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Titulo)
-                        .addGap(18, 18, 18)
-                        .addComponent(Duracion)
-                        .addGap(18, 18, 18)
-                        .addComponent(Actores)
-                        .addGap(22, 22, 22)
-                        .addComponent(Director)
-                        .addGap(18, 18, 18)
-                        .addComponent(Resenia)
-                        .addGap(0, 36, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
-                .addComponent(btn_calificar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtComentarios)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -215,15 +219,15 @@ public class InfoPelis extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Actores;
-    private javax.swing.JLabel Director;
-    private javax.swing.JLabel Duracion;
     private javax.swing.JPanel FotoPeli;
     private javax.swing.JButton OkButton;
-    private javax.swing.JLabel Resenia;
-    private javax.swing.JLabel Titulo;
     private javax.swing.JLabel Titulo2;
     private javax.swing.JButton btn_calificar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel txtCategoria;
+    private javax.swing.JLabel txtComentarios;
+    private javax.swing.JLabel txtDescripcion;
+    private javax.swing.JLabel txtLenguaje;
+    private javax.swing.JLabel txtTitulo;
     // End of variables declaration//GEN-END:variables
 }

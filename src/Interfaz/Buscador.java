@@ -5,7 +5,13 @@
  */
 package Interfaz;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import paquete.CambioImagenProto;
+import paquete.Pelicula;
+
 /**
  *
  * @author Usuario
@@ -15,6 +21,8 @@ public class Buscador extends javax.swing.JFrame {
     /**
      * Creates new form Buscador
      */
+    private String nombrePeliculaSeleccionada = "";
+    
     public Buscador() {
         initComponents();
     }
@@ -30,12 +38,13 @@ public class Buscador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         LblBuscar = new javax.swing.JLabel();
-        TxtBuscar = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
         BtnBuscar = new javax.swing.JButton();
         LblFound = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         BtnVolver = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListPeliculasEncontradas = new javax.swing.JList<>();
+        btnSeleccionarPelicula = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +53,13 @@ public class Buscador extends javax.swing.JFrame {
         LblBuscar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         LblBuscar.setForeground(new java.awt.Color(255, 255, 255));
         LblBuscar.setText("Buscar película por nombre:");
+
+        txtBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
 
         BtnBuscar.setBackground(new java.awt.Color(144, 55, 73));
         BtnBuscar.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
@@ -59,10 +75,6 @@ public class Buscador extends javax.swing.JFrame {
         LblFound.setForeground(new java.awt.Color(255, 255, 255));
         LblFound.setText("Se encontraron:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
         BtnVolver.setBackground(new java.awt.Color(144, 55, 73));
         BtnVolver.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
@@ -70,6 +82,18 @@ public class Buscador extends javax.swing.JFrame {
         BtnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnVolverActionPerformed(evt);
+            }
+        });
+
+        jListPeliculasEncontradas.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(jListPeliculasEncontradas);
+
+        btnSeleccionarPelicula.setBackground(new java.awt.Color(144, 55, 73));
+        btnSeleccionarPelicula.setForeground(new java.awt.Color(255, 255, 255));
+        btnSeleccionarPelicula.setText("Seleccionar Película");
+        btnSeleccionarPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarPeliculaActionPerformed(evt);
             }
         });
 
@@ -88,16 +112,18 @@ public class Buscador extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(LblFound)
-                                .addGap(243, 359, Short.MAX_VALUE))
-                            .addComponent(TxtBuscar)
+                                .addGap(243, 362, Short.MAX_VALUE))
+                            .addComponent(txtBuscar)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(LblBuscar)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(27, 27, 27))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(192, 192, 192)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSeleccionarPelicula)
+                .addGap(18, 18, 18)
                 .addComponent(BtnVolver)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,16 +131,18 @@ public class Buscador extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(LblBuscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BtnBuscar)
-                .addGap(29, 29, 29)
+                .addGap(23, 23, 23)
                 .addComponent(LblFound)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addComponent(BtnVolver)
-                .addGap(33, 33, 33))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnVolver)
+                    .addComponent(btnSeleccionarPelicula))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,18 +164,82 @@ public class Buscador extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnBuscarActionPerformed
 
     private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
-        
+
         //CambioImagenProto a = new CambioImagenProto();
         //a.CambiarFoto();
-        
         this.dispose();
-        
+
     }//GEN-LAST:event_BtnVolverActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        ArrayList<Pelicula> peliculas = getPeliculas();
+        ArrayList<String> nombrePeliculas = new ArrayList<>();
+
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula.getNombre().toLowerCase().contains(txtBuscar.getText().toLowerCase())) {
+                nombrePeliculas.add(pelicula.getNombre());
+            }
+        }
+
+        DefaultListModel model = new DefaultListModel();
+        model.addAll(nombrePeliculas);
+        jListPeliculasEncontradas.setModel(model);
+    }
+
+    private ArrayList<Pelicula> getPeliculas() {
+        ArrayList<Pelicula> peliculas = null;
+
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Peliculas.alexa")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                peliculas = (ArrayList<Pelicula>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        return peliculas;
+    
+    }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void btnSeleccionarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarPeliculaActionPerformed
+
+        ArrayList<Pelicula> peliculas = null;
+
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Peliculas.alexa")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                peliculas = (ArrayList<Pelicula>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        if (peliculas == null) {
+            peliculas = new ArrayList<>();
+        }
+
+        int indexPeliculaSeleccionar = -1;
+        for(Pelicula pelicula : peliculas) {
+            if(pelicula.getNombre().equals(nombrePeliculaSeleccionada)) {
+                indexPeliculaSeleccionar = peliculas.indexOf(pelicula);
+            }
+        }
+        peliculas.get(indexPeliculaSeleccionar);
+
+        this.dispose();
+    }//GEN-LAST:event_btnSeleccionarPeliculaActionPerformed
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -161,13 +253,33 @@ public class Buscador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Buscador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Buscador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Buscador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Buscador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -184,9 +296,10 @@ public class Buscador extends javax.swing.JFrame {
     private javax.swing.JButton BtnVolver;
     private javax.swing.JLabel LblBuscar;
     private javax.swing.JLabel LblFound;
-    private javax.swing.JTextField TxtBuscar;
+    private javax.swing.JButton btnSeleccionarPelicula;
+    private javax.swing.JList<String> jListPeliculasEncontradas;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
