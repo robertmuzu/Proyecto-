@@ -7,12 +7,18 @@ package Interfaz;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import paquete.Persona;
 import java.util.TreeSet;
+import paquete.Pelicula;
+import paquete.Usuario;
 
 /**
  *
@@ -20,13 +26,8 @@ import java.util.TreeSet;
  */
 public class Registro extends javax.swing.JFrame {
 
-    static ArrayList<Persona> NuevoSetPersonas;
-    
     public Registro() {
         initComponents();
-        NuevoSetPersonas = new ArrayList<Persona>();
-        
-        
     }
 
     /**
@@ -57,6 +58,14 @@ public class Registro extends javax.swing.JFrame {
         LblNombre = new javax.swing.JLabel();
         LblApellido = new javax.swing.JLabel();
         LbCorreo = new javax.swing.JLabel();
+        TxtNombreUsuario = new javax.swing.JTextField();
+        LblNombreUsuario = new javax.swing.JLabel();
+        LblContraseña = new javax.swing.JLabel();
+        TxtContraseña = new javax.swing.JPasswordField();
+        TxtContraseña2 = new javax.swing.JPasswordField();
+        LblContraseña2 = new javax.swing.JLabel();
+        jCheckBoxAdmin = new javax.swing.JCheckBox();
+        LblAdmin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,6 +153,30 @@ public class Registro extends javax.swing.JFrame {
 
         LbCorreo.setForeground(new java.awt.Color(255, 0, 0));
 
+        TxtNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNombreUsuarioActionPerformed(evt);
+            }
+        });
+
+        LblNombreUsuario.setBackground(java.awt.Color.darkGray);
+        LblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        LblNombreUsuario.setText("Nombre de Usuario:");
+
+        LblContraseña.setBackground(java.awt.Color.darkGray);
+        LblContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        LblContraseña.setText("Contraseña:");
+
+        LblContraseña2.setBackground(java.awt.Color.darkGray);
+        LblContraseña2.setForeground(new java.awt.Color(255, 255, 255));
+        LblContraseña2.setText("Repetir Contraseña:");
+
+        jCheckBoxAdmin.setBackground(java.awt.Color.darkGray);
+
+        LblAdmin.setBackground(java.awt.Color.darkGray);
+        LblAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        LblAdmin.setText("Admin");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -152,30 +185,44 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(69, 69, 69)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel4)
-                            .addComponent(LblCorreo)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel1))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel4)
+                                .addComponent(LblCorreo)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel1)
+                                .addComponent(LblNombreUsuario, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(LblContraseña)
+                            .addComponent(LblContraseña2)
+                            .addComponent(LblAdmin))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBoxAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(TxtSexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
-                                .addComponent(TxtTelfono, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(TxtEdad))
-                            .addComponent(BtnAvanzar, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(LblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LbCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 113, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(LblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(TxtTelfono, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LbCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(BtnAvanzar)
+                                .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 69, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,33 +235,51 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LblNombre)
-                .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(LblApellido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LblCorreo)
-                    .addComponent(TxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LbCorreo)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(TxtTelfono, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(TxtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(TxtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(10, 10, 10)
+                        .addComponent(LblApellido))
+                    .addComponent(TxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblCorreo))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LbCorreo)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TxtTelfono, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(TxtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblNombreUsuario))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblContraseña))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblContraseña2)))
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblAdmin)
+                    .addComponent(jCheckBoxAdmin))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(BtnAvanzar)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -224,14 +289,14 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(69, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addGap(69, 69, 69))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGap(66, 66, 66))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,67 +307,103 @@ public class Registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreActionPerformed
+    private void TxtNombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtNombreActionPerformed
+    }//GEN-LAST:event_TxtNombreUsuarioActionPerformed
 
-    private void TxtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtApellidosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtApellidosActionPerformed
+    private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
 
-    private void TxtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCorreoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtCorreoActionPerformed
+        if (!TxtNombre.getText().isEmpty()) {
+            if (!TxtApellidos.getText().isEmpty()) {
+                if (!TxtCorreo.getText().isEmpty()) {
+                    Usuario user = new Usuario(
+                            TxtNombre.getText(),
+                            TxtApellidos.getText(),
+                            TxtCorreo.getText(),
+                            TxtSexo.getText(),
+                            TxtEdad.getText(),
+                            TxtTelfono.getText(),
+                            TxtNombreUsuario.getText(),
+                            TxtContraseña.getText(),
+                            jCheckBoxAdmin.isSelected()
+                    );
 
-    private void TxtTelfonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelfonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtTelfonoActionPerformed
+                    insertUser(user);
+                    this.dispose();
+                } else {
+                    LbCorreo.setText("* Campo Requerido");
+                }
+            } else {
+                LblApellido.setText("* Campo Requerido");
+            }
+        } else {
+            LblNombre.setText("* Campo Requerido");
+        }
+    }//GEN-LAST:event_BtnAvanzarActionPerformed
 
-    private void TxtSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtSexoActionPerformed
+    private void insertUser(Usuario user) {
+        ArrayList<Usuario> usuarios = null;
+
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Usuarios.proyecto")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                usuarios = (ArrayList<Usuario>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        if (usuarios == null) {
+            usuarios = new ArrayList<>();
+        }
+        usuarios.add(user);
+
+        try {
+            try (FileOutputStream archivoPelicula = new FileOutputStream("Usuarios.proyecto")) {
+                ObjectOutputStream output = new ObjectOutputStream(archivoPelicula);
+
+                output.writeObject(usuarios);
+
+                output.close();
+            }
+            JOptionPane.showMessageDialog(null, "El usuario ha sido insertado satisfactoriamente.");
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+    }
 
     private void TxtEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEdadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtEdadActionPerformed
 
-    private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
-        
-        if (!TxtNombre.getText().isEmpty()) {
-            if (!TxtApellidos.getText().isEmpty()) {
-                if (!TxtCorreo.getText().isEmpty()) {
-                    Persona per = new Persona(TxtNombre.getText(), TxtApellidos.getText(), TxtCorreo.getText(), TxtSexo.getText(), TxtEdad.getText(), TxtTelfono.getText());
-                    this.NuevoSetPersonas.add(per);
-                    TxtNombre.setText("");
-                    TxtApellidos.setText("");
-                    TxtCorreo.setText("");
-                    TxtSexo.setText("");
-                    TxtEdad.setText("");
-                    TxtTelfono.setText("");
-                    JOptionPane.showMessageDialog(null, "Se agregò el la informaciòn del Usuario con èxito.");
-                    
-                    this.setVisible(false);
-                    Registro2 re = new Registro2();
-                    re.setVisible(true);
-                }else{
-                    LbCorreo.setText("* Campo Requerido");
-                }
-            }else  {
-                LblApellido.setText("* Campo Requerido");
-            }
-        }else {
-            LblNombre.setText("* Campo Requerido");
-            }
-        
-    }//GEN-LAST:event_BtnAvanzarActionPerformed
+    private void TxtSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtSexoActionPerformed
+
+    private void TxtTelfonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelfonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtTelfonoActionPerformed
+
+    private void TxtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtCorreoActionPerformed
+
+    private void TxtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtApellidosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtApellidosActionPerformed
+
+    private void TxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,16 +444,24 @@ public class Registro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAvanzar;
     private javax.swing.JLabel LbCorreo;
+    private javax.swing.JLabel LblAdmin;
     private javax.swing.JLabel LblApellido;
+    private javax.swing.JLabel LblContraseña;
+    private javax.swing.JLabel LblContraseña2;
     private javax.swing.JLabel LblCorreo;
     private javax.swing.JLabel LblNombre;
+    private javax.swing.JLabel LblNombreUsuario;
     private javax.swing.JLabel LblRegistro;
     private javax.swing.JTextField TxtApellidos;
+    private javax.swing.JPasswordField TxtContraseña;
+    private javax.swing.JPasswordField TxtContraseña2;
     private javax.swing.JTextField TxtCorreo;
     private javax.swing.JTextField TxtEdad;
     private javax.swing.JTextField TxtNombre;
+    private javax.swing.JTextField TxtNombreUsuario;
     private javax.swing.JTextField TxtSexo;
     private javax.swing.JTextField TxtTelfono;
+    private javax.swing.JCheckBox jCheckBoxAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

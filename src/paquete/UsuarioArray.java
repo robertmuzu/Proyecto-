@@ -25,6 +25,4 @@ public class UsuarioArray implements Serializable{
         this.usuarios = usuarios;
     }
     
-    
-    
 }
