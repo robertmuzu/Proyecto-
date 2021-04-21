@@ -55,7 +55,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <EmptySpace pref="110" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -92,10 +92,13 @@
                                   <Component id="LblContraseña2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TxtContraseña2" min="-2" pref="350" max="-2" attributes="0"/>
-                                  <Component id="TxtNombreUsuario" min="-2" pref="350" max="-2" attributes="0"/>
-                                  <Component id="TxtContraseña" min="-2" pref="350" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="TxtNombreUsuario" pref="350" max="32767" attributes="0"/>
+                                  <Component id="LbNombre" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                  <Component id="LbContrasena" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="LblContra" alignment="0" min="-2" pref="189" max="-2" attributes="0"/>
+                                  <Component id="TxtContraseña" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TxtContraseña2" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -113,17 +116,23 @@
                           <Component id="LblNombreUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="TxtNombreUsuario" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LbNombre" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LblContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TxtContraseña" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="TxtContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LbContrasena" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LblContraseña2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TxtContraseña2" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="TxtContraseña2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LblContra" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="BtnRegresar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BtnAvanzar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -186,16 +195,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtNombreUsuarioActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="TxtContrase&#xf1;a">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtContrase&#xf1;aActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="TxtContrase&#xf1;a2">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtContrase&#xf1;a2ActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="BtnRegresar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -206,6 +205,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Regresar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRegresarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BtnAvanzar">
               <Properties>
@@ -220,6 +222,31 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAvanzarActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LbNombre">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="cc" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LbContrasena">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LblContra">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="TxtContrase&#xf1;a">
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="TxtContrase&#xf1;a2">
             </Component>
           </SubComponents>
         </Container>

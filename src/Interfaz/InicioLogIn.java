@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import paquete.Admin;
 import paquete.Persona;
 import paquete.Usuario;
+import paquete.UsuarioArray;
 
 /**
  *
@@ -274,7 +275,7 @@ public class InicioLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtContraseñaActionPerformed
 
     private void BtnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistroActionPerformed
-
+        
         this.setVisible(false);
         Registro res = new Registro();
         res.setVisible(true);
@@ -282,41 +283,56 @@ public class InicioLogIn extends javax.swing.JFrame {
 
     private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
         Boolean mien = new Boolean(true);
-
+        
         Admin adIngreso = new Admin(TxtUsuario.getText(), TxtContraseña.getText(), null);
-
+        
         if (!TxtUsuario.getText().isEmpty()) {
             if (!TxtContraseña.getText().isEmpty()) {
-                while (mien == true) {
-                    if (adIngreso.getNombreUsuario().equals("Roberto") && adIngreso.getContrasena().equals("1234")) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
-                        this.setVisible(false);
-                        Administrador ad = new Administrador();
-                        ad.setVisible(true);
-                    }else if (adIngreso.getNombreUsuario().equals("Alee") && adIngreso.getContrasena().equals("1234")) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
-                        this.setVisible(false);
-                        Administrador ad = new Administrador();
-                        ad.setVisible(true);
-                    }else if (adIngreso.getNombreUsuario().equals("Gabriel") && adIngreso.getContrasena().equals("1234")) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
-                        this.setVisible(false);
-                        Administrador ad = new Administrador();
-                        ad.setVisible(true);
-                    }else if (adIngreso.getNombreUsuario().equals("Gabriel(Tatu)") && adIngreso.getContrasena().equals("1234")) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
-                        this.setVisible(false);
-                        Administrador ad = new Administrador();
-                        ad.setVisible(true);
-                    }else if (adIngreso.getNombreUsuario().equals("Element") && adIngreso.getContrasena().equals("1234")) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
-                        this.setVisible(false);
-                        Administrador ad = new Administrador();
-                        ad.setVisible(true);
-                    }else {
-                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña, Invàlida");
+                try {
+                    FileInputStream archivo2 = new FileInputStream("Lista-Usuarios.proyecto");
+                    ObjectInputStream input = new ObjectInputStream(archivo2);
+                    UsuarioArray nuevoUsu = (UsuarioArray) input.readObject();
+                    input.close();
+                    archivo2.close();
+                    Usuario nueUsuario = new Usuario(TxtUsuario.getText(), TxtContraseña.getText());
+                    while (mien == true) {
+                        if (nuevoUsu.getUsuarios().contains(nueUsuario)) {
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + TxtUsuario.getText());
+                            this.setVisible(false);
+                            Buscador bu = new Buscador();
+                            bu.setVisible(true);
+                        } else if (adIngreso.getNombreUsuario().equals("Roberto") && adIngreso.getContrasena().equals("1234")) {
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                            this.setVisible(false);
+                            Administrador ad = new Administrador();
+                            ad.setVisible(true);
+                        } else if (adIngreso.getNombreUsuario().equals("Alee") && adIngreso.getContrasena().equals("1234")) {
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                            this.setVisible(false);
+                            Administrador ad = new Administrador();
+                            ad.setVisible(true);
+                        } else if (adIngreso.getNombreUsuario().equals("Gabriel") && adIngreso.getContrasena().equals("1234")) {
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                            this.setVisible(false);
+                            Administrador ad = new Administrador();
+                            ad.setVisible(true);
+                        } else if (adIngreso.getNombreUsuario().equals("Gabriel(Tatu)") && adIngreso.getContrasena().equals("1234")) {
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                            this.setVisible(false);
+                            Administrador ad = new Administrador();
+                            ad.setVisible(true);
+                        } else if (adIngreso.getNombreUsuario().equals("Element") && adIngreso.getContrasena().equals("1234")) {
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
+                            this.setVisible(false);
+                            Administrador ad = new Administrador();
+                            ad.setVisible(true);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Usuario o Contraseña, Invàlida");
+                        }
+                        mien = false;
                     }
-                    mien = false;
+                } catch (Exception e) {
+                    System.out.println("Exception: " + e.getMessage());
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Favor suministre la contraseña");
@@ -324,6 +340,7 @@ public class InicioLogIn extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Favor suministre su nombre de usuario");
         }
+        
 
     }//GEN-LAST:event_BtnSiguienteActionPerformed
 
@@ -357,7 +374,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {

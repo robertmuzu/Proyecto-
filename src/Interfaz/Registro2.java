@@ -1,26 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz;
 
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import paquete.Usuario;
+import paquete.UsuarioArray;
+import java.util.TreeSet;
 
 /**
  *
  * @author Roberto
  */
 public class Registro2 extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Resgistro2
-     */
+    
+    static ArrayList<Usuario> NuevoSetUsuarios;
+    
     public Registro2() {
         initComponents();
+        NuevoSetUsuarios = new ArrayList<Usuario>();
     }
 
     /**
@@ -39,10 +39,13 @@ public class Registro2 extends javax.swing.JFrame {
         LblContraseña = new javax.swing.JLabel();
         LblContraseña2 = new javax.swing.JLabel();
         TxtNombreUsuario = new javax.swing.JTextField();
-        TxtContraseña = new javax.swing.JTextField();
-        TxtContraseña2 = new javax.swing.JTextField();
         BtnRegresar = new javax.swing.JButton();
         BtnAvanzar = new javax.swing.JButton();
+        LbNombre = new javax.swing.JLabel();
+        LbContrasena = new javax.swing.JLabel();
+        LblContra = new javax.swing.JLabel();
+        TxtContraseña = new javax.swing.JPasswordField();
+        TxtContraseña2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,21 +76,14 @@ public class Registro2 extends javax.swing.JFrame {
             }
         });
 
-        TxtContraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtContraseñaActionPerformed(evt);
-            }
-        });
-
-        TxtContraseña2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtContraseña2ActionPerformed(evt);
-            }
-        });
-
         BtnRegresar.setBackground(new java.awt.Color(144, 55, 73));
         BtnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         BtnRegresar.setText("Regresar");
+        BtnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRegresarActionPerformed(evt);
+            }
+        });
 
         BtnAvanzar.setBackground(new java.awt.Color(144, 55, 73));
         BtnAvanzar.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,6 +93,12 @@ public class Registro2 extends javax.swing.JFrame {
                 BtnAvanzarActionPerformed(evt);
             }
         });
+
+        LbNombre.setForeground(new java.awt.Color(204, 0, 0));
+
+        LbContrasena.setForeground(new java.awt.Color(255, 0, 0));
+
+        LblContra.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -117,10 +119,13 @@ public class Registro2 extends javax.swing.JFrame {
                                 .addComponent(LblNombreUsuario, javax.swing.GroupLayout.Alignment.LEADING))
                             .addComponent(LblContraseña2))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                            .addComponent(LbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblContra, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtContraseña)
+                            .addComponent(TxtContraseña2))))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -132,15 +137,21 @@ public class Registro2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblNombreUsuario)
                     .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LbNombre)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblContraseña)
-                    .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                    .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LbContrasena)
+                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblContraseña2)
-                    .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                    .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LblContra)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnRegresar)
                     .addComponent(BtnAvanzar))
@@ -161,7 +172,7 @@ public class Registro2 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,17 +193,63 @@ public class Registro2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNombreUsuarioActionPerformed
 
-    private void TxtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtContraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtContraseñaActionPerformed
-
-    private void TxtContraseña2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtContraseña2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtContraseña2ActionPerformed
-
     private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
-        // TODO add your handling code here:
+        Boolean mien = new Boolean(true);
+        
+        if (!TxtNombreUsuario.getText().isEmpty()) {
+            if (!TxtContraseña.getText().isEmpty()) {
+                if (!TxtContraseña2.getText().isEmpty()) {
+                    if (TxtContraseña.getText().equals(TxtContraseña2.getText())) {
+                            Usuario usu = new Usuario(TxtNombreUsuario.getText(), TxtContraseña.getText());
+                            this.NuevoSetUsuarios.add(usu);
+                            TxtNombreUsuario.setText("");
+                            TxtContraseña.setText("");
+                            TxtContraseña2.setText("");
+                            JOptionPane.showMessageDialog(null, "Se agregò el Nombre de Usuario y contraseña con èxito.");
+                            if (!NuevoSetUsuarios.isEmpty()) {
+                                UsuarioArray usuArray = new UsuarioArray();
+                                usuArray.setUsuarios(NuevoSetUsuarios);
+                                Collections.sort(NuevoSetUsuarios);
+                                GuardarUsuario(usuArray); 
+                            }
+                        this.setVisible(false);
+                        InicioLogIn ini = new InicioLogIn();
+                        ini.setVisible(true);
+                        
+                    } else {
+                        JOptionPane.showMessageDialog(null, "La contraseña no es igual, por favor digite la misma contraseña");
+                    }
+                } else {
+                    LblContra.setText("* Campo Requerido");
+                }
+            } else {
+                LbContrasena.setText("* Campo Requerido");
+            }
+        } else {
+            LbNombre.setText("* Campo Requerido");
+        }
+
     }//GEN-LAST:event_BtnAvanzarActionPerformed
+    
+    private void GuardarUsuario(UsuarioArray usuaArray) {
+        
+        try {
+            FileOutputStream archivo = new FileOutputStream("Lista-Usuarios.proyecto");
+            ObjectOutputStream output = new ObjectOutputStream(archivo);
+            output.writeObject(usuaArray);
+            output.close();
+            archivo.close();
+            this.dispose();
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+    }
+
+    private void BtnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegresarActionPerformed
+        this.setVisible(false);
+        Registro re = new Registro();
+        re.setVisible(true);
+    }//GEN-LAST:event_BtnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,14 +290,17 @@ public class Registro2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAvanzar;
     private javax.swing.JButton BtnRegresar;
+    private javax.swing.JLabel LbContrasena;
+    private javax.swing.JLabel LbNombre;
+    private javax.swing.JLabel LblContra;
     private javax.swing.JLabel LblContraseña;
     private javax.swing.JLabel LblContraseña2;
     private javax.swing.JLabel LblNombreUsuario;
     private javax.swing.JLabel LblRegistro;
-    private javax.swing.JTextField TxtContraseña;
-    private javax.swing.JTextField TxtContraseña2;
+    private javax.swing.JPasswordField TxtContraseña;
+    private javax.swing.JPasswordField TxtContraseña2;
     private javax.swing.JTextField TxtNombreUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-    }
+}

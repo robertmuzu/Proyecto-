@@ -287,7 +287,7 @@ public class Registro extends javax.swing.JFrame {
                     TxtSexo.setText("");
                     TxtEdad.setText("");
                     TxtTelfono.setText("");
-                    JOptionPane.showMessageDialog(null, "Se agregò el Usuario con èxito.");
+                    JOptionPane.showMessageDialog(null, "Se agregò el la informaciòn del Usuario con èxito.");
                     
                     this.setVisible(false);
                     Registro2 re = new Registro2();
