@@ -155,7 +155,7 @@ public class CalificacionPelis extends javax.swing.JFrame {
 
     private void btn_guardarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCalificacionActionPerformed
         int puntuacion = 5 - cmbPuntuacion.getSelectedIndex();
-        Comentario cmtr = new Comentario(SesionActiva.getPersona().getNombre(), puntuacion, txtAreaComentario.getText());
+        Comentario cmtr = new Comentario(SesionActiva.getUsuario().getNombre(), puntuacion, txtAreaComentario.getText());
         this.peliculaActual.addComentario(cmtr);
         actualizarPeli();
         JOptionPane.showMessageDialog(null, "El comentario ha sido agregado con éxito.");
@@ -195,8 +195,6 @@ public class CalificacionPelis extends javax.swing.JFrame {
                 output.close();
 
             }
-
-            JOptionPane.showMessageDialog(null, "La pelicula ha sido agregada ala categoría indicada.");
 
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());

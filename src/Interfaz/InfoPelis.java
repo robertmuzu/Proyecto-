@@ -5,7 +5,17 @@
  */
 package Interfaz;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import paquete.Comentario;
 import paquete.Pelicula;
 
@@ -25,7 +35,7 @@ public class InfoPelis extends javax.swing.JFrame {
         initComponents();
 
         lblTituloPelicula.setText(peliculaActual.getNombre());
-//        lblCategoriaPelicula.setText(peliculaActual.getCategoria());
+        lblCategoriaPelicula.setText(peliculaActual.getCategoria().name());
         lblLenguajePelicula.setText(peliculaActual.getLenguaje());
         lblDescripcionPelicula.setText(peliculaActual.getDescripcion());
 
@@ -58,6 +68,13 @@ public class InfoPelis extends javax.swing.JFrame {
                 lblCalificacionPelicula.setText("★★★★★");
                 break;
         }
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource(peliculaActual.getUrlImagen()));
+            Image image = icon.getImage();
+            // Se le hace resize a la imagen
+            Image scaledImage = image.getScaledInstance(186, 370, java.awt.Image.SCALE_SMOOTH);
+            icon = new ImageIcon(scaledImage);
+            fotoPeli.setIcon(icon);
     }
 
     /**
@@ -71,7 +88,6 @@ public class InfoPelis extends javax.swing.JFrame {
 
         Titulo2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        FotoPeli = new javax.swing.JPanel();
         btn_calificar = new javax.swing.JButton();
         OkButton = new javax.swing.JButton();
         lblComentarios = new javax.swing.JLabel();
@@ -85,6 +101,7 @@ public class InfoPelis extends javax.swing.JFrame {
         lblDescripcionPelicula = new javax.swing.JLabel();
         lblCalificacionPelicula = new javax.swing.JLabel();
         btnComentarios = new javax.swing.JButton();
+        fotoPeli = new javax.swing.JButton();
 
         Titulo2.setText("Duracion");
 
@@ -92,20 +109,6 @@ public class InfoPelis extends javax.swing.JFrame {
         setBackground(new java.awt.Color(57, 62, 70));
 
         jPanel1.setBackground(new java.awt.Color(57, 62, 70));
-
-        FotoPeli.setBackground(new java.awt.Color(153, 153, 153));
-        FotoPeli.setForeground(new java.awt.Color(57, 62, 70));
-
-        javax.swing.GroupLayout FotoPeliLayout = new javax.swing.GroupLayout(FotoPeli);
-        FotoPeli.setLayout(FotoPeliLayout);
-        FotoPeliLayout.setHorizontalGroup(
-            FotoPeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 145, Short.MAX_VALUE)
-        );
-        FotoPeliLayout.setVerticalGroup(
-            FotoPeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 179, Short.MAX_VALUE)
-        );
 
         btn_calificar.setBackground(new java.awt.Color(144, 55, 73));
         btn_calificar.setForeground(new java.awt.Color(255, 255, 255));
@@ -174,56 +177,59 @@ public class InfoPelis extends javax.swing.JFrame {
             }
         });
 
+        fotoPeli.setBackground(new java.awt.Color(57, 62, 70));
+        fotoPeli.setForeground(java.awt.Color.darkGray);
+        fotoPeli.setText("jButton1");
+        fotoPeli.setBorder(null);
+        fotoPeli.setBorderPainted(false);
+        fotoPeli.setFocusPainted(false);
+        fotoPeli.setFocusable(false);
+        fotoPeli.setMargin(new java.awt.Insets(0, 0, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addComponent(fotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(btn_calificar)
-                        .addGap(66, 66, 66)
-                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addComponent(btnComentarios)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblLenguaje, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCalificacionPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(34, 82, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblTituloPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnComentarios)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLenguaje, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCalificacionPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTituloPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_calificar)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(fotoPeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(lblTitulo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTituloPelicula)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblTitulo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblTituloPelicula))
+                            .addComponent(btn_calificar))
                         .addGap(12, 12, 12)
                         .addComponent(lblCategoria)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -235,17 +241,15 @@ public class InfoPelis extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(lblDescripcion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                        .addGap(19, 19, 19)
+                        .addComponent(lblComentarios)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblCalificacionPelicula)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(btn_calificar))))
-                .addGap(11, 11, 11)
-                .addComponent(lblComentarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCalificacionPelicula)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnComentarios)
-                    .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnComentarios)
+                            .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(15, 15, 15))
         );
 
@@ -269,6 +273,11 @@ public class InfoPelis extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnComentariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComentariosActionPerformed
+        Comentarios test = new Comentarios(peliculaActual);
+        test.setVisible(true);
+    }//GEN-LAST:event_btnComentariosActionPerformed
+
     private void OkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkButtonActionPerformed
         this.dispose();
     }//GEN-LAST:event_OkButtonActionPerformed
@@ -277,11 +286,6 @@ public class InfoPelis extends javax.swing.JFrame {
         CalificacionPelis cal = new CalificacionPelis(peliculaActual);
         cal.setVisible(true);
     }//GEN-LAST:event_btn_calificarActionPerformed
-
-    private void btnComentariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComentariosActionPerformed
-        Comentarios test = new Comentarios(peliculaActual);
-        test.setVisible(true);
-    }//GEN-LAST:event_btnComentariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,11 +323,11 @@ public class InfoPelis extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel FotoPeli;
     private javax.swing.JButton OkButton;
     private javax.swing.JLabel Titulo2;
     private javax.swing.JButton btnComentarios;
     private javax.swing.JButton btn_calificar;
+    private javax.swing.JButton fotoPeli;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCalificacionPelicula;
     private javax.swing.JLabel lblCategoria;

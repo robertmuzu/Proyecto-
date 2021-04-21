@@ -17,6 +17,7 @@ import paquete.Admin;
 import paquete.Categoria;
 import paquete.Pelicula;
 import paquete.Persona;
+import paquete.SesionActiva;
 import paquete.Usuario;
 import paquete.UsuarioArray;
 
@@ -292,6 +293,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                 for (Usuario user : users) {
                     if (user.getNombreUsuario().equals(TxtUsuario.getText())
                             && user.getContrasena().equals(TxtContraseña.getText())) {
+                        SesionActiva.setUsuario(user);
                         if (user.getIsAdmin()) {
                             this.setVisible(false);
                             Administrador ad = new Administrador();
@@ -305,8 +307,6 @@ public class InicioLogIn extends javax.swing.JFrame {
                             this.dispose();
                         }
                         break;
-                    } else {
-                       JOptionPane.showMessageDialog(null, "Usuario no existente."); 
                     }
                 }
             } else {
@@ -347,8 +347,10 @@ public class InicioLogIn extends javax.swing.JFrame {
 
     private void btnTesting(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesting
         this.setVisible(false);
-        Pelicula peli = new Pelicula("ESTO ES UNA PRUEBAAAAAA","Ingles","akshakjshakjhas", Categoria.PELICULAS, "5");
-        InfoPelis test = new InfoPelis(peli);
+//        Pelicula peli = new Pelicula("ESTO ES UNA PRUEBAAAAAA","Ingles","akshakjshakjhas", Categoria.PELICULAS, "5");
+//        InfoPelis test = new InfoPelis(peli);
+//        test.setVisible(true);
+        PruebaBotonesDinamicos test = new PruebaBotonesDinamicos();
         test.setVisible(true);
     }//GEN-LAST:event_btnTesting
 

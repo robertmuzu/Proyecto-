@@ -31,7 +31,7 @@ public class Comentarios extends javax.swing.JFrame {
         ArrayList<String> comentariosConFormato = new ArrayList<>();
 
         for (Comentario comentario : comentarios) {
-                comentariosConFormato.add(comentario.getComentario());
+            comentariosConFormato.add("'"+ comentario.getComentario() + "' - " + comentario.getNombreUsuario());
         }
 
         DefaultListModel model = new DefaultListModel();

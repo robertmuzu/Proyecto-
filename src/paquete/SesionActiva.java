@@ -11,14 +11,16 @@ package paquete;
  */
 public class SesionActiva {
     
-    private static Persona persona;
+    private static Usuario usuario;
 
-    public static void setPersona(Persona aPersona) {
-        persona = aPersona; ///Aqui se va a hacer el codigo para que el usuario obtenga la persona loggeada en el momento
+    public static Usuario getUsuario() {
+        return usuario;
     }
 
-    public static Persona getPersona() {
-        return persona;
+    public static void setUsuario(Usuario aUsuario) {
+        usuario = aUsuario;
     }
+
+    
     
 }

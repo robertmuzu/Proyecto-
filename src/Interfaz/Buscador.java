@@ -9,6 +9,9 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import paquete.CambioImagenProto;
 import paquete.Pelicula;
 
@@ -22,9 +25,18 @@ public class Buscador extends javax.swing.JFrame {
      * Creates new form Buscador
      */
     private String nombrePeliculaSeleccionada = "";
-    
+
     public Buscador() {
         initComponents();
+
+        jListPeliculasEncontradas.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                int indicePeliculaSeleccionada = e.getFirstIndex();
+                ListModel<String> itemsLista = jListPeliculasEncontradas.getModel();
+                nombrePeliculaSeleccionada = itemsLista.getElementAt(indicePeliculaSeleccionada);
+            }
+        });
     }
 
     /**
@@ -104,6 +116,11 @@ public class Buscador extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSeleccionarPelicula)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BtnVolver))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(418, Short.MAX_VALUE)
                         .addComponent(BtnBuscar))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -118,12 +135,6 @@ public class Buscador extends javax.swing.JFrame {
                                 .addComponent(LblBuscar)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(27, 27, 27))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSeleccionarPelicula)
-                .addGap(18, 18, 18)
-                .addComponent(BtnVolver)
-                .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,18 +171,6 @@ public class Buscador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnBuscarActionPerformed
-
-    private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
-
-        //CambioImagenProto a = new CambioImagenProto();
-        //a.CambiarFoto();
-        this.dispose();
-
-    }//GEN-LAST:event_BtnVolverActionPerformed
-
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
         ArrayList<Pelicula> peliculas = getPeliculas();
         ArrayList<String> nombrePeliculas = new ArrayList<>();
 
@@ -184,6 +183,14 @@ public class Buscador extends javax.swing.JFrame {
         DefaultListModel model = new DefaultListModel();
         model.addAll(nombrePeliculas);
         jListPeliculasEncontradas.setModel(model);
+    }//GEN-LAST:event_BtnBuscarActionPerformed
+
+    private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BtnVolverActionPerformed
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+
     }
 
     private ArrayList<Pelicula> getPeliculas() {
@@ -202,7 +209,7 @@ public class Buscador extends javax.swing.JFrame {
         }
 
         return peliculas;
-    
+
     }//GEN-LAST:event_txtBuscarActionPerformed
 
     private void btnSeleccionarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarPeliculaActionPerformed
@@ -226,20 +233,23 @@ public class Buscador extends javax.swing.JFrame {
         }
 
         int indexPeliculaSeleccionar = -1;
-        for(Pelicula pelicula : peliculas) {
-            if(pelicula.getNombre().equals(nombrePeliculaSeleccionada)) {
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula.getNombre().equals(nombrePeliculaSeleccionada)) {
                 indexPeliculaSeleccionar = peliculas.indexOf(pelicula);
             }
         }
-        peliculas.get(indexPeliculaSeleccionar);
+        Pelicula peliculaSeleccionada = peliculas.get(indexPeliculaSeleccionar);
+
+        InfoPelis infoPelis = new InfoPelis(peliculaSeleccionada);
+        infoPelis.setVisible(true);
 
         this.dispose();
     }//GEN-LAST:event_btnSeleccionarPeliculaActionPerformed
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -253,33 +263,17 @@ public static void main(String args[]) {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Buscador
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Buscador
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Buscador
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Buscador
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscador.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

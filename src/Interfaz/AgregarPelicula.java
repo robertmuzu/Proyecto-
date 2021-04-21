@@ -115,6 +115,13 @@ public class AgregarPelicula extends javax.swing.JFrame {
         lblLenguajePelicula1.setForeground(new java.awt.Color(255, 255, 255));
         lblLenguajePelicula1.setText("Lenguaje:");
 
+        txtUrlImagenPelicula.setText("/imagenes/peliculas/avengers.jpg");
+        txtUrlImagenPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUrlImagenPeliculaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -200,7 +207,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
                 cmbLenguajePelicula.getSelectedItem().toString(),
                 txtAreaDescripcionPelicula.getText(),
                 Categoria.get(cmbCategoriaPelicula.getSelectedIndex()),
-                lblUrlImagenPelicula.getText()
+                txtUrlImagenPelicula.getText()
         );
 
         ArrayList<Pelicula> peliculas = null;
@@ -232,7 +239,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
                 
             }
 
-            JOptionPane.showMessageDialog(null, "La pelicula ha sido agregada ala categoría indicada.");
+            JOptionPane.showMessageDialog(null, "La pelicula ha sido agregada a la categoría indicada.");
 
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
@@ -247,6 +254,10 @@ public class AgregarPelicula extends javax.swing.JFrame {
     private void cmbCategoriaPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCategoriaPeliculaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbCategoriaPeliculaActionPerformed
+
+    private void txtUrlImagenPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUrlImagenPeliculaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUrlImagenPeliculaActionPerformed
 
     /**
      * @param args the command line arguments

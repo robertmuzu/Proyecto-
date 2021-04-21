@@ -5,14 +5,16 @@
  */
 package paquete;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuario
  */
-public class Comentario {
-    
+public class Comentario implements Serializable {
+
     private int contadorIdComentario = 0;
-    
+
     private int idComentario;
     private String nombreUsuario;
     private int calificacion;
