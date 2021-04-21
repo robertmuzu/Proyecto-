@@ -31,12 +31,41 @@ public class Comentarios extends javax.swing.JFrame {
         ArrayList<String> comentariosConFormato = new ArrayList<>();
 
         for (Comentario comentario : comentarios) {
-            comentariosConFormato.add("'"+ comentario.getComentario() + "' - " + comentario.getNombreUsuario());
+            comentariosConFormato.add(
+                    getStarsString(comentario.getCalificacion())
+                    + " '" + comentario.getComentario() + "' - "
+                    + comentario.getNombreUsuario()
+            );
         }
 
         DefaultListModel model = new DefaultListModel();
         model.addAll(comentariosConFormato);
         listaComentariosPelicula.setModel(model);
+    }
+
+    private String getStarsString(int calificacion) {
+        String result = "";
+        switch (calificacion) {
+            case 5:
+                result = "★★★★★";
+                break;
+            case 4:
+                result = "★★★★☆";
+                break;
+            case 3:
+                result = "★★★☆☆";
+                break;
+            case 2:
+                result = "★★☆☆☆";
+                break;
+            case 1:
+                result = "★☆☆☆☆";
+                break;
+            default:
+                result = "★★★★★";
+                break;
+        }
+        return result;
     }
 
     /**
