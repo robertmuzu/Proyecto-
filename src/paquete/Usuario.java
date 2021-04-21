@@ -2,21 +2,24 @@ package paquete;
 
 import java.io.Serializable;
 
-public class Usuario implements Serializable, Comparable<Usuario> {
+public class Usuario extends Persona implements Serializable, Comparable<Persona> {
 
     //SE CREAN ATRIBUTOS UNICOS PARA EL USUSARIO.
     protected String nombreUsuario;
     protected String contrasena;
+    private Boolean isAdmin;
 
     //CONSTRUCTOR VACIO
     public Usuario() {
 
     }
 
-    //CONSTRUCTOR
-    public Usuario(String nombreUsuario, String contrasena) {
+    //CONSTRUCTOR    
+    public Usuario(String nombre, String apellidos, String correo, String sexo, String edad, String numeroTelefono, String nombreUsuario, String contrasena, Boolean isAdmin) {
+        super(nombre, apellidos, correo, sexo, edad, numeroTelefono);
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
+        this.isAdmin = isAdmin;
     }
 
     //GETTERS AND SETTERD
@@ -36,9 +39,12 @@ public class Usuario implements Serializable, Comparable<Usuario> {
         this.contrasena = contrasena;
     }
 
-    @Override
-    public int compareTo(Usuario nUsuario) {
-        return this.nombreUsuario.compareTo(nUsuario.getNombreUsuario());
+    public Boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     @Override

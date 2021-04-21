@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 public class Persona implements Serializable, Comparable<Persona> {
 
-
-
     //Creamos atributos de las personas que van a usar el APP.
     private String nombre;
     private String apellidos;
