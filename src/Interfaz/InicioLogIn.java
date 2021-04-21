@@ -302,6 +302,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                             selPer.setVisible(true);
                             this.dispose();
                         }
+                        break;
                     } else {
                        JOptionPane.showMessageDialog(null, "Usuario no existente."); 
                     }
