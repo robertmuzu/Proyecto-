@@ -299,8 +299,8 @@ public class InicioLogIn extends javax.swing.JFrame {
                         if (nuevoUsu.getUsuarios().contains(nueUsuario)) {
                             JOptionPane.showMessageDialog(null, "Bienvenido " + TxtUsuario.getText());
                             this.setVisible(false);
-                            Buscador bu = new Buscador();
-                            bu.setVisible(true);
+                            SeleccionPerfil selPer = new SeleccionPerfil();
+                            selPer.setVisible(true);
                         } else if (adIngreso.getNombreUsuario().equals("Roberto") && adIngreso.getContrasena().equals("1234")) {
                             JOptionPane.showMessageDialog(null, "Bienvenido " + adIngreso.getNombreUsuario());
                             this.setVisible(false);

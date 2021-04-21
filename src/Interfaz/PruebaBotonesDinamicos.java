@@ -59,7 +59,7 @@ public class PruebaBotonesDinamicos extends javax.swing.JFrame {
             icon = new ImageIcon(scaledImage);
             tmp.setIcon(icon);
 
-            // Se agrega el listener
+            // Se agrega el listener(metodo que escucha o se da cuenta del clic del boton)
             tmp.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
