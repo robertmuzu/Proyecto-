@@ -14,6 +14,8 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import paquete.Admin;
+import paquete.Categoria;
+import paquete.Pelicula;
 import paquete.Persona;
 import paquete.Usuario;
 import paquete.UsuarioArray;
@@ -345,7 +347,8 @@ public class InicioLogIn extends javax.swing.JFrame {
 
     private void btnTesting(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesting
         this.setVisible(false);
-        Administrador test = new Administrador();
+        Pelicula peli = new Pelicula("ESTO ES UNA PRUEBAAAAAA","Ingles","akshakjshakjhas", Categoria.PELICULAS, "5");
+        InfoPelis test = new InfoPelis(peli);
         test.setVisible(true);
     }//GEN-LAST:event_btnTesting
 

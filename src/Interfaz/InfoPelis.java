@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import java.util.ArrayList;
+import paquete.Comentario;
 import paquete.Pelicula;
 
 /**
@@ -21,6 +23,41 @@ public class InfoPelis extends javax.swing.JFrame {
     public InfoPelis(Pelicula peliculaActual) {
         this.peliculaActual = peliculaActual;
         initComponents();
+
+        lblTituloPelicula.setText(peliculaActual.getNombre());
+//        lblCategoriaPelicula.setText(peliculaActual.getCategoria());
+        lblLenguajePelicula.setText(peliculaActual.getLenguaje());
+        lblDescripcionPelicula.setText(peliculaActual.getDescripcion());
+
+        int calificacion = 0;
+        ArrayList<Comentario> comentarios = peliculaActual.getComentario();
+        if (comentarios.size() > 0) {
+            for (Comentario comentario : comentarios) {
+                calificacion += comentario.getCalificacion();
+            }
+            calificacion = calificacion / comentarios.size();
+        }
+
+        switch (calificacion) {
+            case 5:
+                lblCalificacionPelicula.setText("★★★★★");
+                break;
+            case 4:
+                lblCalificacionPelicula.setText("★★★★☆");
+                break;
+            case 3:
+                lblCalificacionPelicula.setText("★★★☆☆");
+                break;
+            case 2:
+                lblCalificacionPelicula.setText("★★☆☆☆");
+                break;
+            case 1:
+                lblCalificacionPelicula.setText("★☆☆☆☆");
+                break;
+            default:
+                lblCalificacionPelicula.setText("★★★★★");
+                break;
+        }
     }
 
     /**
@@ -42,11 +79,11 @@ public class InfoPelis extends javax.swing.JFrame {
         lblLenguaje = new javax.swing.JLabel();
         lblCategoria = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        lblTiituloPelicula = new javax.swing.JLabel();
+        lblTituloPelicula = new javax.swing.JLabel();
         lblCategoriaPelicula = new javax.swing.JLabel();
         lblLenguajePelicula = new javax.swing.JLabel();
         lblDescripcionPelicula = new javax.swing.JLabel();
-        lblDescripcionPelicula1 = new javax.swing.JLabel();
+        lblCalificacionPelicula = new javax.swing.JLabel();
         btnComentarios = new javax.swing.JButton();
 
         Titulo2.setText("Duracion");
@@ -67,7 +104,7 @@ public class InfoPelis extends javax.swing.JFrame {
         );
         FotoPeliLayout.setVerticalGroup(
             FotoPeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 179, Short.MAX_VALUE)
         );
 
         btn_calificar.setBackground(new java.awt.Color(144, 55, 73));
@@ -81,7 +118,7 @@ public class InfoPelis extends javax.swing.JFrame {
 
         OkButton.setBackground(new java.awt.Color(144, 55, 73));
         OkButton.setForeground(new java.awt.Color(255, 255, 255));
-        OkButton.setText("OK");
+        OkButton.setText("Volver");
         OkButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OkButtonActionPerformed(evt);
@@ -108,21 +145,27 @@ public class InfoPelis extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("Titulo");
 
-        lblTiituloPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblTiituloPelicula.setText("jLabel1");
+        lblTituloPelicula.setBackground(new java.awt.Color(255, 255, 255));
+        lblTituloPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblTituloPelicula.setText("jLabel1");
 
+        lblCategoriaPelicula.setBackground(new java.awt.Color(255, 255, 255));
         lblCategoriaPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblCategoriaPelicula.setText("jLabel1");
 
+        lblLenguajePelicula.setBackground(new java.awt.Color(255, 255, 255));
         lblLenguajePelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblLenguajePelicula.setText("jLabel1");
 
+        lblDescripcionPelicula.setBackground(new java.awt.Color(255, 255, 255));
         lblDescripcionPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblDescripcionPelicula.setText("jLabel1");
 
-        lblDescripcionPelicula1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblDescripcionPelicula1.setText("jLabel1");
+        lblCalificacionPelicula.setBackground(new java.awt.Color(255, 255, 255));
+        lblCalificacionPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblCalificacionPelicula.setText("jLabel1");
 
+        btnComentarios.setBackground(new java.awt.Color(87, 86, 86));
         btnComentarios.setForeground(new java.awt.Color(255, 255, 255));
         btnComentarios.setText("Ver Comentarios");
         btnComentarios.addActionListener(new java.awt.event.ActionListener() {
@@ -138,41 +181,35 @@ public class InfoPelis extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(btn_calificar)
+                        .addGap(66, 66, 66)
+                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblLenguaje, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(37, 37, 37)
-                                        .addComponent(lblTiituloPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnComentarios)))
+                                    .addComponent(lblCalificacionPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 82, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(lblCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblTituloPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(lblLenguajePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 137, Short.MAX_VALUE)))
+                                .addComponent(btnComentarios)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(btn_calificar)
-                .addGap(106, 106, 106)
-                .addComponent(lblDescripcionPelicula1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,39 +217,36 @@ public class InfoPelis extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(FotoPeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FotoPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(lblTitulo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblTiituloPelicula)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTituloPelicula)
                         .addGap(12, 12, 12)
                         .addComponent(lblCategoria)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblCategoriaPelicula)
-                        .addGap(8, 8, 8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblLenguaje)
-                        .addGap(14, 14, 14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblLenguajePelicula)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(16, 16, 16)
                         .addComponent(lblDescripcion)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(btn_calificar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblDescripcionPelicula)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblComentarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblDescripcionPelicula1)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnComentarios)
-                        .addGap(0, 46, Short.MAX_VALUE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(btn_calificar))))
+                .addGap(11, 11, 11)
+                .addComponent(lblComentarios)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCalificacionPelicula)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnComentarios)
+                    .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -236,7 +270,7 @@ public class InfoPelis extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void OkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkButtonActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_OkButtonActionPerformed
 
     private void btn_calificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calificarActionPerformed
@@ -291,15 +325,15 @@ public class InfoPelis extends javax.swing.JFrame {
     private javax.swing.JButton btnComentarios;
     private javax.swing.JButton btn_calificar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCalificacionPelicula;
     private javax.swing.JLabel lblCategoria;
     private javax.swing.JLabel lblCategoriaPelicula;
     private javax.swing.JLabel lblComentarios;
     private javax.swing.JLabel lblDescripcion;
     private javax.swing.JLabel lblDescripcionPelicula;
-    private javax.swing.JLabel lblDescripcionPelicula1;
     private javax.swing.JLabel lblLenguaje;
     private javax.swing.JLabel lblLenguajePelicula;
-    private javax.swing.JLabel lblTiituloPelicula;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTituloPelicula;
     // End of variables declaration//GEN-END:variables
 }
