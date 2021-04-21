@@ -5,6 +5,11 @@
  */
 package Interfaz;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import paquete.Comentario;
 import paquete.Pelicula;
@@ -152,10 +157,53 @@ public class CalificacionPelis extends javax.swing.JFrame {
         int puntuacion = 5 - cmbPuntuacion.getSelectedIndex();
         Comentario cmtr = new Comentario(SesionActiva.getPersona().getNombre(), puntuacion, txtAreaComentario.getText());
         this.peliculaActual.addComentario(cmtr);
+        actualizarPeli();
         JOptionPane.showMessageDialog(null, "El comentario ha sido agregado con éxito.");
         this.dispose();
     }//GEN-LAST:event_btn_guardarCalificacionActionPerformed
 
+    private void actualizarPeli() {
+        ArrayList<Pelicula> peliculas = null;
+
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Peliculas.alexa")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                peliculas = (ArrayList<Pelicula>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        if (peliculas == null) {
+            peliculas = new ArrayList<>();
+        }
+        for(Pelicula pelicula : peliculas) {
+            if(pelicula.getNombre().equals(peliculaActual.getNombre())) {
+                pelicula.setComentarios(peliculaActual.getComentario());
+            }
+        }
+
+        try {
+            try (FileOutputStream archivoPelicula = new FileOutputStream("Peliculas.alexa")) {
+                ObjectOutputStream output = new ObjectOutputStream(archivoPelicula);
+
+                output.writeObject(peliculas);
+
+                output.close();
+
+            }
+
+            JOptionPane.showMessageDialog(null, "La pelicula ha sido agregada ala categoría indicada.");
+
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+        this.dispose();
+    }
+    
     private void btn_cancelarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarCalificacionActionPerformed
         this.dispose();
     }//GEN-LAST:event_btn_cancelarCalificacionActionPerformed

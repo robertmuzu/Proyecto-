@@ -61,6 +61,10 @@ public class Pelicula implements Serializable{
     public ArrayList getComentario() {
         return Comentarios;
     }
+    
+    public void setComentarios(ArrayList<Comentario> Comentarios) {
+        this.Comentarios = Comentarios;
+    }
 
     public void addComentario(Comentario Comentario) {
         this.Comentarios.add(Comentario);
@@ -81,6 +85,5 @@ public class Pelicula implements Serializable{
     public void setUrlImagen(String UrlImagen) {
         this.UrlImagen = UrlImagen;
     }
-
     
 }
