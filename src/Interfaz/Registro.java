@@ -140,7 +140,7 @@ public class Registro extends javax.swing.JFrame {
 
         BtnAvanzar.setBackground(new java.awt.Color(144, 55, 73));
         BtnAvanzar.setForeground(new java.awt.Color(255, 255, 255));
-        BtnAvanzar.setText("Avanzar");
+        BtnAvanzar.setText("Guardar");
         BtnAvanzar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAvanzarActionPerformed(evt);
