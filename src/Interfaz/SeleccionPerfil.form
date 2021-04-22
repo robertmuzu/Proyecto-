@@ -51,7 +51,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="Gabriel" min="-2" pref="73" max="-2" attributes="0"/>
+                          <Component id="GabrielUser" min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -59,7 +59,7 @@
                           <EmptySpace type="separate" pref="52" max="32767" attributes="0"/>
                           <Component id="Luis" min="-2" pref="77" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                          <Component id="Andres" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="AndresUser" min="-2" pref="79" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -72,7 +72,7 @@
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="andrea" min="-2" pref="109" max="-2" attributes="0"/>
-                      <Component id="Andrea1" min="-2" pref="89" max="-2" attributes="0"/>
+                      <Component id="AndreaUser" min="-2" pref="89" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
               </Group>
@@ -115,11 +115,11 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Andrea1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <Component id="Gabriel" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="AndreaUser" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Component id="GabrielUser" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                               </Group>
                               <Component id="Luis" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="Andres" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="AndresUser" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       </Group>
@@ -138,7 +138,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Gabriel">
+        <Component class="javax.swing.JButton" name="GabrielUser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="49" green="37" red="90" type="rgb"/>
@@ -157,8 +157,9 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GabrielActionPerformed"/>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="GabrielKeyPressed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GabrielUserMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GabrielUserActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="GabrielUserKeyPressed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -185,6 +186,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LuisActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="perro">
           <Properties>
@@ -211,7 +215,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Andres">
+        <Component class="javax.swing.JButton" name="AndresUser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="49" green="37" red="90" type="rgb"/>
@@ -230,10 +234,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AndresActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AndresUserActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Andrea1">
+        <Component class="javax.swing.JButton" name="AndreaUser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="49" green="37" red="90" type="rgb"/>
@@ -252,7 +256,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Andrea1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AndreaUserActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="andrea">

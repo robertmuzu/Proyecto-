@@ -28,13 +28,13 @@ public class SeleccionPerfil extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         UsuarioCualquera = new javax.swing.JLabel();
-        Gabriel = new javax.swing.JButton();
+        GabrielUser = new javax.swing.JButton();
         Luis = new javax.swing.JButton();
         perro = new javax.swing.JLabel();
         usuarios = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        Andres = new javax.swing.JButton();
-        Andrea1 = new javax.swing.JButton();
+        AndresUser = new javax.swing.JButton();
+        AndreaUser = new javax.swing.JButton();
         andrea = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
 
@@ -44,19 +44,24 @@ public class SeleccionPerfil extends javax.swing.JFrame {
 
         UsuarioCualquera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuariogrande.png"))); // NOI18N
 
-        Gabriel.setBackground(new java.awt.Color(144, 55, 73));
-        Gabriel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Gabriel.setForeground(new java.awt.Color(255, 255, 255));
-        Gabriel.setText("Gabriel");
-        Gabriel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Gabriel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GabrielActionPerformed(evt);
+        GabrielUser.setBackground(new java.awt.Color(144, 55, 73));
+        GabrielUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        GabrielUser.setForeground(new java.awt.Color(255, 255, 255));
+        GabrielUser.setText("Gabriel");
+        GabrielUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        GabrielUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GabrielUserMouseClicked(evt);
             }
         });
-        Gabriel.addKeyListener(new java.awt.event.KeyAdapter() {
+        GabrielUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GabrielUserActionPerformed(evt);
+            }
+        });
+        GabrielUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                GabrielKeyPressed(evt);
+                GabrielUserKeyPressed(evt);
             }
         });
 
@@ -79,25 +84,25 @@ public class SeleccionPerfil extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/camara.png"))); // NOI18N
 
-        Andres.setBackground(new java.awt.Color(144, 55, 73));
-        Andres.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Andres.setForeground(new java.awt.Color(255, 255, 255));
-        Andres.setText("Andres");
-        Andres.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Andres.addActionListener(new java.awt.event.ActionListener() {
+        AndresUser.setBackground(new java.awt.Color(144, 55, 73));
+        AndresUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AndresUser.setForeground(new java.awt.Color(255, 255, 255));
+        AndresUser.setText("Andres");
+        AndresUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AndresUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AndresActionPerformed(evt);
+                AndresUserActionPerformed(evt);
             }
         });
 
-        Andrea1.setBackground(new java.awt.Color(144, 55, 73));
-        Andrea1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Andrea1.setForeground(new java.awt.Color(255, 255, 255));
-        Andrea1.setText("Andrea");
-        Andrea1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Andrea1.addActionListener(new java.awt.event.ActionListener() {
+        AndreaUser.setBackground(new java.awt.Color(144, 55, 73));
+        AndreaUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AndreaUser.setForeground(new java.awt.Color(255, 255, 255));
+        AndreaUser.setText("Andrea");
+        AndreaUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AndreaUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Andrea1ActionPerformed(evt);
+                AndreaUserActionPerformed(evt);
             }
         });
 
@@ -123,13 +128,13 @@ public class SeleccionPerfil extends javax.swing.JFrame {
                         .addComponent(UsuarioCualquera, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(Gabriel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(GabrielUser, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 52, Short.MAX_VALUE)
                         .addComponent(Luis, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(92, 92, 92)
-                        .addComponent(Andres, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AndresUser, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
@@ -139,7 +144,7 @@ public class SeleccionPerfil extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(andrea, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Andrea1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AndreaUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 50, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -172,10 +177,10 @@ public class SeleccionPerfil extends javax.swing.JFrame {
                                 .addGap(28, 28, 28)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Andrea1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Gabriel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(AndreaUser, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(GabrielUser, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Luis, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Andres, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AndresUser, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(76, 76, 76)))
                 .addComponent(jButton16)
                 .addGap(22, 22, 22))
@@ -195,30 +200,38 @@ public class SeleccionPerfil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GabrielActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GabrielActionPerformed
-
+    private void GabrielUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GabrielUserActionPerformed
+             
         this.setVisible(false);
+        Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
-    }//GEN-LAST:event_GabrielActionPerformed
+    }//GEN-LAST:event_GabrielUserActionPerformed
 
     private void LuisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuisActionPerformed
         this.setVisible(false);
+          Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
     }//GEN-LAST:event_LuisActionPerformed
 
-    private void AndresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AndresActionPerformed
+    private void AndresUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AndresUserActionPerformed
         this.setVisible(false);
+          Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
-    }//GEN-LAST:event_AndresActionPerformed
+    }//GEN-LAST:event_AndresUserActionPerformed
 
-    private void Andrea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Andrea1ActionPerformed
+    private void AndreaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AndreaUserActionPerformed
         this.setVisible(false);
+          Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
-    }//GEN-LAST:event_Andrea1ActionPerformed
+    }//GEN-LAST:event_AndreaUserActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         String[] options = new String[2];
@@ -233,10 +246,15 @@ public class SeleccionPerfil extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
-    private void GabrielKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GabrielKeyPressed
-
+    private void GabrielUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GabrielUserKeyPressed
+      
+      
         
-    }//GEN-LAST:event_GabrielKeyPressed
+    }//GEN-LAST:event_GabrielUserKeyPressed
+
+    private void GabrielUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GabrielUserMouseClicked
+       boolean usuarioactivo = false;
+    }//GEN-LAST:event_GabrielUserMouseClicked
 
     /**
      * @param args the command line arguments
@@ -274,10 +292,10 @@ public class SeleccionPerfil extends javax.swing.JFrame {
     }
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Andrea1;
-    private javax.swing.JButton Andres;
-    public static javax.swing.JButton Gabriel;
-    private javax.swing.JButton Luis;
+    private javax.swing.JButton AndreaUser;
+    private javax.swing.JButton AndresUser;
+    public static javax.swing.JButton GabrielUser;
+    public static javax.swing.JButton Luis;
     private javax.swing.JLabel UsuarioCualquera;
     private javax.swing.JLabel andrea;
     private javax.swing.JButton jButton16;
