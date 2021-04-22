@@ -111,6 +111,7 @@ public class InfoPelis extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(57, 62, 70));
 
         btn_calificar.setBackground(new java.awt.Color(144, 55, 73));
+        btn_calificar.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         btn_calificar.setForeground(new java.awt.Color(255, 255, 255));
         btn_calificar.setText("Calificar");
         btn_calificar.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +121,7 @@ public class InfoPelis extends javax.swing.JFrame {
         });
 
         OkButton.setBackground(new java.awt.Color(144, 55, 73));
+        OkButton.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         OkButton.setForeground(new java.awt.Color(255, 255, 255));
         OkButton.setText("Volver");
         OkButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,46 +131,57 @@ public class InfoPelis extends javax.swing.JFrame {
         });
 
         lblComentarios.setBackground(new java.awt.Color(255, 255, 255));
+        lblComentarios.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         lblComentarios.setForeground(new java.awt.Color(255, 255, 255));
         lblComentarios.setText("Calificación Promedio");
 
         lblDescripcion.setBackground(new java.awt.Color(255, 255, 255));
+        lblDescripcion.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         lblDescripcion.setForeground(new java.awt.Color(255, 255, 255));
         lblDescripcion.setText("Descripción");
 
         lblLenguaje.setBackground(new java.awt.Color(255, 255, 255));
+        lblLenguaje.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         lblLenguaje.setForeground(new java.awt.Color(255, 255, 255));
         lblLenguaje.setText("Lenguaje");
 
         lblCategoria.setBackground(new java.awt.Color(255, 255, 255));
+        lblCategoria.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         lblCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lblCategoria.setText("Categoría");
 
         lblTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("Titulo");
 
         lblTituloPelicula.setBackground(new java.awt.Color(255, 255, 255));
-        lblTituloPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblTituloPelicula.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        lblTituloPelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblTituloPelicula.setText("jLabel1");
 
         lblCategoriaPelicula.setBackground(new java.awt.Color(255, 255, 255));
-        lblCategoriaPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblCategoriaPelicula.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        lblCategoriaPelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblCategoriaPelicula.setText("jLabel1");
 
         lblLenguajePelicula.setBackground(new java.awt.Color(255, 255, 255));
-        lblLenguajePelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblLenguajePelicula.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        lblLenguajePelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblLenguajePelicula.setText("jLabel1");
 
         lblDescripcionPelicula.setBackground(new java.awt.Color(255, 255, 255));
-        lblDescripcionPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblDescripcionPelicula.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        lblDescripcionPelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblDescripcionPelicula.setText("jLabel1");
 
         lblCalificacionPelicula.setBackground(new java.awt.Color(255, 255, 255));
         lblCalificacionPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblCalificacionPelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblCalificacionPelicula.setText("jLabel1");
 
         btnComentarios.setBackground(new java.awt.Color(87, 86, 86));
+        btnComentarios.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         btnComentarios.setForeground(new java.awt.Color(255, 255, 255));
         btnComentarios.setText("Ver Comentarios");
         btnComentarios.addActionListener(new java.awt.event.ActionListener() {
@@ -238,15 +251,15 @@ public class InfoPelis extends javax.swing.JFrame {
                         .addComponent(lblLenguaje)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblLenguajePelicula)
-                        .addGap(16, 16, 16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblDescripcion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addGap(19, 19, 19)
+                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblComentarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblCalificacionPelicula)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnComentarios)
                             .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
