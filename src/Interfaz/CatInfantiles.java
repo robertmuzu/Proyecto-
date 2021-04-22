@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import paquete.CambioImagenProto;
+import paquete.Categoria;
 import paquete.Pelicula;
 
 /*
@@ -18,7 +19,6 @@ import paquete.Pelicula;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author GABRIEL CHAVES G
@@ -26,46 +26,48 @@ import paquete.Pelicula;
 public class CatInfantiles extends javax.swing.JFrame {
 
     private String nombrePeliSelect = "";
-    
+
     /**
      * Creates new form CatPeliculas
      */
     public CatInfantiles() {
         initComponents();
-        
-        PanelBtns.setLayout(new GridLayout(2,3));
-        
+
+        PanelBtns.setLayout(new GridLayout(2, 3));
+
         ArrayList<Pelicula> peliculas = getPeliculas();
-        
+
         for (Pelicula pelicula : peliculas) {
             //x cada peli del array list, traiga pelis
-            JButton tmp = new JButton(); // Se crea el boton
-            tmp.setSize(50, 100);
-            // Se le asigna un tamano
-            // CAMBIAR LUEGO POR pelicula.getUrlImagen();
-            ImageIcon icon = new ImageIcon(getClass().getResource(pelicula.getUrlImagen()));
-            Image image = icon.getImage();
-            // Se le hace resize a la imagen
-            Image scaledImage = image.getScaledInstance(75, 100, java.awt.Image.SCALE_SMOOTH);
-            icon = new ImageIcon(scaledImage);
-            tmp.setIcon(icon);
+            if (pelicula.getCategoria() == Categoria.INFANTILES) {
+                JButton tmp = new JButton(); // Se crea el boton
+                tmp.setSize(50, 100);
+                // Se le asigna un tamano
+                // CAMBIAR LUEGO POR pelicula.getUrlImagen();
+                ImageIcon icon = new ImageIcon(getClass().getResource(pelicula.getUrlImagen()));
+                Image image = icon.getImage();
+                // Se le hace resize a la imagen
+                Image scaledImage = image.getScaledInstance(75, 100, java.awt.Image.SCALE_SMOOTH);
+                icon = new ImageIcon(scaledImage);
+                tmp.setIcon(icon);
 
-            // Se agrega el listener(metodo que escucha o se da cuenta del clic del boton)
-            tmp.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    //JOptionPane.showMessageDialog(null, pelicula.getNombre());
-                    // Aqui iria a InfoPelis
-                    InfoPelis pantalla = new InfoPelis(pelicula);
-                    pantalla.setVisible(true);
-                }
-            });
+                // Se agrega el listener(metodo que escucha o se da cuenta del clic del boton)
+                tmp.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        //JOptionPane.showMessageDialog(null, pelicula.getNombre());
+                        // Aqui iria a InfoPelis
+                        InfoPelis pantalla = new InfoPelis(pelicula);
+                        pantalla.setVisible(true);
+                    }
+                });
 
-            // Se agrega el boton al panel
-            PanelBtns.add(tmp);
+                // Se agrega el boton al panel
+                PanelBtns.add(tmp);
+            }
         }
     }
-    
+
     private ArrayList<Pelicula> getPeliculas() {
         ArrayList<Pelicula> peliculas = null;
 
@@ -178,11 +180,11 @@ public class CatInfantiles extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        
+
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
         this.dispose();
-        
+
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
