@@ -173,6 +173,7 @@ public class InfoPelis extends javax.swing.JFrame {
         lblDescripcionPelicula.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         lblDescripcionPelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblDescripcionPelicula.setText("jLabel1");
+        lblDescripcionPelicula.setAutoscrolls(true);
 
         lblCalificacionPelicula.setBackground(new java.awt.Color(255, 255, 255));
         lblCalificacionPelicula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -212,7 +213,6 @@ public class InfoPelis extends javax.swing.JFrame {
                         .addComponent(btnComentarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(OkButton))
-                    .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,7 +225,10 @@ public class InfoPelis extends javax.swing.JFrame {
                             .addComponent(lblCategoriaPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTituloPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_calificar)))
+                        .addComponent(btn_calificar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
