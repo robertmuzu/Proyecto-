@@ -217,7 +217,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
                 ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
 
                 peliculas = (ArrayList<Pelicula>) input.readObject();
-
+           
                 input.close();
             }
         } catch (Exception ex) {
