@@ -203,7 +203,7 @@ public class Ajustes extends javax.swing.JFrame {
     private void changeUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeUsuActionPerformed
           SeleccionPerfil perfil = new SeleccionPerfil();
         
-         perfil.GabrielUser.setText(JOptionPane.showInputDialog("Dgite el  nombre que decea agregar"));
+         perfil.GabrielUser.setText(JOptionPane.showInputDialog("Digite el  nombre que decea agregar"));
           this.setVisible(false);
           perfil.setVisible(true);
              

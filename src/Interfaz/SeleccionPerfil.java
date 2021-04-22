@@ -253,7 +253,7 @@ public class SeleccionPerfil extends javax.swing.JFrame {
     }//GEN-LAST:event_GabrielUserKeyPressed
 
     private void GabrielUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GabrielUserMouseClicked
-       boolean usuarioactivo = false;
+       
     }//GEN-LAST:event_GabrielUserMouseClicked
 
     /**
