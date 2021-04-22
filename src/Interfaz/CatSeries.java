@@ -35,7 +35,7 @@ public class CatSeries extends javax.swing.JFrame {
         
         PanelBtns.setLayout(new GridLayout(2,3));
         
-        ArrayList<Pelicula> peliculas = getSeries();
+        ArrayList<Pelicula> peliculas = getPeliculas();
         
         for (Pelicula pelicula : peliculas) {
             //x cada peli del array list, traiga pelis
@@ -66,7 +66,7 @@ public class CatSeries extends javax.swing.JFrame {
         }
     }
     
-    private ArrayList<Pelicula> getSeries() {
+    private ArrayList<Pelicula> getPeliculas() {
         ArrayList<Pelicula> peliculas = null;
 
         try {
