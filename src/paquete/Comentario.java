@@ -62,4 +62,5 @@ public class Comentario implements Serializable {
     public void setCalificacion(int calificacion) {
         this.calificacion = calificacion;
     }
+    //prueba2
 }
