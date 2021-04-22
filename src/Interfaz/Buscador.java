@@ -66,7 +66,6 @@ public class Buscador extends javax.swing.JFrame {
         LblBuscar.setForeground(new java.awt.Color(255, 255, 255));
         LblBuscar.setText("Buscar película por nombre:");
 
-        txtBuscar.setBackground(new java.awt.Color(255, 255, 255));
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarActionPerformed(evt);
@@ -74,7 +73,6 @@ public class Buscador extends javax.swing.JFrame {
         });
 
         BtnBuscar.setBackground(new java.awt.Color(144, 55, 73));
-        BtnBuscar.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         BtnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         BtnBuscar.setText("Buscar");
         BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +86,6 @@ public class Buscador extends javax.swing.JFrame {
         LblFound.setText("Se encontraron:");
 
         BtnVolver.setBackground(new java.awt.Color(144, 55, 73));
-        BtnVolver.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
         BtnVolver.setText("Volver al Catálogo");
         BtnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +94,6 @@ public class Buscador extends javax.swing.JFrame {
             }
         });
 
-        jListPeliculasEncontradas.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jListPeliculasEncontradas);
 
         btnSeleccionarPelicula.setBackground(new java.awt.Color(144, 55, 73));
@@ -121,7 +117,7 @@ public class Buscador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BtnVolver))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(418, Short.MAX_VALUE)
+                        .addContainerGap(425, Short.MAX_VALUE)
                         .addComponent(BtnBuscar))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -186,7 +182,9 @@ public class Buscador extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnBuscarActionPerformed
 
     private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
+        
         this.dispose();
+        
     }//GEN-LAST:event_BtnVolverActionPerformed
 
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed

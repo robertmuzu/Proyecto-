@@ -144,7 +144,8 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        BottonAjustes.setBackground(new java.awt.Color(51, 51, 51));
+        BottonAjustes.setBackground(new java.awt.Color(144,55,73)
+        );
         BottonAjustes.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         BottonAjustes.setForeground(new java.awt.Color(255, 255, 255));
         BottonAjustes.setText("Ajustes");
@@ -283,7 +284,7 @@ public class Catalogo extends javax.swing.JFrame {
 
     private void btnInfantilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfantilActionPerformed
         this.setVisible(false);
-        CatInfantil peliculas = new CatInfantil();
+        CatInfantiles peliculas = new CatInfantiles();
         peliculas.setVisible(true);
     }//GEN-LAST:event_btnInfantilActionPerformed
 

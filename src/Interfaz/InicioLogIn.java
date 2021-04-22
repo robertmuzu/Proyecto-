@@ -56,7 +56,6 @@ public class InicioLogIn extends javax.swing.JFrame {
         LblRegistro = new javax.swing.JLabel();
         BtnRegistro = new javax.swing.JButton();
         BtnSiguiente = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         LblOlvidoContrasena = new javax.swing.JLabel();
         LblTitulo = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -127,13 +126,6 @@ public class InicioLogIn extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Testing");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTesting(evt);
-            }
-        });
-
         LblOlvidoContrasena.setBackground(new java.awt.Color(51, 51, 51));
         LblOlvidoContrasena.setForeground(new java.awt.Color(255, 255, 255));
         LblOlvidoContrasena.setText("¿Olvidó su contraseña?");
@@ -164,9 +156,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(105, 105, 105)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtnRegistro)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnRegistro)
                         .addGap(74, 74, 74))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -196,22 +186,17 @@ public class InicioLogIn extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(LblUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnSiguiente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(LblOlvidoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jButton1)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(BtnSiguiente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LblOlvidoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         LblTitulo.setBackground(new java.awt.Color(51, 51, 51));
         LblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        LblTitulo.setText("¡¡Disfrute de nuestra gran variedad de peliculas!!");
+        LblTitulo.setText("¡¡Disfrute de nuestra gran variedad de películas, series y más!!");
 
         jPanel3.setBackground(new java.awt.Color(144, 53, 71));
 
@@ -234,7 +219,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(LblLog, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblLog, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -345,15 +330,6 @@ public class InicioLogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnSiguienteMouseClicked
 
-    private void btnTesting(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesting
-        this.setVisible(false);
-//        Pelicula peli = new Pelicula("ESTO ES UNA PRUEBAAAAAA","Ingles","akshakjshakjhas", Categoria.PELICULAS, "5");
-//        InfoPelis test = new InfoPelis(peli);
-//        test.setVisible(true);
-        PruebaBotonesDinamicos test = new PruebaBotonesDinamicos();
-        test.setVisible(true);
-    }//GEN-LAST:event_btnTesting
-
     private void LblOlvidoContrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblOlvidoContrasenaMousePressed
         this.setVisible(false);
         Portada por = new Portada();
@@ -412,7 +388,6 @@ public class InicioLogIn extends javax.swing.JFrame {
     private javax.swing.JLabel LblUsuario1;
     private javax.swing.JPasswordField TxtContraseña;
     private javax.swing.JTextField TxtUsuario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

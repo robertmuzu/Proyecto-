@@ -10,13 +10,13 @@ package paquete;
  * @author Alexa
  */
 public enum Categoria {
-    PELICULAS(1),
-    DOCUMENTALES(2),
-    SERIES(3),
-    INFANTILES(4),
-    NOVELAS(5),
-    ESTRENOS(6),
-    OTROS(7);
+    PELICULAS(0),
+    DOCUMENTALES(1),
+    SERIES(2),
+    INFANTILES(3),
+    NOVELAS(4),
+    ESTRENOS(5),
+    OTROS(6);
 
     private final int codigoCategoria;
 

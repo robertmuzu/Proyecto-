@@ -94,11 +94,9 @@
                                   </Group>
                                   <Component id="LblContraseña" min="-2" max="-2" attributes="0"/>
                                   <Component id="LblContraseña2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LblAdmin" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jCheckBoxAdmin" min="-2" pref="79" max="-2" attributes="0"/>
                                   <Component id="TxtNombre" min="-2" pref="350" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="TxtSexo" alignment="0" pref="350" max="32767" attributes="0"/>
@@ -119,7 +117,11 @@
                                   <Component id="TxtNombreUsuario" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                                   <Component id="TxtContraseña" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="BtnAvanzar" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="BtnAtras" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="BtnAvanzar" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <Component id="TxtContraseña2" min="-2" pref="350" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -190,13 +192,11 @@
                           </Group>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="LblAdmin" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBoxAdmin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="BtnAvanzar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtnAtras" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
-                      <Component id="BtnAvanzar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -390,23 +390,19 @@
                 <Property name="text" type="java.lang.String" value="Repetir Contrase&#xf1;a:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBoxAdmin">
+            <Component class="javax.swing.JButton" name="BtnAtras">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="40" green="40" id="darkGray" palette="1" red="40" type="palette"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="LblAdmin">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="40" green="40" id="darkGray" palette="1" red="40" type="palette"/>
+                  <Color blue="49" green="37" red="90" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Admin"/>
+                <Property name="text" type="java.lang.String" value="Atras"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAtrasActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
