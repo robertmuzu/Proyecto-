@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import paquete.CambioImagenProto;
+import paquete.Categoria;
 import paquete.Pelicula;
 
 /*
@@ -39,6 +40,7 @@ public class CatEstrenos extends javax.swing.JFrame {
         
         for (Pelicula pelicula : peliculas) {
             //x cada peli del array list, traiga pelis
+            if(pelicula.getCategoria() == Categoria.ESTRENOS){
             JButton tmp = new JButton(); // Se crea el boton
             tmp.setSize(50, 100);
             // Se le asigna un tamano
@@ -63,7 +65,7 @@ public class CatEstrenos extends javax.swing.JFrame {
 
             // Se agrega el boton al panel
             PanelBtns.add(tmp);
-            tmp.getLocation().x = tmp.getLocation().x + 1;
+            }
         }
     }
     
