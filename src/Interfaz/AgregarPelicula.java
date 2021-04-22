@@ -74,7 +74,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
         txt_tituloAgregarPelicula.setBackground(new java.awt.Color(255, 255, 255));
         txt_tituloAgregarPelicula.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         txt_tituloAgregarPelicula.setForeground(new java.awt.Color(255, 255, 255));
-        txt_tituloAgregarPelicula.setText("Información de la película");
+        txt_tituloAgregarPelicula.setText("Información del elemento");
 
         btnAgregarPelicula.setBackground(new java.awt.Color(144, 55, 73));
         btnAgregarPelicula.setForeground(new java.awt.Color(255, 255, 255));
@@ -239,7 +239,7 @@ public class AgregarPelicula extends javax.swing.JFrame {
                 
             }
 
-            JOptionPane.showMessageDialog(null, "La pelicula ha sido agregada a la categoría indicada.");
+            JOptionPane.showMessageDialog(null, "El elemento ha sido agregado a la categoría indicada!");
 
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
