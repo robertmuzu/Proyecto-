@@ -186,7 +186,11 @@ public class Buscador extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnBuscarActionPerformed
 
     private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
+        
+        CambioImagenProto a = new CambioImagenProto();
+        a.CambiarFoto(); 
         this.dispose();
+        
     }//GEN-LAST:event_BtnVolverActionPerformed
 
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
