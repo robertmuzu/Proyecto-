@@ -64,6 +64,7 @@ public class Registro extends javax.swing.JFrame {
         TxtContraseña = new javax.swing.JPasswordField();
         TxtContraseña2 = new javax.swing.JPasswordField();
         LblContraseña2 = new javax.swing.JLabel();
+        BtnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,6 +170,15 @@ public class Registro extends javax.swing.JFrame {
         LblContraseña2.setForeground(new java.awt.Color(255, 255, 255));
         LblContraseña2.setText("Repetir Contraseña:");
 
+        BtnAtras.setBackground(new java.awt.Color(144, 55, 73));
+        BtnAtras.setForeground(new java.awt.Color(255, 255, 255));
+        BtnAtras.setText("Atras");
+        BtnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -210,7 +220,10 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(TxtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(BtnAvanzar)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(BtnAtras)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(BtnAvanzar))
                                 .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 69, Short.MAX_VALUE))))
         );
@@ -264,7 +277,9 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(LblContraseña2)))
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(BtnAvanzar)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAvanzar)
+                    .addComponent(BtnAtras))
                 .addContainerGap())
         );
 
@@ -391,6 +406,10 @@ public class Registro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNombreActionPerformed
 
+    private void BtnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BtnAtrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -428,6 +447,7 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAtras;
     private javax.swing.JButton BtnAvanzar;
     private javax.swing.JLabel LbCorreo;
     private javax.swing.JLabel LblApellido;
