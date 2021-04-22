@@ -246,7 +246,7 @@ public class Catalogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscadorActionPerformed
-        this.setVisible(false);
+        //this.setVisible(false);
         Buscador buscador = new Buscador();
         buscador.setVisible(true);
     }//GEN-LAST:event_btnBuscadorActionPerformed
