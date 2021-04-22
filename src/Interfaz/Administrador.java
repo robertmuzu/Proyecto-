@@ -47,7 +47,7 @@ public class Administrador extends javax.swing.JFrame {
 
         btnAgregarPelicula.setBackground(new java.awt.Color(144, 55, 73));
         btnAgregarPelicula.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregarPelicula.setText("Agregar pelicula ");
+        btnAgregarPelicula.setText("Agregar Elemento");
         btnAgregarPelicula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarPeliculaActionPerformed(evt);
@@ -56,7 +56,7 @@ public class Administrador extends javax.swing.JFrame {
 
         btnEliminarPelicula.setBackground(new java.awt.Color(144, 55, 73));
         btnEliminarPelicula.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminarPelicula.setText("Eliminar pelicula");
+        btnEliminarPelicula.setText("Eliminar Elemento");
         btnEliminarPelicula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarPeliculaActionPerformed(evt);
