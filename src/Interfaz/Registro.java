@@ -64,8 +64,6 @@ public class Registro extends javax.swing.JFrame {
         TxtContraseña = new javax.swing.JPasswordField();
         TxtContraseña2 = new javax.swing.JPasswordField();
         LblContraseña2 = new javax.swing.JLabel();
-        jCheckBoxAdmin = new javax.swing.JCheckBox();
-        LblAdmin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -171,12 +169,6 @@ public class Registro extends javax.swing.JFrame {
         LblContraseña2.setForeground(new java.awt.Color(255, 255, 255));
         LblContraseña2.setText("Repetir Contraseña:");
 
-        jCheckBoxAdmin.setBackground(java.awt.Color.darkGray);
-
-        LblAdmin.setBackground(java.awt.Color.darkGray);
-        LblAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        LblAdmin.setText("Admin");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -198,11 +190,9 @@ public class Registro extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addComponent(LblNombreUsuario, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addComponent(LblContraseña)
-                            .addComponent(LblContraseña2)
-                            .addComponent(LblAdmin))
+                            .addComponent(LblContraseña2))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBoxAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(TxtSexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
@@ -273,11 +263,7 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(TxtContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LblContraseña2)))
                     .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LblAdmin)
-                    .addComponent(jCheckBoxAdmin))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(BtnAvanzar)
                 .addContainerGap())
         );
@@ -331,7 +317,7 @@ public class Registro extends javax.swing.JFrame {
                             TxtTelfono.getText(),
                             TxtNombreUsuario.getText(),
                             TxtContraseña.getText(),
-                            jCheckBoxAdmin.isSelected()
+                            false
                     );
 
                     insertUser(user);
@@ -444,7 +430,6 @@ public class Registro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAvanzar;
     private javax.swing.JLabel LbCorreo;
-    private javax.swing.JLabel LblAdmin;
     private javax.swing.JLabel LblApellido;
     private javax.swing.JLabel LblContraseña;
     private javax.swing.JLabel LblContraseña2;
@@ -461,7 +446,6 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField TxtNombreUsuario;
     private javax.swing.JTextField TxtSexo;
     private javax.swing.JTextField TxtTelfono;
-    private javax.swing.JCheckBox jCheckBoxAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
