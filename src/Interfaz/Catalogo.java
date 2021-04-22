@@ -144,7 +144,8 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        BottonAjustes.setBackground(new java.awt.Color(51, 51, 51));
+        BottonAjustes.setBackground(new java.awt.Color(144,55,73)
+        );
         BottonAjustes.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         BottonAjustes.setForeground(new java.awt.Color(255, 255, 255));
         BottonAjustes.setText("Ajustes");
@@ -154,7 +155,7 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cartelera/007_1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/007_1.jpg"))); // NOI18N
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CATALOGO");
