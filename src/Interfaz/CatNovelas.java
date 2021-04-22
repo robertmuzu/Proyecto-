@@ -1,22 +1,87 @@
 package Interfaz;
 
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import paquete.CambioImagenProto;
+import paquete.Pelicula;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import paquete.CambioImagenProto;
+
 /**
  *
  * @author GABRIEL CHAVES G
  */
 public class CatNovelas extends javax.swing.JFrame {
 
+    private String nombrePeliSelect = "";
+    
     /**
-     * Creates new form catpeliculas
+     * Creates new form CatPeliculas
      */
     public CatNovelas() {
         initComponents();
+        
+        PanelBtns.setLayout(new GridLayout(2,3));
+        
+        ArrayList<Pelicula> peliculas = getPeliculas();
+        
+        for (Pelicula pelicula : peliculas) {
+            //x cada peli del array list, traiga pelis
+            JButton tmp = new JButton(); // Se crea el boton
+            tmp.setSize(50, 100);
+            // Se le asigna un tamano
+            // CAMBIAR LUEGO POR pelicula.getUrlImagen();
+            ImageIcon icon = new ImageIcon(getClass().getResource(pelicula.getUrlImagen()));
+            Image image = icon.getImage();
+            // Se le hace resize a la imagen
+            Image scaledImage = image.getScaledInstance(75, 100, java.awt.Image.SCALE_SMOOTH);
+            icon = new ImageIcon(scaledImage);
+            tmp.setIcon(icon);
+
+            // Se agrega el listener(metodo que escucha o se da cuenta del clic del boton)
+            tmp.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //JOptionPane.showMessageDialog(null, pelicula.getNombre());
+                    // Aqui iria a InfoPelis
+                    InfoPelis pantalla = new InfoPelis(pelicula);
+                    pantalla.setVisible(true);
+                }
+            });
+
+            // Se agrega el boton al panel
+            PanelBtns.add(tmp);
+        }
+    }
+    
+    private ArrayList<Pelicula> getPeliculas() {
+        ArrayList<Pelicula> peliculas = null;
+
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Peliculas.alexa")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                peliculas = (ArrayList<Pelicula>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        return peliculas;
     }
 
     /**
@@ -28,184 +93,89 @@ public class CatNovelas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnCaines = new javax.swing.JButton();
-        btnCapo = new javax.swing.JButton();
-        btnMuneMafia = new javax.swing.JButton();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        btnRotije = new javax.swing.JButton();
-        btnEscobar = new javax.swing.JButton();
-        btnParaiso = new javax.swing.JButton();
+        PanelBG = new javax.swing.JPanel();
         btnAtras = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jLabel1 = new javax.swing.JLabel();
+        PanelBtns = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(57, 62, 70));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("NOVELAS");
-
-        btnCaines.setText("jButton1");
-        btnCaines.setBorder(null);
-        btnCaines.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCainesActionPerformed(evt);
-            }
-        });
-
-        btnCapo.setText("jButton1");
-        btnCapo.setBorder(null);
-        btnCapo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCapoActionPerformed(evt);
-            }
-        });
-
-        btnMuneMafia.setText("jButton1");
-        btnMuneMafia.setBorder(null);
-        btnMuneMafia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMuneMafiaActionPerformed(evt);
-            }
-        });
-
-        btnRotije.setText("jButton1");
-        btnRotije.setBorder(null);
-        btnRotije.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRotijeActionPerformed(evt);
-            }
-        });
-
-        btnEscobar.setText("jButton1");
-        btnEscobar.setBorder(null);
-        btnEscobar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEscobarActionPerformed(evt);
-            }
-        });
-
-        btnParaiso.setText("jButton1");
-        btnParaiso.setBorder(null);
-        btnParaiso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnParaisoActionPerformed(evt);
-            }
-        });
+        PanelBG.setBackground(new java.awt.Color(57, 62, 70));
 
         btnAtras.setBackground(new java.awt.Color(144, 55, 73));
         btnAtras.setForeground(new java.awt.Color(255, 255, 255));
-        btnAtras.setText("ATRAS");
+        btnAtras.setText("ATRÀS");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCaines, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnParaiso, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEscobar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCapo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMuneMafia, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRotije, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAtras)
-                .addGap(51, 51, 51))
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("PELICULAS");
+
+        PanelBtns.setBackground(new java.awt.Color(57, 62, 70));
+
+        javax.swing.GroupLayout PanelBtnsLayout = new javax.swing.GroupLayout(PanelBtns);
+        PanelBtns.setLayout(PanelBtnsLayout);
+        PanelBtnsLayout.setHorizontalGroup(
+            PanelBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
+        PanelBtnsLayout.setVerticalGroup(
+            PanelBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 134, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout PanelBGLayout = new javax.swing.GroupLayout(PanelBG);
+        PanelBG.setLayout(PanelBGLayout);
+        PanelBGLayout.setHorizontalGroup(
+            PanelBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBGLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCaines, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCapo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMuneMafia, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRotije, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEscobar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnParaiso, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                .addGroup(PanelBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelBGLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBGLayout.createSequentialGroup()
+                        .addGroup(PanelBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PanelBtns, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(PanelBGLayout.createSequentialGroup()
+                                .addGap(0, 407, Short.MAX_VALUE)
+                                .addComponent(btnAtras)))
+                        .addGap(43, 43, 43))))
+        );
+        PanelBGLayout.setVerticalGroup(
+            PanelBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBGLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelBtns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(btnAtras)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCainesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCainesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCainesActionPerformed
-
-    private void btnCapoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCapoActionPerformed
-
-    private void btnRotijeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRotijeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRotijeActionPerformed
-
-    private void btnEscobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscobarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscobarActionPerformed
-
-    private void btnMuneMafiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMuneMafiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMuneMafiaActionPerformed
-
-    private void btnParaisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParaisoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnParaisoActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         
@@ -232,35 +202,29 @@ public class CatNovelas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CatPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatNovelas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CatPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatNovelas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CatPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatNovelas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CatPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatNovelas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CatPeliculas().setVisible(true);
+                new CatNovelas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanelBG;
+    private javax.swing.JPanel PanelBtns;
     private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnCaines;
-    private javax.swing.JButton btnCapo;
-    private javax.swing.JButton btnEscobar;
-    private javax.swing.JButton btnMuneMafia;
-    private javax.swing.JButton btnParaiso;
-    private javax.swing.JButton btnRotije;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollBar jScrollBar1;
     // End of variables declaration//GEN-END:variables
 }
