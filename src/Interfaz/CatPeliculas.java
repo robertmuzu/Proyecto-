@@ -1,6 +1,17 @@
 package Interfaz;
 
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import paquete.CambioImagenProto;
+import paquete.Pelicula;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,11 +25,62 @@ import paquete.CambioImagenProto;
  */
 public class CatPeliculas extends javax.swing.JFrame {
 
+    private String nombrePeliSelect = "";
+    
     /**
      * Creates new form CatPeliculas
      */
     public CatPeliculas() {
         initComponents();
+        
+        jPanel3.setLayout(new GridLayout(4, 4));
+        
+        ArrayList<Pelicula> peliculas = getPeliculas();
+        
+        for (Pelicula pelicula : peliculas) { //x cada peli del array list, traiga pelis
+            JButton tmp = new JButton(); // Se crea el boton
+            tmp.setSize(75, 100);
+            // Se le asigna un tamano
+            // CAMBIAR LUEGO POR pelicula.getUrlImagen();
+            ImageIcon icon = new ImageIcon(getClass().getResource(pelicula.getUrlImagen()));
+            Image image = icon.getImage();
+            // Se le hace resize a la imagen
+            Image scaledImage = image.getScaledInstance(75, 100, java.awt.Image.SCALE_SMOOTH);
+            icon = new ImageIcon(scaledImage);
+            tmp.setIcon(icon);
+
+            // Se agrega el listener(metodo que escucha o se da cuenta del clic del boton)
+            tmp.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //JOptionPane.showMessageDialog(null, pelicula.getNombre());
+                    // Aqui iria a InfoPelis
+                    InfoPelis pantalla = new InfoPelis(pelicula);
+                    pantalla.setVisible(true);
+                }
+            });
+
+            // Se agrega el boton al panel
+            jPanel3.add(tmp);
+        }
+    }
+    
+    private ArrayList<Pelicula> getPeliculas() {
+        ArrayList<Pelicula> peliculas = null;
+
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Peliculas.alexa")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                peliculas = (ArrayList<Pelicula>) input.readObject();
+
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+
+        return peliculas;
     }
 
     /**
@@ -30,85 +92,18 @@ public class CatPeliculas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnAvengers = new javax.swing.JButton();
-        btnEso = new javax.swing.JButton();
-        btnBaby = new javax.swing.JButton();
-        btnMatrix = new javax.swing.JButton();
-        btnBatman = new javax.swing.JButton();
-        btnMortal = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
-        jScrollBar1 = new javax.swing.JScrollBar();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+        setBackground(new java.awt.Color(57, 62, 70));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 51));
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PELICULAS");
-
-        btnAvengers.setText("jButton1");
-        btnAvengers.setBorder(null);
-        btnAvengers.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAvengersActionPerformed(evt);
-            }
-        });
-
-        btnEso.setText("jButton1");
-        btnEso.setBorder(null);
-        btnEso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEsoActionPerformed(evt);
-            }
-        });
-
-        btnBaby.setText("jButton1");
-        btnBaby.setBorder(null);
-        btnBaby.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBabyActionPerformed(evt);
-            }
-        });
-
-        btnMatrix.setText("jButton1");
-        btnMatrix.setBorder(null);
-        btnMatrix.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMatrixActionPerformed(evt);
-            }
-        });
-
-        btnBatman.setText("jButton1");
-        btnBatman.setBorder(null);
-        btnBatman.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBatmanActionPerformed(evt);
-            }
-        });
-
-        btnMortal.setText("jButton1");
-        btnMortal.setBorder(null);
-        btnMortal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMortalActionPerformed(evt);
-            }
-        });
 
         btnAtras.setBackground(new java.awt.Color(144, 55, 73));
         btnAtras.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,98 +114,51 @@ public class CatPeliculas extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel1)
-                        .addGap(74, 74, 74))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(btnEso, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(btnAvengers, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(35, 35, 35))))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnMatrix, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBaby, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBatman, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMortal, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 100, Short.MAX_VALUE)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnAtras)
-                .addGap(38, 38, 38))
+        jPanel3.setBackground(new java.awt.Color(57, 62, 70));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAvengers, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBaby, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBatman, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnMortal, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMatrix, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEso, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addComponent(btnAtras)
-                .addContainerGap(21, Short.MAX_VALUE))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 473, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 665, Short.MAX_VALUE)
+                                .addComponent(btnAtras)))
+                        .addGap(43, 43, 43))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(btnAtras)
+                .addGap(27, 27, 27))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAvengersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvengersActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAvengersActionPerformed
-
-    private void btnBabyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBabyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBabyActionPerformed
-
-    private void btnBatmanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatmanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBatmanActionPerformed
-
-    private void btnMatrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatrixActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMatrixActionPerformed
-
-    private void btnMortalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMortalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMortalActionPerformed
-
-    private void btnEsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEsoActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         
@@ -257,15 +205,7 @@ public class CatPeliculas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnAvengers;
-    private javax.swing.JButton btnBaby;
-    private javax.swing.JButton btnBatman;
-    private javax.swing.JButton btnEso;
-    private javax.swing.JButton btnMatrix;
-    private javax.swing.JButton btnMortal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
