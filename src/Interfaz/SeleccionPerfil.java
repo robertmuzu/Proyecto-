@@ -203,32 +203,32 @@ public class SeleccionPerfil extends javax.swing.JFrame {
     private void GabrielUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GabrielUserActionPerformed
              
         this.setVisible(false);
-        //Catalogo pasar= new Catalogo();
-        //pasar.setVisible(true);
+        Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
     }//GEN-LAST:event_GabrielUserActionPerformed
 
     private void LuisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuisActionPerformed
         this.setVisible(false);
-        //Catalogo pasar= new Catalogo();
-        //pasar.setVisible(true);
+        Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
     }//GEN-LAST:event_LuisActionPerformed
 
     private void AndresUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AndresUserActionPerformed
         this.setVisible(false);
-        //Catalogo pasar= new Catalogo();
-        //pasar.setVisible(true);
+        Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
     }//GEN-LAST:event_AndresUserActionPerformed
 
     private void AndreaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AndreaUserActionPerformed
         this.setVisible(false);
-        //Catalogo pasar= new Catalogo();
-        //pasar.setVisible(true);
+        Catalogo pasar= new Catalogo();
+        pasar.setVisible(true);
         CambioImagenProto a = new CambioImagenProto();
         a.CambiarFoto();
     }//GEN-LAST:event_AndreaUserActionPerformed
