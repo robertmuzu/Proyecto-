@@ -112,7 +112,6 @@ public class InfoPelis extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(57, 62, 70));
 
         btn_calificar.setBackground(new java.awt.Color(144, 55, 73));
-        btn_calificar.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         btn_calificar.setForeground(new java.awt.Color(255, 255, 255));
         btn_calificar.setText("Calificar");
         btn_calificar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +121,6 @@ public class InfoPelis extends javax.swing.JFrame {
         });
 
         OkButton.setBackground(new java.awt.Color(144, 55, 73));
-        OkButton.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         OkButton.setForeground(new java.awt.Color(255, 255, 255));
         OkButton.setText("Volver");
         OkButton.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +179,8 @@ public class InfoPelis extends javax.swing.JFrame {
         lblCalificacionPelicula.setForeground(new java.awt.Color(255, 255, 255));
         lblCalificacionPelicula.setText("jLabel1");
 
-        btnComentarios.setBackground(new java.awt.Color(87, 86, 86));
+        btnComentarios.setBackground(new java.awt.Color(144,55,73)
+        );
         btnComentarios.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         btnComentarios.setForeground(new java.awt.Color(255, 255, 255));
         btnComentarios.setText("Ver Comentarios");
@@ -212,7 +211,7 @@ public class InfoPelis extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnComentarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(OkButton))
                     .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +254,7 @@ public class InfoPelis extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblDescripcion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                        .addComponent(lblDescripcionPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblComentarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -263,7 +262,7 @@ public class InfoPelis extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnComentarios)
-                            .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(OkButton))))
                 .addGap(15, 15, 15))
         );
 

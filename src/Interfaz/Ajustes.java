@@ -36,7 +36,6 @@ public class Ajustes extends javax.swing.JFrame {
         Correo = new javax.swing.JButton();
         contacto = new javax.swing.JButton();
         SalirButton = new javax.swing.JButton();
-        changeUsu = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,26 +89,12 @@ public class Ajustes extends javax.swing.JFrame {
             }
         });
 
-        SalirButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salr¡ir.png"))); // NOI18N
+        SalirButton.setBackground(new java.awt.Color(144,55,73)
+        );
+        SalirButton.setText("Salir");
         SalirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirButtonActionPerformed(evt);
-            }
-        });
-
-        changeUsu.setBackground(new java.awt.Color(144, 55, 73));
-        changeUsu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        changeUsu.setForeground(new java.awt.Color(255, 255, 255));
-        changeUsu.setText("Cambiar nombre de usuario");
-        changeUsu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        changeUsu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changeUsuActionPerformed(evt);
-            }
-        });
-        changeUsu.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                changeUsuKeyPressed(evt);
             }
         });
 
@@ -124,15 +109,14 @@ public class Ajustes extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(InfoPago)
                             .addComponent(Correo)
-                            .addComponent(contacto)
-                            .addComponent(changeUsu)))
+                            .addComponent(contacto)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(JAyuda)))
                 .addGap(0, 149, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(SalirButton))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,10 +129,8 @@ public class Ajustes extends javax.swing.JFrame {
                 .addComponent(Correo)
                 .addGap(43, 43, 43)
                 .addComponent(contacto)
-                .addGap(35, 35, 35)
-                .addComponent(changeUsu)
-                .addGap(31, 31, 31)
-                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106)
+                .addComponent(SalirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -200,19 +182,6 @@ public class Ajustes extends javax.swing.JFrame {
         
     }//GEN-LAST:event_CorreoActionPerformed
 
-    private void changeUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeUsuActionPerformed
-          SeleccionPerfil perfil = new SeleccionPerfil();
-        
-         perfil.GabrielUser.setText(JOptionPane.showInputDialog("Digite el  nombre que decea agregar"));
-          this.setVisible(false);
-          perfil.setVisible(true);
-             
-    }//GEN-LAST:event_changeUsuActionPerformed
-
-    private void changeUsuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_changeUsuKeyPressed
-        
-    }//GEN-LAST:event_changeUsuKeyPressed
-
     /**
      * @param args the command line arguments
      */
@@ -253,7 +222,6 @@ public class Ajustes extends javax.swing.JFrame {
     private javax.swing.JButton InfoPago;
     private javax.swing.JLabel JAyuda;
     private javax.swing.JButton SalirButton;
-    private javax.swing.JButton changeUsu;
     private javax.swing.JButton contacto;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
