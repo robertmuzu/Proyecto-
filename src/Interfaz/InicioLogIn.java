@@ -211,7 +211,7 @@ public class InicioLogIn extends javax.swing.JFrame {
         LblTitulo.setBackground(new java.awt.Color(51, 51, 51));
         LblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        LblTitulo.setText("¡¡Disfrute de nuestra gran variedad de peliculas!!");
+        LblTitulo.setText("¡¡Disfrute de nuestra gran variedad de películas, series y más!!");
 
         jPanel3.setBackground(new java.awt.Color(144, 53, 71));
 
@@ -234,7 +234,7 @@ public class InicioLogIn extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(LblLog, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblLog, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
