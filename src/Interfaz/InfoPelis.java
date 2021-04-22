@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import paquete.CambioImagenProto;
 import paquete.Comentario;
 import paquete.Pelicula;
 
