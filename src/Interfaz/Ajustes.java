@@ -1,8 +1,14 @@
 
 package Interfaz;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JOptionPane;
+import paquete.Usuario;
         
 public class Ajustes extends javax.swing.JFrame {
 
@@ -178,7 +184,19 @@ public class Ajustes extends javax.swing.JFrame {
     }//GEN-LAST:event_contactoActionPerformed
 
     private void CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoActionPerformed
-    
+       ArrayList<Usuario> usuarios = null;
+        try {
+            try (FileInputStream archivoPeliculaInput = new FileInputStream("Usuarios.proyecto")) {
+                ObjectInputStream input = new ObjectInputStream(archivoPeliculaInput);
+
+                Usuario usuario = (Usuario)input.readObject();
+                JOptionPane.showMessageDialog(null,"El Correo de la cuenta es "+ usuario.getCorreo());
+                input.close();
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+     
         
     }//GEN-LAST:event_CorreoActionPerformed
 
