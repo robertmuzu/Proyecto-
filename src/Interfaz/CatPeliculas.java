@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import paquete.CambioImagenProto;
+import paquete.Categoria;
 import paquete.Pelicula;
 
 /*
@@ -63,7 +64,6 @@ public class CatPeliculas extends javax.swing.JFrame {
 
             // Se agrega el boton al panel
             PanelBtns.add(tmp);
-            tmp.getLocation().x = tmp.getLocation().x + 1;
         }
     }
     
