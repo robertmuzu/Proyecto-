@@ -283,7 +283,7 @@ public class Catalogo extends javax.swing.JFrame {
 
     private void btnInfantilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfantilActionPerformed
         this.setVisible(false);
-        CatInfantil peliculas = new CatInfantil();
+        CatInfantiles peliculas = new CatInfantiles();
         peliculas.setVisible(true);
     }//GEN-LAST:event_btnInfantilActionPerformed
 
