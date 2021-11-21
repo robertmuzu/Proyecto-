@@ -6,7 +6,7 @@
 package Interfaz;
 
 /**
- *
+ *erer
  * @author grf16
  */
 public class Administrador extends javax.swing.JFrame {
